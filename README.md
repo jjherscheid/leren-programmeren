@@ -1,6 +1,6 @@
 # Leren programmeren
 
-![Logo leren programmeren](Resources/logo.PNG "Leren programmeren Logo")
+![Logo leren programmeren](Resources/logo.png "Leren programmeren Logo")
 
 *Note:* This repos contains a work instruction for children to learn how to program. It is written in Dutch so the children are able to undertand.
 
