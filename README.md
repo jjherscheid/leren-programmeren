@@ -53,9 +53,9 @@ Om te leren te programmeren heb je natuurlijk een computer nodig waarop je kan e
 
 ### Programma om in te programmeren
 
-1. Visual Studio Community 2019  
+1. Visual Studio Community 2019 _(Voor de stappen 1 t/m 4)_  
 _Hiermee kan je programma's in C# mee maken. Je kan deze downloaden bij Microsoft: https://visualstudio.microsoft.com/vs/community/_
-2. Unity (Gratis editie)  
+2. Unity (Gratis editie) _(Voor stap 5)_  
 _Hiermee kan je games programmeren. Je kan deze downloaden bij Unity: https://store.unity.com/#plans-individual_
 
 ### Ruimte op je computer
@@ -65,4 +65,11 @@ Het is handig om een vaste plek op je computer te hebben waar je de bestanden ne
 * C:\\Leren-Programmeren\
 
 _**Let op:** Als je een andere plek gebruikt voor je bestanden dan moet je in de voorbeelden die gegeven wordt even zelf in de gaten houden dat je het op de goede plek neerzet._
+
+## Beginnen met programmeren
+
+Laten we nu maar eens echt beginnen met programeren. Voor de eerste stappen hebben we alleen 'Visual Studio' nodig. 
+
+# Applicatie 1: Hallo Wereld
+
 
