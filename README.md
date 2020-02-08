@@ -72,4 +72,21 @@ Laten we nu maar eens echt beginnen met programeren. Voor de eerste stappen hebb
 
 # Applicatie 1: Hallo Wereld
 
+Laten we gaan beginnen met 'Hallo wereld'. Dit is een kleine applicatie die deze tekst laat zien wanneer je het opstart. Ook gaan we nog wat aanpassingen doen zodat de applicatie weet wie jij bent en dat hij jou (of iemand anders) ook gedag kan zeggen.
+
+1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  
+![Visual Studio in start menu](Resources/01-VisualStudio_Startmenu.PNG)
+
+2. Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  
+![Create new project](Resources/02-NieuwProject.PNG)
+
+3. In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'   
+_Let op dat je voor degenen kiest waar ook C# bij staat_
+![Create Console app](Resources/03-ConsoleApplicatie.PNG)
+
+4. Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  
+    - Geef je project de naam 'HalloWereld'.
+    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_  
+![Project naam kiezen](Resources/04-ProjectNaam.PNG)  
+    - Als alles goed staat zoals op het plaatje, klik dan op 'Create'
 
