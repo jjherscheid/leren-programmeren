@@ -153,6 +153,8 @@ _De rest van de tekst in het zwarte scherm moet je maar even niet op letten_
 
 ![Hello world](Resources/07-HalloWereld.PNG)
 
+Druk op een toest om het venster weer te sluiten.
+
 **Gefeliciteerd!!** :tada: Je hebt je eerste applicatie gemaakt.
 
 Maar... we gaan nu natuurlijk uitleggen wat het is en nog wat kleine aanpassingen maken ;-)
@@ -199,7 +201,94 @@ Console.WriteLine("Hello World!");
 En dan het (voor nu) belangrijkste stukje code van de applicatie. Deze code staat in de 'Main' functie en wordt uitgevoerd. Maar wat doet het nu precies.
 
 `Console` is het zwarte scherm wat opstart wanneer je 'F5' klikt. En met `WriteLine` vertel je de applicatie dat je een regel wilt schrijven op het zwarte scherm. _('WriteLine' is engels voor 'SchrijfRegel')_
+De tekst die tussen \" staat is tekst.
 
 ## Project aanpassen
 
+### 1. Nederlands maken
+
 Nu wordt het tijd om de code eens aan te passen. 
+
+* Pas de tekst aan naar een Nederlandse tekst.
+    ```cs
+    Console.WriteLine("Hallo wereld!");
+    ```
+* Druk nu op F5.  
+_Als het goed is krijg je weer eenzelfde scherm als bij de vorige keer, maar nu met nederlandse tekst. Gaaf he :D._
+
+### 2. Input en output
+
+Het schrijven van een applicatie naar het zwarte venster noemen we 'output'. Dat is een engels wordt voor 'er uit komen'. Maar het zou ook leuk zijn als we zelf (tijdens dat de applicatie aanstaat) wat er in kunnen schrijven. Dat noemen we 'input'.
+
+* Voeg de volgende regels toe onder de 'Hallo wereld!' regel code.
+    ```cs
+    Console.WriteLine("Wie ben jij:");
+    var naam = Console.ReadLine();
+    Console.WriteLine($"Hallo {naam}");
+    ```
+* Druk op F5  
+_Nu zie je weer het zwarte scherm maar wordt er gevraagd om je naam in te toetsen._  
+![Wie ben jij](Resources/08-Input.PNG)
+* Vul je eigen naam in en druk op 'Enter'
+* In het scherm staat nu 'Hallo' met jou ingevulde naam erachter.
+
+De hele code ziet er als het goed is nu zo uit:
+```cs
+using System;
+
+namespace HalloWereld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hallo wereld!");
+            
+            Console.WriteLine("Wie ben jij:");
+            var naam = Console.ReadLine();
+            Console.WriteLine($"Hallo {naam}");
+        }
+    }
+}
+```
+
+In de code zie je drie keer `Console.WriteLine(...)` staan. Dit is dus de 'Output'. Ook zie je één keer `Console.ReadLine()` staan. Met deze regel wacht de applicatie totdat je wat hebt ingetypd en op 'Enter' hebt gedrukt. Dus is dus de 'Input'.
+
+Andere manieren om te schrijven of de lezen zijn nog:
+- `Console.Write(...)` die gebruikt kan worden om iets op het scherm te zetten zonder naar een nieuwe regel te gaan.
+- `Console.ReadKey(...)` die gebruikt kan worden om iets te lezen zonder dat de 'Enter' toets ingedrukt wordt.
+
+### 3. Problemen opsporen
+
+Het kan wel eens voorkomen dat je programma niet goed doet wat je wilt dat hij doet. Dan is het handig om stap voor stap te kunnen zien wat er gebeurt. Dat noemen we in programmeertaal 'Debuggen'.  
+
+#### Breakpoint
+
+Om stap voor stap te kunnen mee kijken is het nodig om een 'breakpoint' aan te maken. Hiermee geef je aan waar de applicatie moet stoppen en vanaf daar kan je dan mee kijken. In onderstaande plaatje is een 'breakpoint' geplaatst op regel 12. Dit kan je doen door met je muis te klikken op de balk voor het regelnummer (waar in het plaatje het rode bolletje staat).  
+![Breakpoint](Resources/09-Breakpoint.PNG)
+
+#### Debuggen
+
+* Druk nu op F5. Het programma start weer en vraagt naar je naam. Maar voordat je wat kan invullen wordt in Visual Studio het volgende getoond:  
+![BreakpointHit](Resources/10-Breakpoint-Hit.PNG).
+
+* Het programma staat nu eigenlijk gewoon stil en doet niks meer. Maar als je nu (in Visual Studio) op 'F10' klikt dan vertel je daarmee aan Visual Studio dat je een regel verder wilt.  
+Er lijkt nu niks te gebeuren maar als je nu het venster van de applicatie weer opent (staat onder in de balk ergens) dan kan je gewoon weer verder.  
+* Vul nu je naam weer in en druk op Enter.
+* Nu wordt in Visual Studio de volgende lijn geel gemaakt en wordt de applicatie weer gestopt.  
+![Breakpoint Hit 2](Resources/11-Breakpoint-Hit-2.PNG)
+* Ga met je muispijltje over de tekst `{naam}`.
+Je kan nu de waarde zien van wat er in 'naam' zit.  
+![BreakpointValues](Resources/12-Breakpoint-Waardes.PNG)
+* Druk weer op F5 en de applicatie gaat gewoon weer verder.
+
+Nu heb je gezien dat je met 'breakpoints' je code still kan zetten op sommige momenten, en dat je dan kan zien welke waardes er op dat moment in zitten.
+
+### 4. Zelf uitbreiden
+
+Nu heb je voor het eerst zelf een stukje C# code geschreven. Vind je het al leuk? Ik hoop het wel ;-).   
+Het is nog leuker om zelf wat meer er mee te doen. Daarom de volgende (kleine) opdracht. We gaan daarom niet alleen vragen naar de naam van de persoon die onze applicatie gebruikt maar we willen nog wat meer informatie weten. Dus maak het volgende:
+1. Vraag ook naar de leeftijd en laat het daarna zien
+2. Vraag waar iemand woont en laat het daarna zien.
+
+# Applicatie 2: Rekenmachine
