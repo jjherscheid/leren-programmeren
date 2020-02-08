@@ -75,4 +75,131 @@ Laten we nu maar eens echt beginnen met programeren. Voor de eerste stappen hebb
 
 # Applicatie 1: Hallo Wereld
 
+## Project aanmaken
 
+Laten we gaan beginnen met 'Hallo wereld'. Dit is een kleine applicatie die deze tekst laat zien wanneer je het opstart. Ook gaan we nog wat aanpassingen doen zodat de applicatie weet wie jij bent en dat hij jou (of iemand anders) ook gedag kan zeggen.
+
+1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  
+![Visual Studio in start menu](Resources/01-VisualStudio_Startmenu.PNG)
+
+2. Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  
+![Create new project](Resources/02-NieuwProject.PNG)
+
+3. In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'   
+_Let op dat je voor degenen kiest waar ook C# bij staat_
+![Create Console app](Resources/03-ConsoleApplicatie.PNG)
+
+4. Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  
+    - Geef je project de naam 'HalloWereld'.
+    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_  
+![Project naam kiezen](Resources/04-ProjectNaam.PNG)  
+    - Als alles goed staat zoals op het plaatje, klik dan op 'Create'
+
+Nu is er een project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio dit:  
+![Leeg project](Resources/05-VisualStudio.PNG)
+
+Er zijn hier nu 3 delen die belangrijk zijn om te snappen.
+
+1. Het grootste gedeelte is waar de code geschreven wordt. Hier worden bestanden geopend en hier kan je de code echt gaan typen.
+2. Elk betand wat je opent wordt als tab getoond boven het grote gedeelte.
+3. Rechts op je scherm zie je de 'Project boom'. Hierin staan alle bestanden die je aanmaakt voor je project. Voor nu zullen we het nog even simpel houden met maar één bestand.
+
+### Wat heb je nou eigenlijk gedaan?
+
+Ik hoop dat het allemaal gelukt is en dat je nu ook ziet zoals het plaatje van hierboven. Maar misschien is het handig om even een korte uitleg te geven van wat je net gedaan hebt.
+
+Als je in C# wilt programmeren dan heb je een 'project' nodig. In dit project zit alle code die je schrijft lekker bij elkaar. Als je dit project dan uiteindelijk opstart (wat we later gaan doen) dan wordt dat de applicatie die we gaan bouwen.
+
+In dit geval hebben we gekozen voor een 'Console App (.NET Core)' applicatie. Dat betekend dat we een applicatie gaan maken die draait een zwart schermpje met witte letters. En dat het gemaakt is met de nieuwste versie van C#.
+
+## Project openen
+
+Misschien wil je gelijk door, maar misschien moet je ook alweer stoppen omdat je iets anders moet gaan doen. Daarom laat ik je in dit hoofdstuk even zien hoe je het project weer kan openen als je hem gesloten hebt.
+
+1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  
+![Visual Studio in start menu](Resources/01-VisualStudio_Startmenu.PNG)
+
+2. Open je eerder gemaakte project door er op te klikken aan de linkerkant in het start scherm van Visual Studio.  
+![Open recent project](Resources/06-ProjectOpenen.png)
+
+3. Als je project er niet meer bij staat, klik dan op de knop 'Open a project or solution' aan de rechterkant van het schermpje.
+
+## Project starten
+
+Zullen we nu eindelijk eens wat gaan doen aan de code... ;-).
+Kom laten we gaan beginnen. 
+
+Als het goed is heb je nu het project open in Visual Studio en kijk je naar het bestand 'Program.cs'. Dit is het opstart bestand voor onze applicatie en de code ziet er zo uit:
+```cs
+using System;
+
+namespace HalloWereld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+Laten we eerst eens gaan kijken wat het doet en dan wordt het daarna stap voor stap uitgelegd.  
+Als je op 'F5' drukt (een van de knoppen boven je toetsenbord) dan gaat Visual Studio de code die geschreven is bouwen en daaruit komt dan een applicatie. Dus druk nu maar eens op 'F5'.
+
+Als het goed is zie je nu een zwart venster met daarin de tekst 'Hello world!' wat engels is voor 'Hallo wereld!'.  
+_De rest van de tekst in het zwarte scherm moet je maar even niet op letten_
+
+![Hello world](Resources/07-HalloWereld.PNG)
+
+**Gefeliciteerd!!** :tada: Je hebt je eerste applicatie gemaakt.
+
+Maar... we gaan nu natuurlijk uitleggen wat het is en nog wat kleine aanpassingen maken ;-)
+
+### Uitleg
+
+In dit gedeelte probeer ik stukje voor stukje uit te leggen wat er in de code staat geschreven.
+
+```cs
+ using System;
+```
+Het eerst wat er in de tekst staat zijn 'using' stukjes. Dit zal je nog veel meer gaan zien. Dit noem je verwijzingen naar al eerder gemaakte code (bibliotheken).  
+In dit geval wordt er aangegevn dat wij dingen willen gebruiken uit de 'System' bibliotheek, en dit hebben we nodig voor de andere code.
+
+```cs
+namespace HalloWereld
+{
+    ...
+}
+```
+Hiermee maken we zelf een stukje bibliotheek wat iemand anders weer zou kunnen gebruiken. We zeggen hiermee: "Alles wat tussen de '{' en de '}' in staat dat hoort allemaal bij 'HalloWereld'.
+
+_Als iemand een stukje van onze code zou willen gebruiken in een andere applicatie dan zou dat kunnen door `using HalloWereld` boven zijn code te zetten._
+
+```cs
+class Program {
+    ...
+}
+```
+In C# is alle code opgedeelt in stukjes die wat code kunnen uitvoeren. Die stukjes noem je een `class`. Eigenlijk kan je dit zien als een bouwblokje van LEGO. En al die bouwblokjes bij elkaar maken één applicatie.
+
+```cs
+static void Main(string[] args)
+{
+    ...
+}
+```
+Dit stukje noem je een functie. En een functie bevat code die wordt uitgevoerd wanneer het wordt aangeroepen. Deze functie is wat speciaal omdat het `Main(...)` heeft. 'Main' mag maar een keer voorkomen in je applicatie is die wordt aangeroepen wanneer je de applicatie start.
+_(Later wordt er meer uitgelegd over functies)_
+
+```cs
+Console.WriteLine("Hello World!");
+```
+En dan het (voor nu) belangrijkste stukje code van de applicatie. Deze code staat in de 'Main' functie en wordt uitgevoerd. Maar wat doet het nu precies.
+
+`Console` is het zwarte scherm wat opstart wanneer je 'F5' klikt. En met `WriteLine` vertel je de applicatie dat je een regel wilt schrijven op het zwarte scherm. _('WriteLine' is engels voor 'SchrijfRegel')_
+
+## Project aanpassen
+
+Nu wordt het tijd om de code eens aan te passen. 
