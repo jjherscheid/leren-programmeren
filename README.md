@@ -57,7 +57,7 @@ Om te leren te programmeren heb je natuurlijk een computer nodig waarop je kan e
 _Hiermee kan je programma's in C# mee maken. Je kan deze downloaden bij Microsoft: https://visualstudio.microsoft.com/vs/community/_
 2. Unity (Gratis editie) _(Voor stap 5)_  
 _Hiermee kan je games programmeren. Je kan deze downloaden bij Unity: https://store.unity.com/products/unity-personal_
-3. Unity account  
+3. Unity account  _(Voor stap 5)_
 _Maak zelf of laat een ouder iemand een gratis account aanmaken bij https://unity.com/_
 
 
@@ -91,7 +91,7 @@ _Let op dat je voor degenen kiest waar ook C# bij staat_
 
 4. Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  
     - Geef je project de naam 'HalloWereld'.
-    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_  
+    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_, en druk dan op 'Select Folder'.
 ![Project naam kiezen](Resources/04-ProjectNaam.PNG)  
     - Als alles goed staat zoals op het plaatje, klik dan op 'Create'
 
@@ -291,4 +291,76 @@ Het is nog leuker om zelf wat meer er mee te doen. Daarom de volgende (kleine) o
 1. Vraag ook naar de leeftijd en laat het daarna zien
 2. Vraag waar iemand woont en laat het daarna zien.
 
+Is het gelukt? Super leuk! Gefeliciteerd :tada:
+
 # Applicatie 2: Rekenmachine
+
+Laten we nu proberen een iets lastigere applicatie te maken. De basis dingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.
+
+_Als 'Hallo wereld!' nog open staat, dan mag je die sluiten. We gaan namelijk een nieuwe applicatie maken._
+
+## Project aanmaken
+
+Laten we gaan beginnen met 'Rekenmachine'. Dit is een kleine applicatie waarmee je simpele berekeningen moet kunnen gaan doen.
+
+1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  
+![Visual Studio in start menu](Resources/01-VisualStudio_Startmenu.PNG)
+
+2. Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  
+![Create new project](Resources/02-NieuwProject.PNG)
+
+3. In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'   
+_Let op dat je voor degenen kiest waar ook C# bij staat_
+![Create Console app](Resources/03-ConsoleApplicatie.PNG)
+
+4. Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  
+    - Geef je project de naam 'Rekenmachine'.
+    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_. Als je de map zoekt dat ziet de map er zo uit als op het plaatje, en kies dan voor 'Select Folder'.
+    ![Select Existing Folder](Resources/13-BestaandeMapKiezen.PNG)  
+    ![Rekenmachine Create](Resources/14-Rekenmachine.PNG)
+    - Als alles goed staat zoals op het plaatje hierboven, klik dan op 'Create'
+
+Nu is er weer een nieuw project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio weer hetzelfde als bij de eerste applicatie. En staat er weer:
+```cs
+Console.WriteLine("Hello world!");
+```
+
+Klopt dit? Mooi zo, dan ben je goed bezig!
+
+Laten nu dan beginnen met het bedenken wat een rekenmachine moet doen en wat voor sommen we willen dat hij kan uitrekenen:
+
+* De rekenmachine moet getalen kunnen optellen en aftrekken.
+
+Oh.. is dat alles? Dat klint eigenlijk helemaal niet zo moeilijk...
+
+Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
+
+1. Verander in regel 9 de tekst 'Hello World!' in 'Dit is een rekenmachine'
+    ```cs
+    Console.WriteLine("Dit is een rekenmachine");
+    ```
+2. Nu gaan we vragen aan de gebruiker van de rekenmachine wat het eerste getal moet zijn wat gebruikt worden in de berekening. Weet je nog hoe je iets moest vragen aan iemand? ... Juist `Console.ReadLine()`. Zet dus het volgende neer:
+    ```cs
+    Console.WriteLine("Wat is het eerste getal?");
+    var eersteGetal = Console.ReadLine();
+    ```
+    In de stap hierboven lees de applicatie wat de gebruiker in typed en zet dat weer in de variabele 'eersteGetal'. Misschien denk je nu 'variabele', wat is dat nou weer. In de eerste opdracht heb je ze ook al gebruikt. Een variabele is een stukje geheugen in de computer waar je informatie in kan zetten en uit kan halen. Hier is de variable 'eersteGetal'. De computer lees namelijk wat de gebruiker in typed en zet dat daarna in het stukje geheugen dan 'eersteGetal' heet. Later ga je dit er weer uit halen om mee te berekenen.
+
+3. Ok, we hebben het eerste getal. Dus nu willen we weten of de gebruiker wil optellen of aftrekken.
+    ```cs
+    Console.WriteLine("Wil je optellen of aftrekken (+ of -)");
+    var plusOfMin = Console.ReadLine();
+    ```
+
+4. Nu gaan we ook het laatste getal vragen. Zou je al weten hoe dat moet?
+    ```cs
+    Console.WriteLine("Wat is het tweede getal?");
+    var tweedeGetal = Console.ReadLine();
+    ```
+
+We hebben nu alle informatie om de som op te lossen in variabelen gestopt. Weet je nog wat de variabelen zijn? ... Juist...'eersteGetal', 'plusOfMin' en 'tweedeGetal'.
+
+5. Laten we eerst de som een op het scherm zetten:
+    ```cs
+    Console.WriteLine($"De som: {eersteGetal}{plusOfMin}{tweedeGetal}= ");
+    ```
