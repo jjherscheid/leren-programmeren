@@ -6,10 +6,10 @@ _**Note:** This repos contains a work instruction for children to learn how to p
 
 ## Werkbeschrijving
 
-Als je deze werkbeschrijving uitgeprint hebt maar je vindt het makkelijker om op de computer ook te kunnen gebruiken dan kan je naar de volgende website om via internet te bekijken:
-https://tinyurl.com/LerenProgrameren 
-of 
-https://github.com/jjherscheid/leren-programmeren
+Als je deze werkbeschrijving uitgeprint hebt maar je vindt het makkelijker om op de computer ook te kunnen gebruiken dan kan je naar de volgende website om via internet te bekijken:  
+https://tinyurl.com/LerenProgrameren  
+of  
+https://github.com/jjherscheid/leren-programmeren  
 
 In deze document wordt uitgelegd hoe programmeren werkt. Nadat je deze werkinstructie hebt gevolgd zou je zelf een beetje kunnen programmeren.
 Het doel is om kinderen enthousiast te maken voor het vak programmeren.
