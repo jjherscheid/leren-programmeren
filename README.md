@@ -1026,3 +1026,7 @@ namespace Honden
     }
 }
 ```
+
+Je heb nu als het goed is aardig wat kennis over wat programmeren is en hoe je in C# kan programmeren. Gefeliciteerd. Nu willen we natuurlijk het 'echte' werk gaan doen dus gaan we samen proberen 'Snake' te maken. Omdat de handleiding om snake te maken wat uitgebreid is heb ik die in een apart bestand gezet:
+
+[Snake.md](Snake.md)
