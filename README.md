@@ -29,11 +29,9 @@ Ik wil je meenemen in de volgende soort applicaties:
     _Dit is altijd een programma waarmee begonnen wordt als je leert programmeren. Het is een simpele applicatie waar je leert dat een applicatie **input** en **output** heeft._    
 2. **Rekenmachine**  
     _Je gaat een eigen rekenmachine maken. Ook hierbij is het weer belangrijk om te snappen wat **input** en **output** is._ 
-3. **Spoken spel**  
-    _Met de informatie die je in _Hallow wereld_ hebt geleed ga je nu een eerste spelletje maken. Dit spelletje is nog heel simpel maar het bevat al een aantal belangrijk dingen die je moet snappen bij het programmeeren._
-4. **Blaffende honden**  
+3. **Blaffende honden**  
     _Bij het progammeren is het belangrijk om te weten van objecten zijn en kunnen. In deze opdracht ga je hiermee spelen en leer je hier meer over._
-5. **Snake**  
+4. **Snake**  
     _Nu ga je het echte werk doen. We gaan een echt spel maken. In het begin zal je veel moeten doen wat niet echt op programmeren lijkt. Maar uiteindelijk zal je zelf moeten programeren hoe snake werkt._  
 
 ## Verschillende programmeer talen
@@ -332,6 +330,8 @@ Console.WriteLine("Hello world!");
 
 Klopt dit? Mooi zo, dan ben je goed bezig!
 
+## Rekenmachine maken
+
 Laten nu dan beginnen met het bedenken wat een rekenmachine moet doen en wat voor sommen we willen dat hij kan uitrekenen:
 
 * De rekenmachine moet getalen kunnen optellen en aftrekken.
@@ -430,10 +430,11 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
 
     Maar wat is dan _static_, _int_ en _string_. Die zie je ook vast staan in de functie. _static_ laten we even zitten want dat is voor nu niet belangrijk. De _int_ en _string_ zijn wel belangrijk. Dit noem je **types**, je geeft daarmee aan wat voor soort geheugen stukje de computer moet gebruiken voor je parameter. 
     Er zijn een aantal belangrijks **types** die handig zijn om te onthouden:
-    * int = een stukje geheugen waarin je een getal kan zetten. Dit kan alleen een getal zijn wat geen cijfers achter de komma heeft.
-    * double = een stukje geheugen waarin je ook een getal kan zetten. Deze heeft juist wel cijfers achter de komma.
-    * string = een stukje geheugen waarin je tekst kan neer zetten. Strings worden altijd in code geschreven met dubbele quotjes, dat zijn deze ". Dit heb je eerder gezien in bijvoorbeeld de `Console.WriteLine("Wat is het eerste getal")`. Als je voor de eerste " een $ zet dan kan je variabelen (weet je nog wat het is?) gebruiken in je tekst en dan worden die ook automatisch tekst zoals in `$"Hallo {naam}"`. De variable _naam_ wordt dan in de tekst gebruikt.
-    * bool = een stukje geheugen waarin je _waar_ of _niet waar_ kan zetten. Dit is alleen engels dus dat is het _true_ (waar) en _false_ (niet waar).
+    
+    * **int** = een stukje geheugen waarin je een getal kan zetten. Dit kan alleen een getal zijn wat geen cijfers achter de komma heeft.
+    * **double** = een stukje geheugen waarin je ook een getal kan zetten. Deze heeft juist wel cijfers achter de komma.
+    * **string** = een stukje geheugen waarin je tekst kan neer zetten. Strings worden altijd in code geschreven met dubbele quotjes, dat zijn deze ". Dit heb je eerder gezien in bijvoorbeeld de `Console.WriteLine("Wat is het eerste getal")`. Als je voor de eerste " een $ zet dan kan je variabelen (weet je nog wat het is?) gebruiken in je tekst en dan worden die ook automatisch tekst zoals in `$"Hallo {naam}"`. De variable _naam_ wordt dan in de tekst gebruikt.
+    * **bool** = een stukje geheugen waarin je _waar_ of _niet waar_ kan zetten. Dit is alleen engels dus dat is het _true_ (waar) en _false_ (niet waar).
 
     Als we dan nu weer kijken naar de functie die we aan het maken zijn dan zie je dat er dus 2x een nummer en 1x een tekst als parameter wordt meegegeven. Zie je dat? Ja? Goed zo... Maar als je het toch niet ziet hier een beetje extra uitleg.  
     _getal1_ en _getal2_ zijn allebei van het type _int_, dit zijn dus nummers. _plusOfMin_ is van het type _string_, dit is dus een stukje tekst waarin we mee gaan geven of de rekenmachine '+' of '-' moet gaan doen.
@@ -568,5 +569,314 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     _Als je zin of tijd hebt kan je altijd proberen om de _keer_ (*) en de delen-door (/) ook nog te maken._
 
 
-_**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intyped ook wel echt klopt. Als je dus tekst invult inplaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio_  
+_**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intyped ook wel echt klopt. Als je dus tekst invult inplaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen._  
 ![Stopknop](Resources/15-Stop.PNG)
+
+# Tot nu toe...
+
+Je weet inmiddels aardig wat van programmeren af. Je weet hoe je een project kan maken en starten en hoe je de gebruiken van je applicatie kan vragen om dingen in te typen. Je kan met die informatie ook weer leuke dingen doen zoals een rekenmachine maken. Maar misschien heb je zelf nog wel veel meer ideeén wat je kan maken.
+
+## Geleerd met applicatie 1 & 2
+Het is denk ik handig om even een kleine samenvatting te maken van wat we tot nu toe geleerd hebben. Daarom hieronder even een opsomming:
+
+* **Applicatie** is het programma dat je maakt
+* **Input** is wat je aan de gebruiker vraagt en wat je applicatie kan gebruiken
+* **Output** is wat je aan de gebruiker laat zien
+* **usings** heb je nodig om stukjes al eerder gemaakte code te kunnen gebruiken (bibliotheek)
+* **namespace** heb je nodig om zelf een bibliotheek te maken
+* **class** is een stuk code wat zelf wat kan doen en wat functies kan hebben
+* **functie** is een stukje code wat je kan hergebruiken op verschillende plekken
+* **variabele** is iets wat je wilt laten onthouden door de computer in het geheugen
+* **types** zijn de verschillende soorten geheugenstukjes die je aan de computer kan vragen
+* **parameters** zijn de inputs van een functie
+* **return waarde** is wat de functie terug geeft
+* **if** kan je gebruiken om keuzes te maken
+
+Al met al een hele hoop dingen die je in deze eerste 2 applicaties hebt geleerd. Hopelijk vindt je het nog steeds interessant. Zo ja, laten we dan lekker door gaan ;-)
+
+# Applicatie 3: Blaffende honden
+
+Je hebt nu 2 leuke applicaties gemaakt, maar nu gaan we het iets moeilijker maken. De dingen die je in dit hoofdstuk leert zijn belangrijk om te kunnen begrijpen hoe je goed kan programmeeren. Ook is het handig om dit hoofdstuk goed te begrijpen als je straks Snake wilt maken.
+
+## Project aanmaken
+
+Laten we weer beginnen met een nieuw project 'Honden'. Dit is een applicatie waarmee je gaat leren om _classen_ te maken.
+
+1. Start Visual Studio opnieuw op
+2. Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  
+3. In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'
+4. Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  
+    - Geef je project de naam 'Honden'.
+    - En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat _C:\Leren-Programmeren_. Als je de map zoekt dat ziet de map er zo uit als op het plaatje, en kies dan voor 'Select Folder'.
+    - Klik weer op 'Create' als alles goed staat
+
+Nu is er weer een nieuw project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio weer hetzelfde als bij de eerste twee applicaties. En staat er weer:
+```cs
+Console.WriteLine("Hello world!");
+```
+
+Klopt dit? Mooi zo, dan ben je goed bezig!
+
+## Uitleg
+
+Wat gaan we doen? We gaan geen functies maken, maar we gaan meerdere _classen_ maken. Je hebt al eerder een _class_ gezien namelijk de volgende:
+```cs
+class Program
+{
+    ...
+}
+```
+
+Een _class_ is een ding wat zelf iets kan doen. Nu klinkt dat een beetje lastig maar hopelijk wordt er zometeen duidelijker. Dus vooral doorlezen :D. Ik ga je proberen uit te leggen wat het is door een verzonnen verhaaltje:
+
+>_In een huis in dorpje niet ver hier vandaan is niemand thuis. Nou ja niemand... Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond. Elke keer wanneer er iemand aanbelt dan gaan de honden allebei blaffen._
+
+Heb je enig idee hoe dat zal klinken als er iemand aanbelt?
+
+>_WOEF, kef kef, WOEF, kef kef, WOEF, kef kef ...._
+
+Zoiets? Voor nu is het prima zo. Maar... wat moet je nou met dit verhaal? Het idee is dat we dit verhaal gaan maken in code en dat we daarvoor _classen_ gaan gebruiken. Een ander woord voor een _class_ is ook wel een object. En als we objecten willen maken in code dan kunnen we alle zelfstandig naamwoorden gebruiken en daar objecten van maken.
+
+## Objecten maken
+
+Welke zelfstandig naamwoorden kan jij allemaal vinden?
+- **huis**
+- **honden**
+- **Teckel**
+- **herdershond**
+
+Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten we daarom voor deze objecten een _class_ aanmaken.
+
+1. Type de volgende code onder de `Program` class. De teksten achter // hoef je niet over te typen. Dat is alleen om duidelijk te maken wat er gemaakt wordt.
+    ```cs
+    class Huis {
+        // Dit is het object wat we gaan gebruiken als het huis
+    }
+
+    class Hond {
+        // Dit is een object wat als een hond gebruikt wordt
+    }
+
+    class Teckel {
+        // Dit is een object wat de Teckel gaat zijn
+    }
+
+    class Herdershond {    
+        // Dit is een object wat de herdershond gaat zijn
+    }
+    ```
+
+    Nu gaan we de tekst nog een keertje doorlopen en gaan we zorgen dat de objecten bij elkaar worden gezet. Laten we beginnen met het huis. Er staat in de tekst
+    > _In het huis zijn 2 honden_
+
+2. Laten we die honden toevoegen door een lijstje te maken. Zorg eerst ervoor dat we een extra using toevoegen boven in het bestand.
+
+    ```cs
+    using System.Collections.Generic;
+    ```
+
+    Bovenstaannde code hebben we nodig om lijstjes bij te houden in de code.
+
+3. Nu kunnen we in het huis een lijstje met honden maken (waar er uiteindelijk 2 in komen).
+
+    ```cs
+    class Huis {
+        List<Hond> honden = new List<Hond>();
+    }
+    ```
+
+    _List_ is engels voor lijst dus je hebt nu een lijst gemaakt in het _Huis_ waar je honden in bij kunt houden. Je ziet dat we dus in plaats van _string_, _int_ etc.. ook objecten en zelfs lijsten van objecten kunnen bijhouden in weer een ander object.
+
+    De lijst is nu alleen nog niet gevuld, het is dus een lege lijst. Nu zou het handig zijn dat als we een _Huis_ hebben dat we dus kunnen vertellen dat er 2 honden wonen. Dat gaan we doen door een _contructor_ te maken. Een _constructor_ is een speciale functie die gebruikt wordt om een object te maken. 
+
+    Een _constructor_ herken je aan de naam van de functie. Die is namelijk hetzelfde als de naam van de _class_:
+    ```cs
+    public Huis()
+    {
+
+    }
+    ```
+
+4. Deze functie zet je in de _class_ die _Huis_ heet. Zorg dat je code er zo uit ziet:
+    ```cs
+    class Huis
+    {
+        List<Hond> honden;
+
+        public Huis()
+        {
+
+        }
+    }
+    ```
+
+5. Elke keer wanneer een _Huis_ wordt aangemaakt zal deze functie worden aangeroepen. Misschien kunnen we dat eens uit testen. Pas daarom de code aan die in de _Main_ functie staat naar dit:
+
+    ```cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Huis huis1 = new Huis();
+            Huis huis2 = new Huis();
+        }
+    }
+    ```
+6. En pas de code in de _constructor_ aan met de volgende code:
+    ```cs
+    public Huis()
+    {
+        Console.WriteLine("Huis gemaakt");
+    }
+    ```
+    
+7. Druk op 'F5' om het programma te starten. En als het goed is zie je dan dit:
+    ![2HuizenGemaakt](Resources/16-HuizenGemaakt.PNG)
+
+    Je ziet alleen niet goed welk huis gemaakt is, maar dat is voor nu ook niet belangrijk. Volgens het verhaaltje hebben we ook maar één huis nodig.
+
+    Zometeen gaan we zorgen dat de honden ook echt in het huis kunnen wonen ;-). Maar nu eerst even terug naar die honden... In het verhaal staat:
+    > _Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond_
+
+    Wat verteld deze zin ons?  
+    - "_Er zijn twee honden_"
+    - "_Een Teckel is een hond_"
+    - "_Een herdershond is een hond_"'
+
+    Belangrijk hierbij is het woordje **is**. We hebben namelijk een object gemaakt wat _Hond_ heet, een object gemaakt wat _Teckel_ heet en een object gemaakt wat _Herdershond_. We hebben in code alleen niet verteld dat een _Teckel_ een _Hond_ **is**, of dat de _Herdershond_ een _Hond_ is. Laten we dat nu gaan doen.
+
+8. Zorg dat de _Teckel_ een _Hond_ wordt doe je zo:
+    ```cs
+    class Teckel : Hond
+    {
+    }
+    ```
+
+9. Maak nu ook van de _Herdershond_ een _Hond_.
+
+    Als het goed is heb je nu 2 honden gemaakt maar ze 'bestaan' nog niet. 
+
+10. Dus maak nu 2 honden aan in de functie 'Main' en haal 'huis2' weg.
+    ```cs
+    static void Main(string[] args)
+    {
+        Teckel teckel = new Teckel();
+        Herdershond herdershond = new Herdershond();
+
+        Huis huis1 = new Huis();
+    }
+    ```
+
+    We hebben nu de 2 honden aangemaakt. Maar wacht eens... Hoe kan het nou zijn dat we deze honden kunnen aanmaken zonder een _constructor_ te maken? 
+
+    Een _constructor_ is alleen maar nodig als je ook echt iets speciaals wilt doen bij het maken van een object. Als je geen _constructor_ hebt gemaakt is er eigenlijk automatisch een lege functie.
+
+    Nu moeten we alleen de honden nog aan het _Huis_ geven.
+
+11. Voeg een _parameter_ toe aan de _constructor_ van het _Huis_ waarmee we een lijst van honden kunnen mee geven.
+
+    ```cs
+    public Huis(List<Hond> honden)
+    {
+        Console.WriteLine("Huis gemaakt");
+        this.honden = honden;
+    }
+    ```
+
+    We hebben nu een parameter toegevoegd aan de _constructor_ en de lijst die al in het _Huis_ zat maken we nu gelijk aan de lijst die we mee geven. Belangrijk is om te snappen dat de lijst die we in het _Huis_ hebben aanroepen met het woordje _this_ ervoor. ('this' betekend in het engels 'deze'). 
+    ```cs
+    this.honden = honden
+    ```
+    
+12. Pas nu de code in 'Main' aan door 2 honden mee te geven aan het _Huis_
+    ```cs
+    static void Main(string[] args)
+    {
+        Teckel teckel = new Teckel();
+        Herdershond herdershond = new Herdershond();
+
+        List<Hond> huis1Honden = new List<Hond>()
+        {
+            teckel,
+            herdershond
+        };
+
+        Huis huis1 = new Huis(huis1Honden);
+    }
+    ```
+    Hier maken we dus eerst weer een nieuwe lijst aan en vullen die gelijk met 2 honden. Daarna geven we de lijst mee aan het _constructor_ van het _Huis_.
+
+13. Maak een functie aan in het _Hond_ object die 'Blaf' heeft.
+    ```cs
+    class Hond
+    {
+        public virtual void Blaf() { }
+    }
+    ```
+    
+14. Maak een functie aan in de _Teckel_ en _herdershond_ die 'Blaf' heet.  
+    **Let op:** deze functie ziet er iets anders uit dan in de _Hond_.
+    ```cs
+    class Teckel : Hond
+    {
+        public override void Blaf()
+        {
+            Console.WriteLine("kef kef");
+        }
+    }
+
+    class Herdershond : Hond
+    {
+        public override void Blaf()
+        {
+            Console.WriteLine("WOEF");
+        }
+    }
+    ```
+
+    Zoals je zie hebben we in de _Hond_ een functie 'Blaf' gemaakt. Dat betekend dat we elke _Hond_ die er is kunnen aanroepen met de functie 'Blaf'. Maar omdat de _Teckel_ en de _Herdershond_ allebei anders blaffen maken we daar ook de functie 'Blaf' die de functie van de _Hond_ overschrijft (overschrijven in het engels is _override_).
+
+15. Maak nu een functie 'Aanbellen' aan in het _Huis_.
+    ```cs
+    class Huis
+    {
+        ....
+
+        public void Aanbellen()
+        {
+        }
+    }
+    ```
+
+16. In de functie aanbellen gaan we de honden die in het huis wonen laten blaffen. Daarvoor moeten we door het lijstje heen lopen van de honden en dan bij elke _Hond_ roepen we de functie 'Blaf' aan.
+    ```cs
+    public void Aanbellen()
+    {
+        foreach(Hond hond in this.honden)
+        {
+            hond.Blaf();
+        }
+    }
+    ```
+
+17. Nu gaan we in de functie 'Main' aanbellen bij het _Huis_.
+    ```cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ....
+
+            Huis huis1 = new Huis(huis1Honden);
+            huis1.Aanbellen();
+        }
+    }
+    ```
+
+18. Druk nu op 'F5' en start daarmee de applicatie weer op.
+    ![Aangebeld](Resources/17-Aangebeld.PNG)
+
+    Gefeliciteerd!! :tada: :tada: Je bent klaar met de **Blaffende honden**.
+    Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel aandere leuke dingen verzinnen. Succes :D
+
+    
