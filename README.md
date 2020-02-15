@@ -873,10 +873,9 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     }
     ```
 
-18. Druk nu op 'F5' en start daarmee de applicatie weer op.
+18. Druk nu op 'F5' en start daarmee de applicatie weer op.  
     ![Aangebeld](Resources/17-Aangebeld.PNG)
 
     Gefeliciteerd!! :tada: :tada: Je bent klaar met de **Blaffende honden**.
     Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel aandere leuke dingen verzinnen. Succes :D
 
-    
