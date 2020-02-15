@@ -296,6 +296,37 @@ Het is nog leuker om zelf wat meer er mee te doen. Daarom de volgende (kleine) o
 
 Is het gelukt? Super leuk! Gefeliciteerd :tada:
 
+### Complete code
+
+Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.
+
+```cs
+using System;
+
+namespace HalloWereld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hallo wereld!");
+            
+            Console.WriteLine("Wie ben jij:");
+            var naam = Console.ReadLine();
+            Console.WriteLine($"Hallo {naam}");
+
+            Console.WriteLine("Hoe oud ben je:");
+            var leeftijd = Console.ReadLine();
+            Console.WriteLine($"Je ben {leeftijd} jaar oud");
+
+            Console.WriteLine("Waar woon je:");
+            var plaats = Console.ReadLine();
+            Console.WriteLine($"Je woont in {plaats}");
+        }
+    }
+}
+```
+
 # Applicatie 2: Rekenmachine
 
 Laten we nu proberen een iets lastigere applicatie te maken. De basis dingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.
@@ -571,6 +602,53 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
 
 _**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intyped ook wel echt klopt. Als je dus tekst invult inplaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen._  
 ![Stopknop](Resources/15-Stop.PNG)
+
+### Complete code
+
+Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.
+
+```cs
+using System;
+
+namespace Rekenmachine
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Dit is een rekenmachine");
+
+            Console.WriteLine("Wat is het eerste getal?");
+            var eersteGetal = Console.ReadLine();
+
+            Console.WriteLine("Wil je optellen of aftrekken (+ of -)");
+            var plusOfMin = Console.ReadLine();
+
+            Console.WriteLine("Wat is het tweede getal?");
+            var tweedeGetal = Console.ReadLine();
+
+            var uitkomst = Bereken(Convert.ToInt32(eersteGetal), Convert.ToInt32(tweedeGetal), plusOfMin);
+            
+            Console.WriteLine($"De som: {eersteGetal}{plusOfMin}{tweedeGetal}={uitkomst}");
+        }
+
+        static int Bereken(int getal1, int getal2, string plusOfMin)
+        {
+            if (plusOfMin == "+")
+            {
+                return getal1 + getal2;
+            }
+
+            if (plusOfMin == "-")
+            {
+                return getal1 - getal2;
+            }
+
+            return 0;
+        }
+    }
+}
+```
 
 # Tot nu toe...
 
@@ -879,3 +957,72 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     Gefeliciteerd!! :tada: :tada: Je bent klaar met de **Blaffende honden**.
     Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel aandere leuke dingen verzinnen. Succes :D
 
+### Complete code
+
+Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.
+
+```cs
+using System;
+using System.Collections.Generic;
+
+namespace Honden
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Teckel teckel = new Teckel();
+            Herdershond herdershond = new Herdershond();
+
+            List<Hond> huis1Honden = new List<Hond>()
+            {
+                teckel,
+                herdershond
+            };
+
+            Huis huis1 = new Huis(huis1Honden);
+            huis1.Aanbellen();
+        }
+    }
+
+    class Huis
+    {
+        List<Hond> honden;
+
+        public Huis(List<Hond> honden)
+        {
+            Console.WriteLine("Huis gemaakt");
+            this.honden = honden;
+        }
+
+        public void Aanbellen()
+        {
+            foreach(Hond hond in this.honden)
+            {
+                hond.Blaf();
+            }
+        }
+    }
+
+    class Hond
+    {
+        public virtual void Blaf() { }
+    }
+
+    class Teckel : Hond
+    {
+        public override void Blaf()
+        {
+            Console.WriteLine("kef kef");
+        }
+    }
+
+    class Herdershond : Hond
+    {
+        public override void Blaf()
+        {
+            Console.WriteLine("WOEF");
+        }
+    }
+}
+```
