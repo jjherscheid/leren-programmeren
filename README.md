@@ -20,6 +20,8 @@ Het doel is om kinderen enthousiast te maken voor het vak programmeren.
 - **Input** is informatie die een applicatie in gaat, dit zijn bijvoorbeeld de letters die je intyped.
 - **Output** is informatie die een applicatie uit gaat, dit zijn bijvoorbeeld de teksten die de applicatie op het scherm zet.
 
+<div class="page-break"></div>
+
 ## Wat gaan we leren?
 
 Programmeren is iets wat je in stappen moet leren, daarom is deze werk instructie ook opgedeelt in een aantal stappen. Dit is gedaan met het idee dat jezo van een makkelijke applicatie naar een wat moeilijkere applicatie kan groeien.
@@ -76,6 +78,8 @@ _**Let op:** Als je een andere plek gebruikt voor je bestanden dan moet je in de
 
 Laten we nu maar eens echt beginnen met programeren. Voor de eerste stappen hebben we alleen 'Visual Studio' nodig. 
 
+<div class="page-break"></div>
+
 # Applicatie 1: Hallo Wereld
 
 ## Project aanmaken
@@ -104,7 +108,7 @@ Nu is er een project aangemaakt waarin we kunnen gaan werken. Als het goed is zi
 Er zijn hier nu 3 delen die belangrijk zijn om te snappen.
 
 1. Het grootste gedeelte is waar de code geschreven wordt. Hier worden bestanden geopend en hier kan je de code echt gaan typen.
-2. Elk betand wat je opent wordt als tab getoond boven het grote gedeelte.
+2. Elk bestand wat je opent wordt als tab getoond boven het grote gedeelte.
 3. Rechts op je scherm zie je de 'Project boom'. Hierin staan alle bestanden die je aanmaakt voor je project. Voor nu zullen we het nog even simpel houden met maar één bestand.
 
 ### Wat heb je nou eigenlijk gedaan?
@@ -114,6 +118,8 @@ Ik hoop dat het allemaal gelukt is en dat je nu ook ziet zoals het plaatje van h
 Als je in C# wilt programmeren dan heb je een 'project' nodig. In dit project zit alle code die je schrijft lekker bij elkaar. Als je dit project dan uiteindelijk opstart (wat we later gaan doen) dan wordt dat de applicatie die we gaan bouwen.
 
 In dit geval hebben we gekozen voor een 'Console App (.NET Core)' applicatie. Dat betekend dat we een applicatie gaan maken die draait een zwart schermpje met witte letters. En dat het gemaakt is met de nieuwste versie van C#.
+
+<div class="page-break"></div>
 
 ## Project openen
 
@@ -126,6 +132,8 @@ Misschien wil je gelijk door, maar misschien moet je ook alweer stoppen omdat je
 ![Open recent project](Resources/06-ProjectOpenen.png)
 
 3. Als je project er niet meer bij staat, klik dan op de knop 'Open a project or solution' aan de rechterkant van het schermpje.
+
+<div class="page-break"></div>
 
 ## Project starten
 
@@ -327,6 +335,8 @@ namespace HalloWereld
 }
 ```
 
+<div class="page-break"></div>
+
 # Applicatie 2: Rekenmachine
 
 Laten we nu proberen een iets lastigere applicatie te maken. De basis dingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.
@@ -360,6 +370,8 @@ Console.WriteLine("Hello world!");
 ```
 
 Klopt dit? Mooi zo, dan ben je goed bezig!
+
+<div class="page-break"></div>
 
 ## Rekenmachine maken
 
@@ -603,10 +615,11 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
 _**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intyped ook wel echt klopt. Als je dus tekst invult inplaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen._  
 ![Stopknop](Resources/15-Stop.PNG)
 
+<div class="page-break"></div>
+
 ### Complete code
 
-Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.
-
+Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. 
 ```cs
 using System;
 
@@ -672,6 +685,8 @@ Het is denk ik handig om even een kleine samenvatting te maken van wat we tot nu
 
 Al met al een hele hoop dingen die je in deze eerste 2 applicaties hebt geleerd. Hopelijk vindt je het nog steeds interessant. Zo ja, laten we dan lekker door gaan ;-)
 
+<div class="page-break"></div>
+
 # Applicatie 3: Blaffende honden
 
 Je hebt nu 2 leuke applicaties gemaakt, maar nu gaan we het iets moeilijker maken. De dingen die je in dit hoofdstuk leert zijn belangrijk om te kunnen begrijpen hoe je goed kan programmeeren. Ook is het handig om dit hoofdstuk goed te begrijpen als je straks Snake wilt maken.
@@ -707,7 +722,7 @@ class Program
 
 Een _class_ is een ding wat zelf iets kan doen. Nu klinkt dat een beetje lastig maar hopelijk wordt er zometeen duidelijker. Dus vooral doorlezen :D. Ik ga je proberen uit te leggen wat het is door een verzonnen verhaaltje:
 
->_In een huis in dorpje niet ver hier vandaan is niemand thuis. Nou ja niemand... Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond. Elke keer wanneer er iemand aanbelt dan gaan de honden allebei blaffen._
+>_In een huis in een dorpje niet ver hier vandaan is niemand thuis. Nou ja niemand... Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond. Elke keer wanneer er iemand aanbelt dan gaan de honden allebei blaffen._
 
 Heb je enig idee hoe dat zal klinken als er iemand aanbelt?
 
