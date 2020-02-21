@@ -17,14 +17,14 @@ Het doel is om kinderen enthousiast te maken voor het vak programmeren.
 ## Woorden die je moet leren
 
 - **Applicatie** is het programma wat je gaat maken.
-- **Input** is informatie die een applicatie in gaat, dit zijn bijvoorbeeld de letters die je intyped.
+- **Input** is informatie die een applicatie in gaat, dit zijn bijvoorbeeld de letters die je intypt.
 - **Output** is informatie die een applicatie uit gaat, dit zijn bijvoorbeeld de teksten die de applicatie op het scherm zet.
 
 <div class="page-break"></div>
 
 ## Wat gaan we leren?
 
-Programmeren is iets wat je in stappen moet leren, daarom is deze werk instructie ook opgedeelt in een aantal stappen. Dit is gedaan met het idee dat jezo van een makkelijke applicatie naar een wat moeilijkere applicatie kan groeien.
+Programmeren is iets wat je in stappen moet leren, daarom is deze werk instructie ook opgedeeld in een aantal stappen. Dit is gedaan met het idee dat je zo van een makkelijke applicatie naar een wat moeilijkere applicatie kan groeien.
 Ik wil je meenemen in de volgende soort applicaties:
 
 1. **Hallo wereld**  
@@ -32,11 +32,11 @@ Ik wil je meenemen in de volgende soort applicaties:
 2. **Rekenmachine**  
     _Je gaat een eigen rekenmachine maken. Ook hierbij is het weer belangrijk om te snappen wat **input** en **output** is._ 
 3. **Blaffende honden**  
-    _Bij het progammeren is het belangrijk om te weten van objecten zijn en kunnen. In deze opdracht ga je hiermee spelen en leer je hier meer over._
+    _Bij het programmeren is het belangrijk om te weten van objecten zijn en kunnen. In deze opdracht ga je hiermee spelen en leer je hier meer over._
 4. **Snake**  
-    _Nu ga je het echte werk doen. We gaan een echt spel maken. In het begin zal je veel moeten doen wat niet echt op programmeren lijkt. Maar uiteindelijk zal je zelf moeten programeren hoe snake werkt._  
+    _Nu ga je het echte werk doen. We gaan een echt spel maken. In het begin zal je veel moeten doen wat niet echt op programmeren lijkt. Maar uiteindelijk zal je zelf moeten programmeren hoe snake werkt._  
 
-## Verschillende programmeer talen
+## Verschillende programmeertalen
 
 Er zijn een heleboel verschillende programmeertalen. Het is eigenlijk haast niet mogelijk om die allemaal te kennen. Een aantal van de belangrijkste programmeertalen zijn:
 * Javascript
@@ -68,7 +68,7 @@ _Maak zelf of laat een ouder iemand een gratis account aanmaken bij https://unit
 
 ### Ruimte op je computer
 
-Het is handig om een vaste plek op je computer te hebben waar je de bestanden neer kan zetten. In alle voorbeelden ga ik er vanuit dat er een mapje op de computer is waar je de bestanden neer mag zetten. Als je niet weet hoe het werkt moet je misschien even aan papa of mama vragen of ze op de computer een mapje aanmaken. Voor de voorbeelden is het het makkelijkst als er een mapje is op de volgende plek:
+Het is handig om een vaste plek op je computer te hebben waar je de bestanden neer kan zetten. In alle voorbeelden ga ik ervan uit dat er een mapje op de computer is waar je de bestanden neer mag zetten. Als je niet weet hoe het werkt moet je misschien even aan papa of mama vragen of ze op de computer een mapje aanmaken. Voor de voorbeelden is het het makkelijkst als er een mapje is op de volgende plek:
 
 * C:\\Leren-Programmeren\
 
@@ -76,7 +76,7 @@ _**Let op:** Als je een andere plek gebruikt voor je bestanden dan moet je in de
 
 ## Beginnen met programmeren
 
-Laten we nu maar eens echt beginnen met programeren. Voor de eerste stappen hebben we alleen 'Visual Studio' nodig. 
+Laten we nu maar eens echt beginnen met programmeren. Voor de eerste stappen hebben we alleen 'Visual Studio' nodig. 
 
 <div class="page-break"></div>
 
@@ -117,7 +117,7 @@ Ik hoop dat het allemaal gelukt is en dat je nu ook ziet zoals het plaatje van h
 
 Als je in C# wilt programmeren dan heb je een 'project' nodig. In dit project zit alle code die je schrijft lekker bij elkaar. Als je dit project dan uiteindelijk opstart (wat we later gaan doen) dan wordt dat de applicatie die we gaan bouwen.
 
-In dit geval hebben we gekozen voor een 'Console App (.NET Core)' applicatie. Dat betekend dat we een applicatie gaan maken die draait een zwart schermpje met witte letters. En dat het gemaakt is met de nieuwste versie van C#.
+In dit geval hebben we gekozen voor een 'Console App (.NET Core)' applicatie. Dat betekent dat we een applicatie gaan maken die draait een zwart schermpje met witte letters. En dat het gemaakt is met de nieuwste versie van C#.
 
 <div class="page-break"></div>
 
@@ -164,7 +164,7 @@ _De rest van de tekst in het zwarte scherm moet je maar even niet op letten_
 
 ![Hello world](Resources/07-HalloWereld.PNG)
 
-Druk op een toest om het venster weer te sluiten.
+Druk op een toets om het venster weer te sluiten.
 
 **Gefeliciteerd!!** :tada: Je hebt je eerste applicatie gemaakt.
 
@@ -178,7 +178,7 @@ In dit gedeelte probeer ik stukje voor stukje uit te leggen wat er in de code st
  using System;
 ```
 Het eerst wat er in de tekst staat zijn 'using' stukjes. Dit zal je nog veel meer gaan zien. Dit noem je verwijzingen naar al eerder gemaakte code (bibliotheken).  
-In dit geval wordt er aangegevn dat wij dingen willen gebruiken uit de 'System' bibliotheek, en dit hebben we nodig voor de andere code.
+In dit geval wordt er aangegeven dat wij dingen willen gebruiken uit de 'System' bibliotheek, en dit hebben we nodig voor de andere code.
 
 ```cs
 namespace HalloWereld
@@ -195,7 +195,7 @@ class Program {
     ...
 }
 ```
-In C# is alle code opgedeelt in stukjes die wat code kunnen uitvoeren. Die stukjes noem je een `class`. Eigenlijk kan je dit zien als een bouwblokje van LEGO. En al die bouwblokjes bij elkaar maken één applicatie.
+In C# is alle code opgedeeld in stukjes die wat code kunnen uitvoeren. Die stukjes noem je een `class`. Eigenlijk kan je dit zien als een bouwblokje van LEGO. En al die bouwblokjes bij elkaar maken één applicatie.
 
 ```cs
 static void Main(string[] args)
@@ -225,11 +225,11 @@ Nu wordt het tijd om de code eens aan te passen.
     Console.WriteLine("Hallo wereld!");
     ```
 * Druk nu op F5.  
-_Als het goed is krijg je weer eenzelfde scherm als bij de vorige keer, maar nu met nederlandse tekst. Gaaf he :D._
+_Als het goed is krijg je weer eenzelfde scherm als bij de vorige keer, maar nu met Nederlandse tekst. Gaaf he :D._
 
 ### 2. Input en output
 
-Het schrijven van een applicatie naar het zwarte venster noemen we 'output'. Dat is een engels wordt voor 'er uit komen'. Maar het zou ook leuk zijn als we zelf (tijdens dat de applicatie aanstaat) wat er in kunnen schrijven. Dat noemen we 'input'.
+Het schrijven van een applicatie naar het zwarte venster noemen we 'output'. Dat is een engels wordt voor 'er uit komen'. Maar het zou ook leuk zijn als we zelf (tijdens dat de applicatie aanstaat) wat erin kunnen schrijven. Dat noemen we 'input'.
 
 * Voeg de volgende regels toe onder de 'Hallo wereld!' regel code. Let op dat bij de 3e regel er een $ in de tekst staat. Die is nodig anders werkt het niet om 'naam' goed te tonen.
     ```cs
@@ -263,7 +263,7 @@ namespace HalloWereld
 }
 ```
 
-In de code zie je drie keer `Console.WriteLine(...)` staan. Dit is dus de 'Output'. Ook zie je één keer `Console.ReadLine()` staan. Met deze regel wacht de applicatie totdat je wat hebt ingetypd en op 'Enter' hebt gedrukt. Dus is dus de 'Input'.
+In de code zie je drie keer `Console.WriteLine(...)` staan. Dit is dus de 'Output'. Ook zie je één keer `Console.ReadLine()` staan. Met deze regel wacht de applicatie totdat je wat hebt ingetypt en op 'Enter' hebt gedrukt. Dus is dus de 'Input'.
 
 Andere manieren om te schrijven of de lezen zijn nog:
 - `Console.Write(...)` die gebruikt kan worden om iets op het scherm te zetten zonder naar een nieuwe regel te gaan.
@@ -293,7 +293,7 @@ Je kan nu de waarde zien van wat er in 'naam' zit.
 ![BreakpointValues](Resources/12-Breakpoint-Waardes.PNG)
 * Druk weer op F5 en de applicatie gaat gewoon weer verder.
 
-Nu heb je gezien dat je met 'breakpoints' je code still kan zetten op sommige momenten, en dat je dan kan zien welke waardes er op dat moment in zitten.
+Nu heb je gezien dat je met 'breakpoints' je code stil kan zetten op sommige momenten, en dat je dan kan zien welke waardes er op dat moment in zitten.
 
 ### 4. Zelf uitbreiden
 
@@ -302,7 +302,7 @@ Het is nog leuker om zelf wat meer er mee te doen. Daarom de volgende (kleine) o
 1. Vraag ook naar de leeftijd en laat het daarna zien
 2. Vraag waar iemand woont en laat het daarna zien.
 
-Is het gelukt? Super leuk! Gefeliciteerd :tada:
+Is het gelukt? Superleuk! Gefeliciteerd :tada:
 
 ### Complete code
 
@@ -339,7 +339,7 @@ namespace HalloWereld
 
 # Applicatie 2: Rekenmachine
 
-Laten we nu proberen een iets lastigere applicatie te maken. De basis dingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.
+Laten we nu proberen een iets lastigere applicatie te maken. De basisdingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.
 
 _Als 'Hallo wereld!' nog open staat, dan mag je die sluiten. We gaan namelijk een nieuwe applicatie maken._
 
@@ -379,9 +379,9 @@ Laten nu dan beginnen met het bedenken wat een rekenmachine moet doen en wat voo
 
 * De rekenmachine moet getalen kunnen optellen en aftrekken.
 
-Oh.. is dat alles? Dat klint eigenlijk helemaal niet zo moeilijk...
+Oh.. is dat alles? Dat klinkt eigenlijk helemaal niet zo moeilijk...
 
-Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
+Nou.. dan gaan we gewoon beginnen, vind je ook niet ;-).
 
 1. Verander in regel 9 de tekst 'Hello World!' in 'Dit is een rekenmachine'
     ```cs
@@ -392,7 +392,7 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     Console.WriteLine("Wat is het eerste getal?");
     var eersteGetal = Console.ReadLine();
     ```
-    In de stap hierboven lees de applicatie wat de gebruiker in typed en zet dat weer in de variabele 'eersteGetal'. Misschien denk je nu 'variabele', wat is dat nou weer. In de eerste opdracht heb je ze ook al gebruikt. Een variabele is een stukje geheugen in de computer waar je informatie in kan zetten en uit kan halen. Hier is de variable 'eersteGetal'. De computer lees namelijk wat de gebruiker in typed en zet dat daarna in het stukje geheugen dan 'eersteGetal' heet. Later ga je dit er weer uit halen om mee te berekenen.
+    In de stap hierboven lees de applicatie wat de gebruiker in typt en zet dat weer in de variabele 'eersteGetal'. Misschien denk je nu 'variabele', wat is dat nou weer. In de eerste opdracht heb je ze ook al gebruikt. Een variabele is een stukje geheugen in de computer waar je informatie in kan zetten en uit kan halen. Hier is de variabele 'eersteGetal'. De computer lees namelijk wat de gebruiker in typt en zet dat daarna in het stukje geheugen dan 'eersteGetal' heet. Later ga je dit er weer uit halen om mee te berekenen.
 
 3. Ok, we hebben het eerste getal. Dus nu willen we weten of de gebruiker wil optellen of aftrekken.
     ```cs
@@ -430,11 +430,11 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
 
     #### Return waarde (vertaald: teruggeef waarde)
 
-    Een functie **kan** een return waarde hebben. Dat betekend dat wanneer de functie wordt aangeroepen dat er informatie terugkomt waar je weer wat mee kan doen. Ook die heb je al gebruikt. Kijk maar eens naar de plekken waar je `Console.ReadLine()` hebt gebruikt. Deze functie heeft zoals je ziet _geen_ parameters, maar elke keer wanneer we hem aanroepen dan zetten we er een variabele voor. Bijv:  
+    Een functie **kan** een return waarde hebben. Dat betekent dat wanneer de functie wordt aangeroepen dat er informatie terugkomt waar je weer wat mee kan doen. Ook die heb je al gebruikt. Kijk maar eens naar de plekken waar je `Console.ReadLine()` hebt gebruikt. Deze functie heeft zoals je ziet _geen_ parameters, maar elke keer wanneer we hem aanroepen dan zetten we er een variabele voor. Bijv:  
     ```cs
     var tweedeGetal = Console.ReadLine();
     ```
-    In dit geval komt er dus uit de functie een return waarde waarin staat wat de gebruiker heeft ingetyped op het scherm. Wij zetten die waarde die terugkomt uit de functie gelijk in een variabele _tweedeGetal_ (weet je nog wat dat is? Juist.. en stukje computer geheugen).
+    In dit geval komt er dus uit de functie een return waarde waarin staat wat de gebruiker heeft ingetypt op het scherm. Wij zetten die waarde die terugkomt uit de functie gelijk in een variabele _tweedeGetal_ (weet je nog wat dat is? Juist.. en stukje computergeheugen).
 
 6. We gaan een functie maken! Zet daarom de functie `Bereken` tekst onder de functie `Main()`. De functie `Bereken` ziet er zo uit:
 
@@ -466,7 +466,7 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     }
     ```
 
-    Maar nu is natuurlijk de vraag.. Wat heb je nou neer gezet. Er zitten weer allemaal nieuwe dingen die je nog niet eerder gezien hebt. Hieronder leg ik uit wat het betekend.
+    Maar nu is natuurlijk de vraag.. Wat heb je nou neer gezet. Er zitten weer allemaal nieuwe dingen die je nog niet eerder gezien hebt. Hieronder leg ik uit wat het betekent.
 
     Weet je nog dat we het hebben gehad over _Parameters_? Ja.. Goed zo. Nou in de `Bereken` functie zitten 3 parameters: _getal1_, _getal2_ en _plusOfMin_. Ook heeft de functie een _Return waarde_. Zie jij hem al?...
     Goed zo.. De Return waarde van deze functie is nu '0'. Dat gaan we straks natuurlijk wijzigen want een Rekenmachine die alleen maar 0 teruggeeft is niet heel handig ;-).
@@ -476,13 +476,13 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     
     * **int** = een stukje geheugen waarin je een getal kan zetten. Dit kan alleen een getal zijn wat geen cijfers achter de komma heeft.
     * **double** = een stukje geheugen waarin je ook een getal kan zetten. Deze heeft juist wel cijfers achter de komma.
-    * **string** = een stukje geheugen waarin je tekst kan neer zetten. Strings worden altijd in code geschreven met dubbele quotjes, dat zijn deze ". Dit heb je eerder gezien in bijvoorbeeld de `Console.WriteLine("Wat is het eerste getal")`. Als je voor de eerste " een $ zet dan kan je variabelen (weet je nog wat het is?) gebruiken in je tekst en dan worden die ook automatisch tekst zoals in `$"Hallo {naam}"`. De variable _naam_ wordt dan in de tekst gebruikt.
+    * **string** = een stukje geheugen waarin je tekst kan neer zetten. Strings worden altijd in code geschreven met dubbele aanhalingstekens, dat zijn deze ". Dit heb je eerder gezien in bijvoorbeeld de `Console.WriteLine("Wat is het eerste getal")`. Als je voor de eerste " een $ zet dan kan je variabelen (weet je nog wat het is?) gebruiken in je tekst en dan worden die ook automatisch tekst zoals in `$"Hallo {naam}"`. De variabele _naam_ wordt dan in de tekst gebruikt.
     * **bool** = een stukje geheugen waarin je _waar_ of _niet waar_ kan zetten. Dit is alleen engels dus dat is het _true_ (waar) en _false_ (niet waar).
 
     Als we dan nu weer kijken naar de functie die we aan het maken zijn dan zie je dat er dus 2x een nummer en 1x een tekst als parameter wordt meegegeven. Zie je dat? Ja? Goed zo... Maar als je het toch niet ziet hier een beetje extra uitleg.  
     _getal1_ en _getal2_ zijn allebei van het type _int_, dit zijn dus nummers. _plusOfMin_ is van het type _string_, dit is dus een stukje tekst waarin we mee gaan geven of de rekenmachine '+' of '-' moet gaan doen.
 
-    Nu is je misschien al opgevallen dat er nog een keertje _int_ staat, maar dan voor de `Bereken` functie. Dit zorgt er voor dat de computer snapt dat je ook een nummer terug wilt geven als Return waarde.
+    Nu is je misschien al opgevallen dat er nog een keertje _int_ staat, maar dan voor de `Bereken` functie. Dit zorgt ervoor dat de computer snapt dat je ook een nummer terug wilt geven als Return waarde.
 
     Nou laten we nu maar eens echt beginnen met het vullen van de functie, vind je ook niet :D.
 
@@ -505,9 +505,9 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     Als getal1 gelijk is aan 10 dan
     ```
     En alles wat tussen de twee haakjes { } staat wordt dan gedaan als de vraag waar is.
-    Dus achter het woordje _if_ staat altijd iets tussen twee 'gewone' haakjes ( ). Wat daar tussen staat wordt bekeken door de computer en als het 'waar' is dan gaat de computer het stukje code tussen de twee speciale haakjes { } uitvoeren. Als het 'niet waar' is dan wordt dat stukje code overgeslagen.
+    Dus achter het woordje _if_ staat altijd iets tussen twee 'gewone' haakjes ( ). Wat daartussen staat wordt bekeken door de computer en als het 'waar' is dan gaat de computer het stukje code tussen de twee speciale haakjes { } uitvoeren. Als het 'niet waar' is dan wordt dat stukje code overgeslagen.
 
-    Wat zou het betekend als er zou staan:
+    Wat zou het betekenen als er zou staan:
     ```cs
     if (getal1 == getal2) { 
 
@@ -528,7 +528,7 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     }
     ```
 
-    Ok nu eindelijk weer naar de echte code. Zorg er voor dat de functie er nu zo uit ziet:
+    Ok nu eindelijk weer naar de echte code. Zorg ervoor dat de functie er nu zo uit ziet:
     ```cs
     static int Bereken(int getal1, int getal2, string plusOfMin)
     {
@@ -555,14 +555,14 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
             return getal1 + getal2;
         }
 
-        // Als in de variable 'plusOfMin' niet de tekst "+" staat dan gaat de computer verder
+        // Als in de variabele 'plusOfMin' niet de tekst "+" staat dan gaat de computer verder
         // en kijkt hier of er "-" in staat. Als dat zo is dan trekken we getal2 van getal1 af 
         // en geven dat terug met de 'return'
         if(plusOfMin == "-") {
             return getal1 - getal2;
         }
 
-        // Als in de variable 'plusOfMin' helemaal niet "+" of "-" in stond, maar heel iets
+        // Als in de variabele 'plusOfMin' helemaal niet "+" of "-" in stond, maar heel iets
         // anders dan geven we in dit geval 0 terug
         return 0;
     }
@@ -581,7 +581,7 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     ```
     Je zal nu zien dat er kringeltjes onder _eersteGetal_ en _tweedeGetal_ komen. Waarom is dat nu weer? Nou dat komt door het volgende.
 
-    Wanneer de computer aan de gebruiker vraagt wat het eerste of tweede getal is dan weet de computer niet dat het om een nummer gaat. Hij denk daarom automatisch dat het om een stukje tekst gaat. Om de computer te laten weten dat we een nummber bedoelen moeten we de _string_ (tekst) omzetten naar _int_ met een `Convert` functie (convert is engels voor omzetten).
+    Wanneer de computer aan de gebruiker vraagt wat het eerste of tweede getal is dan weet de computer niet dat het om een nummer gaat. Hij denk daarom automatisch dat het om een stukje tekst gaat. Om de computer te laten weten dat we een nummer bedoelen moeten we de _string_ (tekst) omzetten naar _int_ met een `Convert` functie (convert is engels voor omzetten).
 
     ```cs
     int nummer100 = Convert.ToInt32("100");
@@ -612,7 +612,7 @@ Nou.. dan gaan we gewoon beginnen, vindt je ook niet ;-).
     _Als je zin of tijd hebt kan je altijd proberen om de _keer_ (*) en de delen-door (/) ook nog te maken._
 
 
-_**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intyped ook wel echt klopt. Als je dus tekst invult inplaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen._  
+_**Let op**: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intypt ook wel echt klopt. Als je dus tekst invult in plaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen._  
 ![Stopknop](Resources/15-Stop.PNG)
 
 <div class="page-break"></div>
@@ -665,7 +665,7 @@ namespace Rekenmachine
 
 # Tot nu toe...
 
-Je weet inmiddels aardig wat van programmeren af. Je weet hoe je een project kan maken en starten en hoe je de gebruiken van je applicatie kan vragen om dingen in te typen. Je kan met die informatie ook weer leuke dingen doen zoals een rekenmachine maken. Maar misschien heb je zelf nog wel veel meer ideeén wat je kan maken.
+Je weet inmiddels aardig wat van programmeren af. Je weet hoe je een project kan maken en starten en hoe je de gebruiken van je applicatie kan vragen om dingen in te typen. Je kan met die informatie ook weer leuke dingen doen zoals een rekenmachine maken. Maar misschien heb je zelf nog wel veel meer ideeën wat je kan maken.
 
 ## Geleerd met applicatie 1 & 2
 Het is denk ik handig om even een kleine samenvatting te maken van wat we tot nu toe geleerd hebben. Daarom hieronder even een opsomming:
@@ -680,16 +680,16 @@ Het is denk ik handig om even een kleine samenvatting te maken van wat we tot nu
 * **variabele** is iets wat je wilt laten onthouden door de computer in het geheugen
 * **types** zijn de verschillende soorten geheugenstukjes die je aan de computer kan vragen
 * **parameters** zijn de inputs van een functie
-* **return waarde** is wat de functie terug geeft
+* **return waarde** is wat de functie teruggeeft
 * **if** kan je gebruiken om keuzes te maken
 
-Al met al een hele hoop dingen die je in deze eerste 2 applicaties hebt geleerd. Hopelijk vindt je het nog steeds interessant. Zo ja, laten we dan lekker door gaan ;-)
+Al met al een hele hoop dingen die je in deze eerste 2 applicaties hebt geleerd. Hopelijk vind je het nog steeds interessant. Zo ja, laten we dan lekker door gaan ;-)
 
 <div class="page-break"></div>
 
 # Applicatie 3: Blaffende honden
 
-Je hebt nu 2 leuke applicaties gemaakt, maar nu gaan we het iets moeilijker maken. De dingen die je in dit hoofdstuk leert zijn belangrijk om te kunnen begrijpen hoe je goed kan programmeeren. Ook is het handig om dit hoofdstuk goed te begrijpen als je straks Snake wilt maken.
+Je hebt nu 2 leuke applicaties gemaakt, maar nu gaan we het iets moeilijker maken. De dingen die je in dit hoofdstuk leert zijn belangrijk om te kunnen begrijpen hoe je goed kan programmeren. Ook is het handig om dit hoofdstuk goed te begrijpen als je straks Snake wilt maken.
 
 ## Project aanmaken
 
@@ -720,7 +720,7 @@ class Program
 }
 ```
 
-Een _class_ is een ding wat zelf iets kan doen. Nu klinkt dat een beetje lastig maar hopelijk wordt er zometeen duidelijker. Dus vooral doorlezen :D. Ik ga je proberen uit te leggen wat het is door een verzonnen verhaaltje:
+Een _class_ is een ding wat zelf iets kan doen. Nu klinkt dat een beetje lastig maar hopelijk wordt het straks duidelijker. Dus vooral doorlezen :D. Ik ga je proberen uit te leggen wat het is door een verzonnen verhaaltje:
 
 >_In een huis in een dorpje niet ver hier vandaan is niemand thuis. Nou ja niemand... Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond. Elke keer wanneer er iemand aanbelt dan gaan de honden allebei blaffen._
 
@@ -768,7 +768,7 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     using System.Collections.Generic;
     ```
 
-    Bovenstaannde code hebben we nodig om lijstjes bij te houden in de code.
+    Bovenstaande code hebben we nodig om lijstjes bij te houden in de code.
 
 3. Nu kunnen we in het huis een lijstje met honden maken (waar er uiteindelijk 2 in komen).
 
@@ -828,7 +828,7 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
 
     Je ziet alleen niet goed welk huis gemaakt is, maar dat is voor nu ook niet belangrijk. Volgens het verhaaltje hebben we ook maar één huis nodig.
 
-    Zometeen gaan we zorgen dat de honden ook echt in het huis kunnen wonen ;-). Maar nu eerst even terug naar die honden... In het verhaal staat:
+    Straks gaan we zorgen dat de honden ook echt in het huis kunnen wonen ;-). Maar nu eerst even terug naar die honden... In het verhaal staat:
     > _Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond_
 
     Wat verteld deze zin ons?  
@@ -876,7 +876,7 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     }
     ```
 
-    We hebben nu een parameter toegevoegd aan de _constructor_ en de lijst die al in het _Huis_ zat maken we nu gelijk aan de lijst die we mee geven. Belangrijk is om te snappen dat de lijst die we in het _Huis_ hebben aanroepen met het woordje _this_ ervoor. ('this' betekend in het engels 'deze'). 
+    We hebben nu een parameter toegevoegd aan de _constructor_ en de lijst die al in het _Huis_ zat maken we nu gelijk aan de lijst die we mee geven. Belangrijk is om te snappen dat de lijst die we in het _Huis_ hebben aanroepen met het woordje _this_ ervoor. ('this' betekent in het engels 'deze'). 
     ```cs
     this.honden = honden
     ```
@@ -927,7 +927,7 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     }
     ```
 
-    Zoals je zie hebben we in de _Hond_ een functie 'Blaf' gemaakt. Dat betekend dat we elke _Hond_ die er is kunnen aanroepen met de functie 'Blaf'. Maar omdat de _Teckel_ en de _Herdershond_ allebei anders blaffen maken we daar ook de functie 'Blaf' die de functie van de _Hond_ overschrijft (overschrijven in het engels is _override_).
+    Zoals je zie hebben we in de _Hond_ een functie 'Blaf' gemaakt. Dat betekent dat we elke _Hond_ die er is kunnen aanroepen met de functie 'Blaf'. Maar omdat de _Teckel_ en de _Herdershond_ allebei anders blaffen maken we daar ook de functie 'Blaf' die de functie van de _Hond_ overschrijft (overschrijven in het engels is _override_).
 
 15. Maak nu een functie 'Aanbellen' aan in het _Huis_.
     ```cs
@@ -970,7 +970,7 @@ Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten 
     ![Aangebeld](Resources/17-Aangebeld.PNG)
 
     Gefeliciteerd!! :tada: :tada: Je bent klaar met de **Blaffende honden**.
-    Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel aandere leuke dingen verzinnen. Succes :D
+    Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel andere leuke dingen verzinnen. Succes :D
 
 ### Complete code
 
@@ -1042,6 +1042,6 @@ namespace Honden
 }
 ```
 
-Je heb nu als het goed is aardig wat kennis over wat programmeren is en hoe je in C# kan programmeren. Gefeliciteerd. Nu willen we natuurlijk het 'echte' werk gaan doen dus gaan we samen proberen 'Snake' te maken. Omdat de handleiding om snake te maken wat uitgebreid is heb ik die in een apart bestand gezet:
+Je hebt nu als het goed is aardig wat kennis over wat programmeren is en hoe je in C# kan programmeren. Gefeliciteerd. Nu willen we natuurlijk het 'echte' werk gaan doen dus gaan we samen proberen 'Snake' te maken. Omdat de handleiding om snake te maken wat uitgebreid is heb ik die in een apart bestand gezet:
 
 [Snake.md](Snake.md)
