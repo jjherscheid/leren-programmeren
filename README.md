@@ -214,6 +214,12 @@ En dan het (voor nu) belangrijkste stukje code van de applicatie. Deze code staa
 `Console` is het zwarte scherm wat opstart wanneer je 'F5' klikt. En met `WriteLine` vertel je de applicatie dat je een regel wilt schrijven op het zwarte scherm. _('WriteLine' is engels voor 'SchrijfRegel')_
 De tekst die tussen " staat is de tekst.  
 
+Op veel plekken in deze opdrachten zal je ook commentaar vinden. Dit zijn help teksten maar die hoef je niet perse over te typen. Commentaar wordt in Visual Studio 'Groen' getoond en begint altijd met twee schuine streepjes:
+
+```cs
+// Dit is commentaar en hoe je niet over te typen.
+```
+
 ## Project aanpassen
 
 ### 1. Nederlands maken
@@ -467,7 +473,7 @@ Nou.. dan gaan we gewoon beginnen, vind je ook niet ;-).
         {
             static void Main(string[] args)
             {
-                // Hier staat bij jou een heleboel code all
+                // Hier staat bij jou een heleboel code al
                 // ....
             }
 
