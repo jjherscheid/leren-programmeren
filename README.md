@@ -263,6 +263,19 @@ namespace HalloWereld
 }
 ```
 
+>_Misschien heb je het al doorgehad, maar in Visual Studio zit iets wat je noemt 'AutoComplete'. Dit betekend dat wanneer je begint met typen hij een voorbeeld geeft van wat je misschien bedoeld. Hierdoor kan je heel snel leren programmeren zonder dat je alles helemaal moet uittypen._  
+![AutoComplete1](Resources/AutoComplete1.PNG)
+_Als Visual Studio het venstertje toont met voorbeelden dan kan je hier met je pijltjes toets kiezen welke je wilt. Druk dan op de 'Tab' toets en het wordt in de code gezet. Als je daarna bijvoorbeeld weer een punt '.' zet dan komt er weer een venster met de mogelijke opties._  
+![AutoComplete2](Resources/AutoComplete2.PNG)
+_Type je dan gewoon door (in dit geval 'Re') dan laat hij alleen de opties die ook 'Re' hebben. Ook hier kan je weer met je pijltjes toetsen doorheen en op 'Tab' klikken. Zo hoef je dus voor `Console.ReadLine()` eigenlijk alleen maar het volgende te doen:_  
+>- Type 'Co'
+>- Druk op de 'Tab' toets
+>- Type '.Re'
+>- Druk op de 'Tab' toets
+>- Type '();'
+>
+>_En nu ben je klaar._ ;-)
+
 In de code zie je drie keer `Console.WriteLine(...)` staan. Dit is dus de 'Output'. Ook zie je één keer `Console.ReadLine()` staan. Met deze regel wacht de applicatie totdat je wat hebt ingetypt en op 'Enter' hebt gedrukt. Dus is dus de 'Input'.
 
 Andere manieren om te schrijven of de lezen zijn nog:
