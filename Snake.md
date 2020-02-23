@@ -119,7 +119,7 @@ Klik 'food' aan in het assets vak (3). En zorg dat de eigenschappen goed staan z
 Nu kunnen we het voedsel in het spel slepen. Dat doe je door gewoon het 'food' icoontje met je muis naar het speelveld te slepen.  
 ![02-14](Resources/Snake/02-14-AddFood.PNG)
 
-Net zoals met de rande van het spel moet Snake weten dat hij voedsel aanraakt. Daarom moeten we net als bij de randen een **Collider** toevoegen via de eigenschappen. Zorg daarom dat het eten in het spel geselecteerd is en klik in het eigenschappen venster vervolgens op **Add Component' -> Physics 2D -> Box Collider 2D**.  
+Net zoals met de randen van het spel moet Snake weten dat hij voedsel aanraakt. Daarom moeten we net als bij de randen een **Collider** toevoegen via de eigenschappen. Zorg daarom dat het eten in het spel geselecteerd is en klik in het eigenschappen venster vervolgens op **Add Component -> Physics 2D -> Box Collider 2D**.  
 ![02-15](Resources/Snake/02-15-FoodIsTrigger.PNG)
 
 Bij de randen van het spel hoefte je niks te selecteren in het venster van de Box Collider, maar bij het eten moet je klikken op **Is Trigger**.
@@ -368,4 +368,261 @@ Nu willen we natuurlijk uittesten of het gaat werken. Dus klik nu maar eens op d
 Als het goed is zie je nu je spel starten en als je even wacht zouden er vanzelf eten stukjes tevoorschijn moeten komen.
 
 Gelukt? Jippie...:tada:
+
+Klik nog een keertje op de 'Play' knop om weer te stoppen.
+
+## Snake maken
+
+We hebben nu gemaakt dat het eten er is, maar zonder Snake is het spel natuurlijk niet af. Laten we daarom nu Snake gaan toevoegen aan het spel. Het toevoegen van Snake lijkt een beetje op het toevoegen van het eten.
+
+Voor de Snake is al een 'asset' (een plaatje in vakje 3).
+- Snake
+
+Dit plaatje is bij hetzelfde als het eten, namelijk een pixel, maar dan wit.
+
+Klik het plaatje 'Snake' aan in het assets vak (3). En zorg dat de eigenschappen goed staan zoals hieronder. Druk daarna op 'Apply'.  
+![04-01](Resources/Snake/04-01-SnakeImport.PNG)
+
+Als dat goed staat dan kan je nu Snake het spel in slepen en hem in het midden van het spel zetten.  
+![04-02](Resources/Snake/04-02-SnakeInSpel.PNG)
+
+Op dit moment is dit eigenlijk nog geen slang, maar alleen nog maar zijn hoofd. Daarom gaan we hem even hernoemen naar 'Head' (engels voor hoofd).  
+![04-03](Resources/Snake/04-03-Hernoemen.PNG)
+![04-04](Resources/Snake/04-04-Head.PNG)
+
+Snake is natuurlijk nog maar een plaatje en zoals we eerder geleerd hadden moet Snake nog onderdeel worden van het spel om echt wat te kunnen doen. Daarop moeten we ook bij Snake een **Box Collider** toevoegen. Weet je nog hoe dat moet?
+
+Nee?
+
+Geeft niet! We leggen het gewoon nog even uit ;-). Klik op het hoofd van snake in het scene venster (1) (_waar je net hernoemd hebt_). Ga dan naar het eigenschappen venster en klik vervolgens op: **Add Component -> Physics 2D -> Box Collider 2D**.
+
+Bij de vorige keren hebben we niks aangepast in het vakje van de **Box Collider**, maar in dit geval moeten we dat wel doen. Pas daarom de eigenschappen aan van de 'Size' naar 0.7 en 0.7. Dit doen we omdat Snake dan dicht langs de muur kan bewegen.  
+![04-05](Resources/Snake/04-05-BoxCollider.PNG)
+
+Omdat Snake ook moet bewegen in het spel, moeten we nog wat toevoegen. Namelijk een **Rigidbody**. Een **Rigidbody** is iets wat zorgt voor zwaartekracht, snelheid en beweging. Laten we die dus ook toevoegen aan het 'Head' object door in het eigenschappen venster vervolgs op het volgende te klikken: **Add Component -> Physics 2D -> Rigidbody 2D**. En we gebruiken dan de volgende settings.  
+![04-06](Resources/Snake/04-06-Rigidbody.PNG)
+
+Nu hebben we Snake (zijn hoofd) en eten in het spel. Probeer eens uit met play of het eten ook nog steeds werkt. Sla nu het project weer op zoals je eerder hebt gedaan.
+
+## Snake's lichaam maken
+
+Snake is nu alleen nog maar een hoofd, maar we hebben natuurlijk ook een lichaam nodig. Wij gebruiken eigenlijk hetzelfde als zijn hoofd alleen willen we dat tijdens het spel er aan vast maken. Hiervoor hebben we net als bij het eten een **Prefab** nodig.
+
+Sleep daarom het hoofd van Snake uit het scene venster naar het Assets scherm.  
+![04-07](Resources/Snake/04-07-HeadPrefab.PNG)
+
+Hernoem nu de 'Head' in het Assets scherm naar 'TailPrefab' (tail betekend staart).  
+![04-08](Resources/Snake/04-08-RenamePrefab.PNG)
+
+## Snake's hoofd laten bewegen
+
+Ok, nu hebben we de onderdelen voor zijn hoofd in het spel en de onderdelen voor zijn staart in het Assets venster.
+
+Klik weer op het hoofd van Snake. We gaan nu een script toevoegen om weer te kunnen programmeren. Klik in het eigenschappen venster achter elkaar op: **Add Component -> New Script**. Noem het script 'Snake' en klik op 'Create and add'.  
+![04-09](Resources/Snake/04-09-SnakeScript.PNG)
+
+Dubbel klik op het Snake script in het Assets venster. Nu zal Visual Studio weer openen en kan je weer gaan programmeren. Als het goed is ziet het script er zo uit:  
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Snake : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+Omdat ze zometeen nog wat met een lijst moeten doen om de staart in te bewaren voegen we nog een `using` toe:
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+
+public class Snake : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+We gaan nu maken dat Snake altijd een kant op zal gaan. We gebruiken hiervoor weer de **Start()** functie. Maar om Snake te laten bewegen hebben we 2 nieuwe functies nodig. De eerste is de functie **Beweeg()**, deze functie zal er voor zorgen dat Snake elke keer een stukje beweegt. We hebben nog een andere functie nodig die de **Beweeg()** functie aan blijft roepen net zolang we niet game over zijn. Deze nieuwe functie noemen we **BeweegLus()** en deze heeft als 'Return waarde' het type `IEnumerator`, maar voor nu is dat even niet belangrijk wat dat doet.
+```cs
+void Beweeg() 
+{
+
+}
+
+IEnumerator BeweegLus()
+{
+
+}
+```
+
+Vanuit de **Start()** functie roepen we de **BeweegLus()** functie aan. Dat doen we met een speciale functie die door Unity gemaakt is. Dit functie heet **StartCoroutine()** en we geven daar de naam van de functie aan mee die hij moet uitvoeren.
+```cs
+void Start() 
+{
+    StartCoroutine(nameof(BeweegLus));
+}
+```
+
+Nu gaan de de echte lus maken die uiteindelijke weer de **Beweeg()** functie moet aanroepen. Hiervoor hebben we een lus nodig. Één van de manier om een lus te maken is met een 'while()' lus. Dit is een lus die elke keer opnieuw begint totdat de variabele die in de 'while()' staat niet meer waar is.  
+Voor nu maken we een 'while()' lus die altijd 'waar' (true) is. Maar daarom de 'while' lus aan in de **BeweegLus()** functie.
+```cs
+IEnumerator BeweegLus()
+{
+    while(true)
+    {
+        
+    }
+}
+```
+
+In de lus willen we dat Snake beweegt. Daarom roepen we in de 'while()' lus de functie **Beweeg()** aan.
+```cs
+IEnumerator BeweegLus()
+{
+    while(true)
+    {
+        Beweeg();
+    }
+}
+```
+
+Als we nu niks zouden aanpassen dan gaat Snake heel snel bewegen. En we willen eigenlijk dat hij elke seconde ongeveer 3 stapjes maakt. Daarom roepen we vóórdat we **Beweeg()** aanroepen eerst nog een functie aan die wacht voor het aantal seconden wat we meegeven. (_Dit ziet er een beetje vreemd uit, maar is te lastig om nu uit te leggen, type het maar gewoon over ;-)).
+```cs
+IEnumerator BeweegLus()
+{
+    while(true)
+    {
+        yield return new WaitForSeconds(0.3f);
+        Beweeg();
+    }
+}
+```
+In de functie **WaitForSeconds()** geven we de waarde 0.3f mee. Dit betekend dat we 0.3 seconden wachten. En dan de **Beweeg()** functie aanroepen. Dan begint de lus weer opnieuw. Wacht weer 0.3 seconden en roept weer de **Beweeg()** functie aan. En zo blijft dit doorgaan.
+
+Nu wordt dus om de 0.3 seconden de **Beweeg()** functie aangeroepen, maar die doet nog niks. De code van het hele bestand zou er ongeveer zo uit moeten zien:
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Snake : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(nameof(BeweegLus));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void Beweeg()
+    {
+
+    }
+
+    IEnumerator BeweegLus()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.3f);
+            Beweeg();
+        }
+    }
+}
+```
+
+Laten we nu de **Beweeg()** functie maar eens gaan maken.  
+Voor het bewegen moet het spel weten welke kant Snake op aan het bewegen is. Hiervoor voegen we een variabele toe die we 'richting' noemen. _Voor nu laten we hem naar rechts (right in het engels) gaan.
+```cs
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(nameof(BeweegLus));
+    }
+
+    ...
+}
+```
+
+In de **Beweeg()** functie kunnen we nu Snake laten bewegen. Omdat we dit script in Unity hebben gekoppeld met het hoofd van Snake, kunnen we in de **Beweeg()** functie 'transform' aanroepen wat eigenlijk zorgt dat het plaatje gaat bewegen.
+```cs
+void Beweeg()
+{
+    transform.Translate(richting);
+}
+```
+
+_Wat de **Translate()** functie doet is eigenlijk zeggen 'Voeg deze richting toe aan de plek waar ik nu ben'. Dus elke keer dat het wordt aangeroepen met 'right' zal Snake dus een plekje naar rechts opschuiven._
+
+**Belangrijk** sla het bestand op in Visual Studio weer op zoals je eerder gedaan hebt. 
+
+Open nu weer het Unity programma en klik op de 'Play' knop. Als het goed is zou Snake nu naar rechts moeten bewegen. _Let op Snake gaat ook nog gewoon door de muur heen, maar dat gaan we echt nog wel goed maken ;-)_  
+![04-10](Resources/Snake/04-10-SnakeBeweegd.gif)
+
+## Het hoofd van Snake besturen
+
+Nu beweegt het hoofd van Snake, maar daar hebben we natuurlijk niet zo heel veel aan. Misschien is het daarom leuk om te gaan maken dat je met de pijltjes toetsen het hoofd kan bewegen. Hiervoor gebruiken we de **Update()** functie die al door Unity gemaakt was.
+
+Hiervoor gebruiken we de 'if' blokjes die we bij het maken van een rekenmachine ook gemaakt hebben. En we willen weten of iemand een toets heeft ingedrukt van de pijltjes. Dit doen we door het aanroepen van een functie **Input.GetKey()** en dan geven we mee welk pijltje we willen controleren:
+- KeyCode.RightArrow = pijltje rechts,
+- KeyCode.LeftArrow = pijltje links,
+- KeyCode.UpArrow = pijltje omhoog,
+- KeyCode.DownArrow = pijltje omlaag
+
+Waar we ook rekening mee moeten houden is dat als we links gaan dan we niet in één keer naar rechts kunnen. Als we dus _niet_ links gaan _en_ iemand drukt op de pijl naar rechts, dan zetten we de variabele 'richting' op rechts (right). Daarom ziet één afzonderlijk stukje er zo uit:
+```cs
+    if (Input.GetKey(KeyCode.RightArrow) && richting != Vector2.left)
+        richting = Vector2.right;
+```
+
+Als we dit voor alle richtingen doen dan krijgen we de volgende code in de **Update()** functie.
+```cs
+void Update()
+{
+    if (Input.GetKey(KeyCode.RightArrow) && richting != Vector2.left)
+        richting = Vector2.right;
+    else if (Input.GetKey(KeyCode.LeftArrow) && richting != Vector2.right)
+        richting = Vector2.left;
+    else if (Input.GetKey(KeyCode.UpArrow) && richting != Vector2.down)
+        richting = Vector2.up;
+    else if (Input.GetKey(KeyCode.DownArrow) && richting != Vector2.up)
+        richting = Vector2.down;
+}
+```
+
+Sla het bestand weer op in Visual Studio en ga weer naar Unity. Klik in Unity op de 'Play' knop. Als het goed is kan je nu met de pijltjes Snake bewegen door het veld. 
+
+Sla nu ook in Unity het project weer op zodat we zeker weten dat we later weer verder kunnen.
 
