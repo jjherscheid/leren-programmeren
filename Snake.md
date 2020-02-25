@@ -7,11 +7,56 @@ Deze snake werkbeschrijving komt heb ik niet helemaal zelf bedacht maar via een 
 
 Snake is een op zich een simpel spelletje, maar het is nog best ingewikkeld om te maken. Naast als je programmeer ervaring van de vorige opdrachten zal je hier ook met een nieuw programma aan de slag gaan, namelijk Unity. Unity is een programma waarmee spelletjes gemaakt kunnen worden voor de Computer, maar ook voor de PS4, Switch, Telefoon, Tablet etc. Het is dus een heel uitgebreid programma waar heel veel dingen ingesteld kunnen worden.
 
+## Unity Installeren
+
+**Let op:** Dit hoofdstuk ik alleen nodig als Unity nog niet geïnstalleerd is.
+
+### Unity Hub installeren 
+
+Unity Hub is eigenlijk een programma om eenvoudige meerdere versies van Unity te kunnen gebruiken en je projecten te maken/openen.
+
+_Je kan deze downloaden bij Unity: https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe_  
+* Voer de installatie uit
+* Na de installatie zie je het volgende scherm:  
+![UnityHubLicense](Resources/UnityInstall/UnityHubLicense.PNG)
+* Klik op het poppetje boven inbeeld en kies voor 'Sign In'
+* Klik daar op 'Create account'  
+![UnityCreateAccount](Resources/UnityInstall/CreateAccount.PNG)
+* Vul de gegevens in. (_Gebruik niet het knopje 'SignIn with Google' die werkt niet_)  
+![ConnectEmail](Resources/UnityInstall/ConnectEmail.PNG)
+* Nadat je email gecontroleerd is kom je weer in het Unity Hub scherm. Klik daar op 'Activate New License'  
+![Activate](Resources/UnityInstall/ActiveLicense.PNG)
+* Kies voor 'Personal' license.  
+![Personal](Resources/UnityInstall/ProfesionalLicense.PNG)
+* Klik op de pijl om terug te gaan naar het hoofscherm.  
+![TerugNaarHoofd](Resources/UnityInstall/TerugNaarHome.PNG)
+
+Unity Hub is nu geinstalleerd, nu moet nog de juiste versie van Unity geinstalleerd worden.
+
+### Unity installeren (2019.2.**)
+
+Voor dit project is verstandig om versie 2019.2.** te installeren. 
+
+* Klik op 'Installs'  
+![Installs](Resources/UnityInstall/Installs.PNG)
+* Klik op 'Add' om een installatie toe te voegen   
+![Add](Resources/UnityInstall/AddInstall.PNG)
+* Kies de juiste versie van Unity  
+![Version](Resources/UnityInstall/2019.2.xxf1.PNG)
+* Kies de juiste modules (standaard staat het goed)  
+![Modules](Resources/UnityInstall/Modules.PNG)
+* Accepteer de voorwaarden  
+![Accept](Resources/UnityInstall/Accept.PNG)
+* Als het goed is zie je deze na de installatie beschikbaar onder 'Installs'  
+![VersionInstalled](Resources/UnityInstall/VersionInstalled.PNG)
+
+Onder het kopje 'Projects' zal je straks een project toevoegen.
+
 ## Project openen in Unity
 
 _Omdat het best lastig is om een Unity project aan te maken, heb ik alvast een basis project aangemaakt voor een 2D spel. Ook zijn alle plaatjes die je nodig hebt ook al toegevoegd._
 
-Laten we beginnen met het project te openen. Zoek in het Startmenu van Windows naar 'Unity Hub'.  
+Laten we beginnen met het project te openen. Zoek in het Startmenu van Windows naar 'Unity Hub'.  (_Als Unity Hub al open staat hoeft dit natuurlijk niet ;-)_)
 ![00](Resources/Snake/00-UnityHub.PNG)
 
 Klik in het venster wat nu in beeld staat op 'Add' (toevoegen).  
@@ -626,3 +671,158 @@ Sla het bestand weer op in Visual Studio en ga weer naar Unity. Klik in Unity op
 
 Sla nu ook in Unity het project weer op zodat we zeker weten dat we later weer verder kunnen.
 
+## Staart van Snake
+
+Laten we nu eens gaan nadenken over de staart van Snake. Stel Snake heeft een kop (H) en 3 staart delen (S).
+```sh
+SSSH
+```
+
+De computer kan per keer maar één dingen doen. Als nu het hoofd van Snake naar rechts gaat bewegen dan zou het logisch zijn om zijn staart erachter aan te laten bewegen op de volgende manier. 
+```sh
+stap 1: SSSH    snake heeft nog niet bewogen
+stap 2: SSS H   snake zijn hoofd is naar rechts bewogen
+stap 3: SS SH   snake zijn eerste staart stukje beweegt ook naar rechts
+stap 4: S SSH   snake zijn tweede staart stukje beweegt ook naar rechts
+stap 5:  SSSH   snake is nu in zijn geheel naar rechts geschoven
+```
+
+Om Snake te bewegen zijn er dus voor de computer 5 stappen nodig. Weet jij misschien een manier om voor de computer in maar 3 stappen heel snake te bewegen?
+
+Lees nog even niet verder, probeer eerst zelf eens een oplossing te bedenken.
+
+<div class="page-break"></div>
+
+Ok, heb je wat bedacht? Ik ben erg benieuwd. Schrijf daarom hieronder je oplossing op op de zelfde manier als dat we met de 5 stappen deden. Hieronder alvast stap 1. 
+
+```sh
+stap 1: SSSH    snake heeft nog niet bewogen
+
+
+
+
+
+
+
+
+
+
+
+```
+
+Heb je geen oplossing of heb je wel een oplossing en deze opgeschreven ga dan naar de volgende bladzijde.
+
+<div class="page-break"></div>
+
+Dit is de oplossing om in 3 stappen hetzelfde te doen als in 5 stappen:
+```sh
+stap 1: SSSH    snake heeft nog niet bewogen
+stap 2: SSS H   snake zijn hoofd heeft bewogen
+stap 3:  SSSH   snake zijn achterste stukje stoppen we in het gat. 
+```
+
+Dit is voor de computer dus veel makkelijker om te doen dan elk stukje staart te bewegen. Het maakt hierdoor ook niet uit hoelang de staart is.
+
+Om dit te maken moeten we een lijstje bij gaan houden met staartstukjes. Open daarom weer in Visual Studio de code voor Snake door dubbel te klikken op 'Snake' in het assets venser.  
+![SnakeScript](Resources/Snake/04-09-SnakeScript.PNG)
+
+We gaan nu vlak onder de variabele 'richting' (boven in de class) een nieuwe variabele maken. Hierin gaan we een lijstje bij houden van de staartdelen.
+```cs
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+    List<Transform> staartstukjes = new List<Transform>();
+
+    ...
+}
+```
+
+We hebben nu een `List` gemaakt (lijst in het engels), en zeggen tegen de computer dat in die lijst objecten komen van het type `Transform`. En een `Transform` was iets waaraan we positie konden geven, zoals dus ook nodig is bij de staart stukjes.
+
+Omdat we wat functies willen gebruiken die nodig zijn om informatie te vragen aan de lijst is het nodig om bovenin het bestand nog een bibliotheek toe te voegen. Voeg daar `using System.Linq;` aan toe
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;    // <-- Deze is nieuw
+```
+
+Dan moeten we nu de logica maken die we net bedacht hebben om de staart te bewegen. Zorg ervoor dat de **Beweeg()** functie er zo uit gaat zien:
+(_het commentaar in code hoef je niet over te typen he ;-)_)
+```cs
+void Beweeg()
+{
+    // We slaan eerst de vorige positie van het hoofd op
+    Vector2 vorigePositieHoofd = transform.position;
+
+    // Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)
+    transform.Translate(richting);
+
+    // Controleren of we een staart hebben
+    if(staartstukjes.Any())
+    {
+        // Pak het laatste staartstukje en geef het de positie waar het hoofd was
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        // Zet het laatste stukje in de lijst als eerste in de lijst
+        staartstukjes.Insert(0, staartstukjes.Last());
+
+        // Haal het staartstukje aan het einde weg
+        staartstukjes.RemoveAt(staartstukjes.Count - 1);
+    }
+}
+```
+
+Ik heb geprobeerd in het commentaar te zetten wat er gedaan wordt, maar hieronder even een opsomming van de stappen:
+1. Vorige positie van hoofd moeten we even opslaan
+2. Hoofd bewegen
+3. Kijken of we staart stukjes hebben
+4. Positie (in het spel) van laatste staartstukje veranderen in de positie van het hoofd
+5. Laatste staart stukje in de lijst stoppen als eerste stukje (_we vullen nu het gat op, maar dit stukje zit nu 2x in de lijst_)
+6. Uit de lijst het laatste stukje weghalen.
+
+## Snake voeren zodat zijn staart langer wordt
+
+We hebben nu een stukje code gemaakt om te zorgen dat de staart van Snake zijn hoofd volgt. Maar zolang Snake niet kan eten gebeurt er natuurlijk weinig.
+
+Wat we gaan doen is het volgende:
+1. Functie maken die aangeroepen wordt door het spel wanneer Snake in aanraking komt met een stukje eten
+2. Snake langer maken wanneer hij een stukje eet
+
+Voor het langer worden van Snake gebruiken we dezelfde techniek als bij zijn staart. Hieronder en voorbeeld met Snake zijn hoofd (H), zijn staart (S) en eten (E):
+```sh
+stap 1: SSSH E      // Snake is bijna bij het eten
+stap 2: SSS HE      // Snake zijn hoofd is bewogen
+stap 3:  SSSHE      // Snakes laatste staartstukje is verplaatst
+stap 4:  SSS H      // Snake zijn hoofd is over het eten heen
+stap 5:  SSSSH      // We voegen een nieuwe stukje staart toe 
+                    // in het gat wat is onstaan.
+```
+
+Wat we nu eerst nodig hebben is nu weer een extra variabele om bij de houden of Snake wat gegeten heeft. Voeg daarom onder de 'staartstukjes' variabele 'gegeten' toe. 'gegeten' zetten we gelijk op 'false' (_niet waar, dus niet gegeten_):
+```cs
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+    List<Transform> staartstukjes = new List<Transform>();
+    bool gegeten = false;
+
+    ...
+}
+```
+
+Ook hebben we een variable nodig om nieuwe staart stukjes toe te kunnen voegen 'staartPrefab'. De code ziet er dan zo uit:
+```cs
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+    List<Transform> staartstukjes = new List<Transform>();
+    bool gegeten = false;
+
+    public GameObject staartPrefab;
+}
+```
+
+### Eten opeten
+
+// TODO OnTriggerEnter2D

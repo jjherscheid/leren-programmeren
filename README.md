@@ -58,12 +58,14 @@ Om te leren te programmeren heb je natuurlijk een computer nodig waarop je kan e
 
 ### Programma om in te programmeren
 
-1. Visual Studio Community 2019 _(Voor de stappen 1 t/m 4)_  
-_Hiermee kan je programma's in C# mee maken. Je kan deze downloaden bij Microsoft: https://visualstudio.microsoft.com/vs/community/_
-2. Unity (Gratis editie) _(Voor stap 5)_  
-_Hiermee kan je games programmeren. Je kan deze downloaden bij Unity: https://store.unity.com/products/unity-personal_
-3. Unity account  _(Voor stap 5)_
-_Maak zelf of laat een ouder iemand een gratis account aanmaken bij https://unity.com/_
+1. Visual Studio Community 2019 _(Voor de stappen 1 t/m 3)_  
+_Hiermee kan je programma's in C# mee maken. Je kan deze downloaden bij Microsoft: https://visualstudio.microsoft.com/vs/community/_  
+Belangrijk is dat bij de installatie de volgende onderdelen aangevinkt staan:  
+- .NET desktop development
+![VSInstall](Resources/VS-Install.PNG)
+
+2. Unity Hub (Gratis editie) _(Pas nodig voor stap 4)_  
+Uitleg hiervan komt in deel 2.
 
 
 ### Ruimte op je computer
@@ -86,7 +88,7 @@ Laten we nu maar eens echt beginnen met programmeren. Voor de eerste stappen heb
 
 Laten we gaan beginnen met 'Hallo wereld'. Dit is een kleine applicatie die deze tekst laat zien wanneer je het opstart. Ook gaan we nog wat aanpassingen doen zodat de applicatie weet wie jij bent en dat hij jou (of iemand anders) ook gedag kan zeggen.
 
-1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  
+1. Start Visual Studio op door in het start-menu van Windows te zoeken naar _Visual Studio_ en dan op Enter te drukken  (_In het plaatje staat er Community achter, maar dat is in het echt niet altijd zo_)
 ![Visual Studio in start menu](Resources/01-VisualStudio_Startmenu.PNG)
 
 2. Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  
@@ -203,8 +205,20 @@ static void Main(string[] args)
     ...
 }
 ```
-Dit stukje noem je een functie. En een functie bevat code die wordt uitgevoerd wanneer het wordt aangeroepen. Deze functie is wat speciaal omdat het `Main(...)` heeft. 'Main' mag maar een keer voorkomen in je applicatie is die wordt aangeroepen wanneer je de applicatie start.
-_(Later wordt er meer uitgelegd over functies)_
+Dit stukje noem je een functie. En een functie bevat code die wordt uitgevoerd wanneer het wordt aangeroepen. Deze functie is wat speciaal omdat het `Main(...)` heeft. 'Main' mag maar een keer voorkomen in je applicatie is die wordt aangeroepen wanneer je de applicatie start. Functies worden altijd onder elkaar gezet, en nooit in elkaar. De opbouw is dus altijd het volgende:
+```cs
+// Bibliotheken (usings)
+
+// Eigen stukje bibliotheek (namespace)
+
+    // Objecten (class)
+
+        // Functie
+    
+        // Functie
+
+        // ...
+```
 
 ```cs
 Console.WriteLine("Hello World!");
