@@ -441,7 +441,7 @@ Nee?
 
 Geeft niet! We leggen het gewoon nog even uit ;-). Klik op het hoofd van snake in het scene venster (1) (_waar je net hernoemd hebt_). Ga dan naar het eigenschappen venster en klik vervolgens op: **Add Component -> Physics 2D -> Box Collider 2D**.
 
-Bij de vorige keren hebben we niks aangepast in het vakje van de **Box Collider**, maar in dit geval moeten we dat wel doen. Pas daarom de eigenschappen aan van de 'Size' naar 0.7 en 0.7. Dit doen we omdat Snake dan dicht langs de muur kan bewegen.  
+Bij de vorige keren hebben we niks aangepast in het vakje van de **Box Collider**, maar in dit geval moeten we dat wel doen. Pas daarom de eigenschappen aan van de 'Size' naar 0.7 en 0.7. Dit doen we omdat Snake dan dicht langs de muur kan bewegen. Ook hier moeten we de _Is Trigger_ aanzetten.  
 ![04-05](Resources/Snake/04-05-BoxCollider.PNG)
 
 Omdat Snake ook moet bewegen in het spel, moeten we nog wat toevoegen. Namelijk een **Rigidbody**. Een **Rigidbody** is iets wat zorgt voor zwaartekracht, snelheid en beweging. Laten we die dus ook toevoegen aan het 'Head' object door in het eigenschappen venster vervolgs op het volgende te klikken: **Add Component -> Physics 2D -> Rigidbody 2D**. En we gebruiken dan de volgende settings.  
@@ -523,6 +523,8 @@ IEnumerator BeweegLus()
 
 }
 ```
+
+_**Letop:** de functies moeten onder de andere functies staan, maar wel **tussen** de `class Snake {` en het einde van die class `}`_
 
 Vanuit de **Start()** functie roepen we de **BeweegLus()** functie aan. Dat doen we met een speciale functie die door Unity gemaakt is. Dit functie heet **StartCoroutine()** en we geven daar de naam van de functie aan mee die hij moet uitvoeren.
 ```cs
@@ -668,6 +670,8 @@ void Update()
 ```
 
 Sla het bestand weer op in Visual Studio en ga weer naar Unity. Klik in Unity op de 'Play' knop. Als het goed is kan je nu met de pijltjes Snake bewegen door het veld. 
+
+Doordat je nu met de pijltjes toets de waarde van de variabele `richting` veranderd zal elke keer dat de **Beweeg()** functie uitgevoerd worden gekeken worden welke kan Snake die keer op moet.
 
 Sla nu ook in Unity het project weer op zodat we zeker weten dat we later weer verder kunnen.
 
@@ -825,4 +829,356 @@ public class Snake : MonoBehaviour
 
 ### Eten opeten
 
-// TODO OnTriggerEnter2D
+We hebben net 2 variabelen toegevoegd. Één om te weten dat Snake gegeten heeft en één om te weten hoe de staartstukjes er uit zien.  
+Nu moeten we natuurlijk nog zorgen dat we ook weten dat Snake echte gegeten heeft. Hiervoor hebben we eerder in de opdracht **Box Colliders** gemaakt voor de stukjes eten en voor Snake zijn hoofd. Als nu het hoofd van Snake tegen een eten stukje aankomt dan wordt door Unity de functie **OnTriggerEnter2D()** aangeroepen. Dat doet Unity alleen als de functie er ook is. Die moeten we nu dus aanmaken.
+```cs
+private void OnTriggerEnter2D(Collider2D gebotstMet)
+{
+    // Is Snake gebotst met FoodPrefab
+    if (gebotstMet.name.StartsWith("FoodPrefab"))
+    {
+        // Snake heeft gegeten
+        this.gegeten = true;
+
+        // Het eten weghalen uit het spel
+        Destroy(gebotstMet.gameObject);
+    }
+    else
+    {
+        // Je bent met iets anders gebotst.. 
+        Time.timeScale = 0; // Stop het spel
+    }
+}
+```
+
+Even een korte uitleg van wat we nou gedaan hebben. In Unity hebben we een object gemaakt (eerder in de opdracht) voor het eten. Dat object heeft 'FoodPrefab'  
+![FoodPrefab](Resources/Snake/05-01-FoodPrefab.PNG)
+
+Nu weten we dat Snake gegeten heeft en als hij eet dan verwijderen we de stukje eten weer uit het spel. Met de **Destroy()** functie wordt het stukje eten verwijderd. (_Destroy betekend vernietigen in het engels_)
+
+Wanneer je met iets anders botst (_dat is dan je staart of de rand van het spel_) dan stoppen we het hele spel. Doordat we de tijd stil zetten. Er zijn natuurlijk allemaal andere manieren om het spel te laten stoppen, maar voor nu is dit het makkelijkst.
+
+Nu hebben we er dus voor gezorgd dat we weten wanneer Snake gegeten heeft. We moeten nu alleen nog maken dat tijdens het bewegen er een stukje staart bij komt. Dit doen we in de **Beweeg()** functie gaan we een stukje code toevoegen net boven de **if(staartstukjes.Any())** die er staat. Het stuk code ziet er zo uit (_kijk verder voor hoe de hele functie eruit ziet_):
+```cs
+void Beweeg()
+{
+    ....
+
+    // Heeft Snake gegeten? Dan moeten we extra stukje staart maken
+    if(gegeten)
+    {
+        // Stukje staart inladen in het spel en op de vorige postitie
+        // van het hoofd neerzetten
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        // Ook het stukje toevoegen aan de lijst met staart stukjes
+        staartstukjes.Insert(0, staart.transform);
+
+        // En weer laten weten dat Snake weer kan eten
+        gegeten = false;
+    }
+
+    ....
+}
+```
+
+De functie **Beweeg()** ziet er als het goed is nu zo uit:
+
+```cs
+void Beweeg()
+{
+    // We slaan eerst de vorige positie van het hoofd op
+    Vector2 vorigePositieHoofd = transform.position;
+
+    // Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)
+    transform.Translate(richting);
+
+    // Heeft Snake gegeten? Dan moeten we extra stukje staart maken
+    if(gegeten)
+    {
+        // Stukje staart inladen in het spel en op de vorige postitie
+        // van het hoofd neerzetten
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        // Ook het stukje toevoegen aan de lijst met staart stukjes
+        staartstukjes.Insert(0, staart.transform);
+
+        // En weer laten weten dat Snake weer kan eten
+        gegeten = false;
+    }
+    // Controleren of we een staart hebben
+    if(staartstukjes.Any())
+    {
+        // Pak het laatste staartstukje en geef het de positie waar het hoofd was
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        // Zet het laatste stukje in de lijst als eerste in de lijst
+        staartstukjes.Insert(0, staartstukjes.Last());
+
+        // Haal het staartstukje aan het einde weg
+        staartstukjes.RemoveAt(staartstukjes.Count - 1);
+    }
+}
+```
+
+Nu zie je twee keer een **if()** staan, maar dat klopt eigenlijk niet. Want wat er nu gebeurt is het volgende:
+
+- Snake beweegt
+- Heeft Snake gegeten?
+  - Ja: Voeg nieuwe stukje staart toe
+- Heeft Snake staart stukjes?
+  - Ja: Verplaats het laatst stukje staart naar de plek waar net het hoofd van Snake zat.
+
+Op het eerste gezicht lijkt dit misschien te kloppen, maar als we even verder nadenken, klopt het toch niet. Want het laatste stukje staart verplaatsen naar waar Snake zijn hoofd zat, dat hoeft alleen als we bewegen en niet als we gegeten hebben. Daarom moeten we de **else** gebruiken. 
+
+We hebben eerder geleerd dat een **if()** eigenlijk **als?** betekend. Dus `if(gegeten)` betekent eigenlijk: `als Snake gegeten heeft dan...`. Maar nu willen we maken: `als Snake gegeten heeft dan ... en anders ...`. En precies voor het stukje `en anders ...` is de **else** uitgevonden.
+
+We gaan daarom de code een heel klein beetje veranderen namelijk:
+```cs
+if(staartstukjes.Any())
+```
+Moet je veranderen in:
+```cs
+else if(staartstukjes.Any())
+```
+
+De hele functie ziet er dan nu zo uit:
+```cs
+void Beweeg()
+{
+    // We slaan eerst de vorige positie van het hoofd op
+    Vector2 vorigePositieHoofd = transform.position;
+
+    // Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)
+    transform.Translate(richting);
+
+    // Heeft Snake gegeten? Dan moeten we extra stukje staart maken
+    if(gegeten)
+    {
+        // Stukje staart inladen in het spel en op de vorige postitie
+        // van het hoofd neerzetten
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        // Ook het stukje toevoegen aan de lijst met staart stukjes
+        staartstukjes.Insert(0, staart.transform);
+
+        // En weer laten weten dat Snake weer kan eten
+        gegeten = false;
+    }
+    // Controleren of we een staart hebben
+    else if(staartstukjes.Any())
+    {
+        // Pak het laatste staartstukje en geef het de positie waar het hoofd was
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        // Zet het laatste stukje in de lijst als eerste in de lijst
+        staartstukjes.Insert(0, staartstukjes.Last());
+
+        // Haal het staartstukje aan het einde weg
+        staartstukjes.RemoveAt(staartstukjes.Count - 1);
+    }
+}
+```
+
+Sla je code weer op in Visual Studio zoals je eerder al hebt moeten doen.
+
+We hebben nu heel wat code gemaakt. Nu is het bijna tijd om het uit te testen. Maar er mist nog één ding. Namelijk aan de computer laten weten welk onderdeel bij de Staart hoort. We hebben eerder al in Unity een _TailPrefab_ gemaakt (zie plaatje) en deze moeten we koppelen aan de variabele _StaartPrefab_ die in de code hierboven staat.
+
+Selecteer daarom eerst in Unity het hoofd van Snake  
+![05-02](Resources/Snake/05-02-HoofdSnake.PNG)
+
+Klik daarna in het eigenschappen venster op het kleine ronde knopje om een Staart te koppelen.  
+![05-02](Resources/Snake/05-02-StaartPrefab1.PNG)
+
+In het schermpje wat er dan komt kies je de _TailPrefab_.  
+![05-03](Resources/Snake/05-03-SelectTailPrefab.PNG)
+
+Start nu het spel opnieuw en als het goed is kan je Snake bewegen. Kan je stukjes opeten en wordt Snake dan langer. En als je tegen de muur botst of tegen je eigen staart, dan ben je af en stopt het spel.
+
+De volledige code van Snake script zou er ongever zo uit moeten zien:
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+    List<Transform> staartstukjes = new List<Transform>();
+    bool gegeten = false;
+    
+    public GameObject staartPrefab;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(nameof(BeweegLus));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) && richting != Vector2.left)
+            richting = Vector2.right;
+        else if (Input.GetKey(KeyCode.LeftArrow) && richting != Vector2.right)
+            richting = Vector2.left;
+        else if (Input.GetKey(KeyCode.UpArrow) && richting != Vector2.down)
+            richting = Vector2.up;
+        else if (Input.GetKey(KeyCode.DownArrow) && richting != Vector2.up)
+            richting = Vector2.down;
+    }
+
+    void Beweeg()
+    {
+        // We slaan eerst de vorige positie van het hoofd op
+        Vector2 vorigePositieHoofd = transform.position;
+
+        // Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)
+        transform.Translate(richting);
+
+        // Heeft Snake gegeten? Dan moeten we extra stukje staart maken
+        if(gegeten)
+        {
+            // Stuke staart inladen in het spel en op de vorige postitie
+            // van het hoofd neerzetten
+            GameObject staart = (GameObject)Instantiate(
+                staartPrefab,
+                vorigePositieHoofd,
+                Quaternion.identity);
+
+            // Ook het stukje toevoegen aan de lijst met staart stukjes
+            staartstukjes.Insert(0, staart.transform);
+
+            // En weer laten weten dat Snake weer kan eten
+            gegeten = false;
+        }
+        // Controleren of we een staart hebben
+        else if (staartstukjes.Any())
+        {
+            // Pak het laatste staartstukje en geef het de positie waar het hoofd was
+            staartstukjes.Last().position = vorigePositieHoofd;
+
+            // Zet het laatste stukje in de lijst als eerste in de lijst
+            staartstukjes.Insert(0, staartstukjes.Last());
+
+            // Haal het staartstukje aan het einde weg
+            staartstukjes.RemoveAt(staartstukjes.Count - 1);
+        }
+    }
+
+    IEnumerator BeweegLus()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.3f);
+            Beweeg();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D gebotstMet)
+    {
+        // Is Snake gebotst met FoodPrefab
+        if (gebotstMet.name.StartsWith("FoodPrefab"))
+        {
+            // Snake heeft gegeten
+            this.gegeten = true;
+
+            // Het eten weghalen uit het spel
+            Destroy(gebotstMet.gameObject);
+        }
+        else
+        {
+            // Je bent met iets anders gebotst.. 
+            Time.timeScale = 0; // Stop het spel
+        }
+    }
+}
+```
+
+Gefeliciteerd! Je hebt in een aantal opdrachten nu geleerd hoe je kan programmeren. Natuurlijk is er nog veel meer te leren, maar hopelijk heb je een beetje een gevoel bij wat je gedaan hebt.
+
+Nu komt misschien nog wel het leukste.. dat is lekker zelf bezig zijn en dingen verzinnen.
+
+---
+
+Als je nog tijd hebt of het leuk vindt om dingen uit te proberen hieronder nog een aantal 
+
+### 1. Snake sneller laten gaan: 
+Probeer eens het getal in `WaitForSeconds` aan te passen en kijk wat er gebeurt.
+
+### 2. Snake steed een beetje sneller laten gaan:
+Voor het maken van het eten hebben we gebruik gemaakt van de functie:  
+```cs
+InvokeRepeating(nameof(EtenMaken), 3, 4);
+```
+Misschien weet je het nog, deze functie roept na 3 seconden de functie **EtenMaken()** aan en daarna wacht hij elke keer 4 seconden en roept hij weer de functie **EtenMaken()** aan.
+
+Deze `InvokeRepeating` kunnen we ook gebruiken om het spel steeds een beetje sneller te laten gaan.
+
+Eerst moeten we een variabele aan maken voor de snelheid van het spel. 
+```cs
+float snelheid = 0.3f;
+```
+Zet deze onder de variabele 'gegeten' neer:
+```cs
+public class Snake : MonoBehaviour
+{
+    Vector2 richting = Vector2.right;
+    List<Transform> staartstukjes = new List<Transform>();
+    bool gegeten = false;
+    float snelheid = 0.3f;
+    
+    public GameObject staartPrefab;
+
+    ...
+}
+```
+
+Pas de code van de `WaitForSeconds` aan in het volgende:
+```cs
+IEnumerator BeweegLus()
+{
+    while(true)
+    {
+        yield return new WaitForSeconds(snelheid);
+        Beweeg();
+    }
+}
+```
+
+Maak nu een extra functie aan die we **VerhoogSnelheid()** noemen:  
+```cs
+void VerhoogSnelheid()
+{
+    this.snelheid = this.snelheid * 0.8f;
+}
+```
+
+Deze functie veranderd de inhoud van snelheid door elke keer de snelheid keer 0.8 te doen.
+
+Pas nu de **Start()** functie aan door met `InvokeRepeating` de **VerhoogSnelheid()** functie aan te roepen.
+```cs
+void Start()
+{
+    this.timeToMove = .3f;
+    //InvokeRepeating(nameof(Move), .3f, .2f);
+    StartCoroutine(nameof(MoveRoutine));
+    InvokeRepeating(nameof(VerhoogSnelheid), 1, 10);
+}
+```
+
+Hierboven staat dus dat na 1 seconden en daarna elke 10 seconden de snelheid van snake wordt aangepast door de functie **VerhoogSnelheid()** aan te roepen.
+
+Sla het spel op en test het uit.
+
+
