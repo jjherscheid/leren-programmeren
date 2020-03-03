@@ -1,0 +1,996 @@
+<!DOCTYPE html><html><head>
+	<meta charset="utf-8">
+<style type="text/css">.page-break { page-break-after: always; } .markdown-body { font-size: 10pt; } code { white-space: pre-wrap; font-size: 1em !important; }</style><style type="text/css">/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+/*# sourceURL=C:\Users\jhers\AppData\Roaming\npm\node_modules\md-to-pdf\node_modules\highlight.js\styles\github.css*/</style><style type="text/css">* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=C:\Users\jhers\AppData\Roaming\npm\node_modules\md-to-pdf\markdown.css*/</style></head>
+<body class="markdown-body">
+<p><em><strong>Note:</strong> This repos contains a work instruction for children to learn how to program. It is written in Dutch so the children are able to undertand.</em></p>
+<h1 id="leren-programmeren-voor-kinderen">Leren programmeren voor kinderen</h1>
+<p><img src="Resources/Logo.png" alt="Logo leren programmeren" title="Leren programmeren Logo"></p>
+<h2 id="werkbeschrijving">Werkbeschrijving</h2>
+<p>Als je deze werkbeschrijving uitgeprint hebt maar je vindt het makkelijker om op de computer ook te kunnen gebruiken dan kan je naar de volgende website om via internet te bekijken:<br><a href="https://tinyurl.com/LerenProgrameren">https://tinyurl.com/LerenProgrameren</a><br>of<br><a href="https://github.com/jjherscheid/leren-programmeren">https://github.com/jjherscheid/leren-programmeren</a>  </p>
+<p>In deze document wordt uitgelegd hoe programmeren werkt. Nadat je deze werkinstructie hebt gevolgd zou je zelf een beetje kunnen programmeren.
+Het doel is om kinderen enthousiast te maken voor het vak programmeren.</p>
+<h2 id="woorden-die-je-moet-leren">Woorden die je moet leren</h2>
+<ul>
+<li><strong>Applicatie</strong> is het programma wat je gaat maken.</li>
+<li><strong>Input</strong> is informatie die een applicatie in gaat, dit zijn bijvoorbeeld de letters die je intypt.</li>
+<li><strong>Output</strong> is informatie die een applicatie uit gaat, dit zijn bijvoorbeeld de teksten die de applicatie op het scherm zet.</li>
+</ul>
+<div class="page-break"></div>
+
+<h2 id="wat-gaan-we-leren">Wat gaan we leren?</h2>
+<p>Programmeren is iets wat je in stappen moet leren, daarom is deze werk instructie ook opgedeeld in een aantal stappen. Dit is gedaan met het idee dat je zo van een makkelijke applicatie naar een wat moeilijkere applicatie kan groeien.
+Ik wil je meenemen in de volgende soort applicaties:</p>
+<ol>
+<li><strong>Hallo wereld</strong><br> <em>Dit is altijd een programma waarmee begonnen wordt als je leert programmeren. Het is een simpele applicatie waar je leert dat een applicatie <strong>input</strong> en <strong>output</strong> heeft.</em>    </li>
+<li><strong>Rekenmachine</strong><br> <em>Je gaat een eigen rekenmachine maken. Ook hierbij is het weer belangrijk om te snappen wat <strong>input</strong> en <strong>output</strong> is.</em> </li>
+<li><strong>Blaffende honden</strong><br> <em>Bij het programmeren is het belangrijk om te weten van objecten zijn en kunnen. In deze opdracht ga je hiermee spelen en leer je hier meer over.</em></li>
+<li><strong>Snake</strong><br> <em>Nu ga je het echte werk doen. We gaan een echt spel maken. In het begin zal je veel moeten doen wat niet echt op programmeren lijkt. Maar uiteindelijk zal je zelf moeten programmeren hoe snake werkt.</em>  </li>
+</ol>
+<h2 id="verschillende-programmeertalen">Verschillende programmeertalen</h2>
+<p>Er zijn een heleboel verschillende programmeertalen. Het is eigenlijk haast niet mogelijk om die allemaal te kennen. Een aantal van de belangrijkste programmeertalen zijn:</p>
+<ul>
+<li>Javascript</li>
+<li>HTML/CSS</li>
+<li>Python</li>
+<li>Java</li>
+<li>C#</li>
+<li>Scratch</li>
+</ul>
+<p>Waarom zijn er nu zoveel verschillende programmeertalen vraag je je misschien af. Elke taal is uitgevonden omdat mensen een andere taal minder goed vonden. Maar ook zijn sommige talen geschikt om websites mee te maken en andere juist weer om applicaties mee te maken. Als je eenmaal een programmeertaal goed kent dan is het vaak ook minder lastig om een andere taal te leren.</p>
+<p>Omdat we toch een keuze moeten maken kiezen we in deze werkbeschrijving voor C#. Wil je liever in Python en/of Scratch programmeren dan is misschien het boek "Programmeren voor kinderen" wel een leuk boek om te kopen.</p>
+<h2 id="wat-heb-je-nodig">Wat heb je nodig?</h2>
+<h3 id="computer">Computer</h3>
+<p>Om te leren te programmeren heb je natuurlijk een computer nodig waarop je kan en mag programmeren. Voor het maken van kleine applicaties heb je helemaal niet zo veel nodig. Vraag wel je ouders even of je op de computer mag programmeren en of ze je willen helpen met het instaleren van de programma's die je nodig hebt.</p>
+<h3 id="programma-om-in-te-programmeren">Programma om in te programmeren</h3>
+<ol>
+<li>Visual Studio Community 2019 <em>(Voor de stappen 1 t/m 4)</em><br><em>Hiermee kan je programma's in C# mee maken. Je kan deze downloaden bij Microsoft: <a href="https://visualstudio.microsoft.com/vs/community/">https://visualstudio.microsoft.com/vs/community/</a></em></li>
+<li>Unity (Gratis editie) <em>(Voor stap 5)</em><br><em>Hiermee kan je games programmeren. Je kan deze downloaden bij Unity: <a href="https://store.unity.com/products/unity-personal">https://store.unity.com/products/unity-personal</a></em></li>
+<li>Unity account  <em>(Voor stap 5)</em>
+<em>Maak zelf of laat een ouder iemand een gratis account aanmaken bij <a href="https://unity.com/">https://unity.com/</a></em></li>
+</ol>
+<h3 id="ruimte-op-je-computer">Ruimte op je computer</h3>
+<p>Het is handig om een vaste plek op je computer te hebben waar je de bestanden neer kan zetten. In alle voorbeelden ga ik ervan uit dat er een mapje op de computer is waar je de bestanden neer mag zetten. Als je niet weet hoe het werkt moet je misschien even aan papa of mama vragen of ze op de computer een mapje aanmaken. Voor de voorbeelden is het het makkelijkst als er een mapje is op de volgende plek:</p>
+<ul>
+<li>C:\Leren-Programmeren\</li>
+</ul>
+<p><em><strong>Let op:</strong> Als je een andere plek gebruikt voor je bestanden dan moet je in de voorbeelden die gegeven wordt even zelf in de gaten houden dat je het op de goede plek neerzet.</em></p>
+<h2 id="beginnen-met-programmeren">Beginnen met programmeren</h2>
+<p>Laten we nu maar eens echt beginnen met programmeren. Voor de eerste stappen hebben we alleen 'Visual Studio' nodig. </p>
+<div class="page-break"></div>
+
+<h1 id="applicatie-1-hallo-wereld">Applicatie 1: Hallo Wereld</h1>
+<h2 id="project-aanmaken">Project aanmaken</h2>
+<p>Laten we gaan beginnen met 'Hallo wereld'. Dit is een kleine applicatie die deze tekst laat zien wanneer je het opstart. Ook gaan we nog wat aanpassingen doen zodat de applicatie weet wie jij bent en dat hij jou (of iemand anders) ook gedag kan zeggen.</p>
+<ol>
+<li><p>Start Visual Studio op door in het start-menu van Windows te zoeken naar <em>Visual Studio</em> en dan op Enter te drukken<br><img src="Resources/01-VisualStudio_Startmenu.PNG" alt="Visual Studio in start menu"></p>
+</li>
+<li><p>Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'<br><img src="Resources/02-NieuwProject.PNG" alt="Create new project"></p>
+</li>
+<li><p>In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'<br><em>Let op dat je voor degenen kiest waar ook C# bij staat</em>
+<img src="Resources/03-ConsoleApplicatie.PNG" alt="Create Console app"></p>
+</li>
+<li><p>Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  </p>
+<ul>
+<li>Geef je project de naam 'HalloWereld'.</li>
+<li>En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat <em>C:\Leren-Programmeren</em>, en druk dan op 'Select Folder'.
+<img src="Resources/04-ProjectNaam.PNG" alt="Project naam kiezen">  </li>
+<li>Als alles goed staat zoals op het plaatje, klik dan op 'Create'</li>
+</ul>
+</li>
+</ol>
+<p>Nu is er een project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio dit:<br><img src="Resources/05-VisualStudio.PNG" alt="Leeg project"></p>
+<p>Er zijn hier nu 3 delen die belangrijk zijn om te snappen.</p>
+<ol>
+<li>Het grootste gedeelte is waar de code geschreven wordt. Hier worden bestanden geopend en hier kan je de code echt gaan typen.</li>
+<li>Elk bestand wat je opent wordt als tab getoond boven het grote gedeelte.</li>
+<li>Rechts op je scherm zie je de 'Project boom'. Hierin staan alle bestanden die je aanmaakt voor je project. Voor nu zullen we het nog even simpel houden met maar één bestand.</li>
+</ol>
+<h3 id="wat-heb-je-nou-eigenlijk-gedaan">Wat heb je nou eigenlijk gedaan?</h3>
+<p>Ik hoop dat het allemaal gelukt is en dat je nu ook ziet zoals het plaatje van hierboven. Maar misschien is het handig om even een korte uitleg te geven van wat je net gedaan hebt.</p>
+<p>Als je in C# wilt programmeren dan heb je een 'project' nodig. In dit project zit alle code die je schrijft lekker bij elkaar. Als je dit project dan uiteindelijk opstart (wat we later gaan doen) dan wordt dat de applicatie die we gaan bouwen.</p>
+<p>In dit geval hebben we gekozen voor een 'Console App (.NET Core)' applicatie. Dat betekent dat we een applicatie gaan maken die draait een zwart schermpje met witte letters. En dat het gemaakt is met de nieuwste versie van C#.</p>
+<div class="page-break"></div>
+
+<h2 id="project-openen">Project openen</h2>
+<p>Misschien wil je gelijk door, maar misschien moet je ook alweer stoppen omdat je iets anders moet gaan doen. Daarom laat ik je in dit hoofdstuk even zien hoe je het project weer kan openen als je hem gesloten hebt.</p>
+<ol>
+<li><p>Start Visual Studio op door in het start-menu van Windows te zoeken naar <em>Visual Studio</em> en dan op Enter te drukken<br><img src="Resources/01-VisualStudio_Startmenu.PNG" alt="Visual Studio in start menu"></p>
+</li>
+<li><p>Open je eerder gemaakte project door er op te klikken aan de linkerkant in het start scherm van Visual Studio.<br><img src="Resources/06-ProjectOpenen.png" alt="Open recent project"></p>
+</li>
+<li><p>Als je project er niet meer bij staat, klik dan op de knop 'Open a project or solution' aan de rechterkant van het schermpje.</p>
+</li>
+</ol>
+<div class="page-break"></div>
+
+<h2 id="project-starten">Project starten</h2>
+<p>Zullen we nu eindelijk eens wat gaan doen aan de code... ;-).
+Kom laten we gaan beginnen. </p>
+<p>Als het goed is heb je nu het project open in Visual Studio en kijk je naar het bestand 'Program.cs'. Dit is het opstart bestand voor onze applicatie en de code ziet er zo uit:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">HalloWereld</span>
+{
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Hello World!"</span>);
+        }
+    }
+}</code></pre><p>Laten we eerst eens gaan kijken wat het doet en dan wordt het daarna stap voor stap uitgelegd.<br>Als je op 'F5' drukt (een van de knoppen boven je toetsenbord) dan gaat Visual Studio de code die geschreven is bouwen en daaruit komt dan een applicatie. Dus druk nu maar eens op 'F5'.</p>
+<p>Als het goed is zie je nu een zwart venster met daarin de tekst 'Hello world!' wat engels is voor 'Hallo wereld!'.<br><em>De rest van de tekst in het zwarte scherm moet je maar even niet op letten</em></p>
+<p><img src="Resources/07-HalloWereld.PNG" alt="Hello world"></p>
+<p>Druk op een toets om het venster weer te sluiten.</p>
+<p><strong>Gefeliciteerd!!</strong> :tada: Je hebt je eerste applicatie gemaakt.</p>
+<p>Maar... we gaan nu natuurlijk uitleggen wat het is en nog wat kleine aanpassingen maken ;-)</p>
+<h3 id="uitleg">Uitleg</h3>
+<p>In dit gedeelte probeer ik stukje voor stukje uit te leggen wat er in de code staat geschreven.</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">using</span> System;</code></pre><p>Het eerst wat er in de tekst staat zijn 'using' stukjes. Dit zal je nog veel meer gaan zien. Dit noem je verwijzingen naar al eerder gemaakte code (bibliotheken).<br>In dit geval wordt er aangegeven dat wij dingen willen gebruiken uit de 'System' bibliotheek, en dit hebben we nodig voor de andere code.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">namespace</span> <span class="hljs-title">HalloWereld</span>
+{
+    ...
+}</code></pre><p>Hiermee maken we zelf een stukje bibliotheek wat iemand anders weer zou kunnen gebruiken. We zeggen hiermee: "Alles wat tussen de '{' en de '}' in staat dat hoort allemaal bij 'HalloWereld'.</p>
+<p><em>Als iemand een stukje van onze code zou willen gebruiken in een andere applicatie dan zou dat kunnen door <code>using HalloWereld</code> boven zijn code te zetten.</em></p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span> {
+    ...
+}</code></pre><p>In C# is alle code opgedeeld in stukjes die wat code kunnen uitvoeren. Die stukjes noem je een <code>class</code>. Eigenlijk kan je dit zien als een bouwblokje van LEGO. En al die bouwblokjes bij elkaar maken één applicatie.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+{
+    ...
+}</code></pre><p>Dit stukje noem je een functie. En een functie bevat code die wordt uitgevoerd wanneer het wordt aangeroepen. Deze functie is wat speciaal omdat het <code>Main(...)</code> heeft. 'Main' mag maar een keer voorkomen in je applicatie is die wordt aangeroepen wanneer je de applicatie start.
+<em>(Later wordt er meer uitgelegd over functies)</em></p>
+<pre><code class="hljs cs">Console.WriteLine(<span class="hljs-string">"Hello World!"</span>);</code></pre><p>En dan het (voor nu) belangrijkste stukje code van de applicatie. Deze code staat in de 'Main' functie en wordt uitgevoerd. Maar wat doet het nu precies.</p>
+<p><code>Console</code> is het zwarte scherm wat opstart wanneer je 'F5' klikt. En met <code>WriteLine</code> vertel je de applicatie dat je een regel wilt schrijven op het zwarte scherm. <em>('WriteLine' is engels voor 'SchrijfRegel')</em>
+De tekst die tussen " staat is de tekst.  </p>
+<h2 id="project-aanpassen">Project aanpassen</h2>
+<h3 id="1-nederlands-maken">1. Nederlands maken</h3>
+<p>Nu wordt het tijd om de code eens aan te passen. </p>
+<ul>
+<li>Pas de tekst aan naar een Nederlandse tekst.<pre><code class="hljs cs">  Console.WriteLine(<span class="hljs-string">"Hallo wereld!"</span>);</code></pre></li>
+<li>Druk nu op F5.<br><em>Als het goed is krijg je weer eenzelfde scherm als bij de vorige keer, maar nu met Nederlandse tekst. Gaaf he :D.</em></li>
+</ul>
+<h3 id="2-input-en-output">2. Input en output</h3>
+<p>Het schrijven van een applicatie naar het zwarte venster noemen we 'output'. Dat is een engels wordt voor 'er uit komen'. Maar het zou ook leuk zijn als we zelf (tijdens dat de applicatie aanstaat) wat erin kunnen schrijven. Dat noemen we 'input'.</p>
+<ul>
+<li>Voeg de volgende regels toe onder de 'Hallo wereld!' regel code. Let op dat bij de 3e regel er een $ in de tekst staat. Die is nodig anders werkt het niet om 'naam' goed te tonen.<pre><code class="hljs cs">  Console.WriteLine(<span class="hljs-string">"Wie ben jij:"</span>);
+  <span class="hljs-keyword">var</span> naam = Console.ReadLine();
+  Console.WriteLine(<span class="hljs-string">$"Hallo <span class="hljs-subst">{naam}</span>"</span>);</code></pre></li>
+<li>Druk op F5<br><em>Nu zie je weer het zwarte scherm maar wordt er gevraagd om je naam in te toetsen.</em><br><img src="Resources/08-Input.PNG" alt="Wie ben jij"></li>
+<li>Vul je eigen naam in en druk op 'Enter'</li>
+<li>In het scherm staat nu 'Hallo' met jou ingevulde naam erachter.</li>
+</ul>
+<p>De hele code ziet er als het goed is nu zo uit:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">HalloWereld</span>
+{
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Hallo wereld!"</span>);
+
+            Console.WriteLine(<span class="hljs-string">"Wie ben jij:"</span>);
+            <span class="hljs-keyword">var</span> naam = Console.ReadLine();
+            Console.WriteLine(<span class="hljs-string">$"Hallo <span class="hljs-subst">{naam}</span>"</span>);
+        }
+    }
+}</code></pre><p>In de code zie je drie keer <code>Console.WriteLine(...)</code> staan. Dit is dus de 'Output'. Ook zie je één keer <code>Console.ReadLine()</code> staan. Met deze regel wacht de applicatie totdat je wat hebt ingetypt en op 'Enter' hebt gedrukt. Dus is dus de 'Input'.</p>
+<p>Andere manieren om te schrijven of de lezen zijn nog:</p>
+<ul>
+<li><code>Console.Write(...)</code> die gebruikt kan worden om iets op het scherm te zetten zonder naar een nieuwe regel te gaan.</li>
+<li><code>Console.ReadKey(...)</code> die gebruikt kan worden om iets te lezen zonder dat de 'Enter' toets ingedrukt wordt.</li>
+</ul>
+<h3 id="3-problemen-opsporen">3. Problemen opsporen</h3>
+<p>Het kan wel eens voorkomen dat je programma niet goed doet wat je wilt dat hij doet. Dan is het handig om stap voor stap te kunnen zien wat er gebeurt. Dat noemen we in programmeertaal 'Debuggen'.  </p>
+<h4 id="breakpoint">Breakpoint</h4>
+<p>Om stap voor stap te kunnen mee kijken is het nodig om een 'breakpoint' aan te maken. Hiermee geef je aan waar de applicatie moet stoppen en vanaf daar kan je dan mee kijken. In onderstaande plaatje is een 'breakpoint' geplaatst op regel 12. Dit kan je doen door met je muis te klikken op de balk voor het regelnummer (waar in het plaatje het rode bolletje staat).<br><img src="Resources/09-Breakpoint.PNG" alt="Breakpoint"></p>
+<h4 id="debuggen">Debuggen</h4>
+<ul>
+<li><p>Druk nu op F5. Het programma start weer en vraagt naar je naam. Maar voordat je wat kan invullen wordt in Visual Studio het volgende getoond:<br><img src="Resources/10-Breakpoint-Hit.PNG" alt="BreakpointHit">.</p>
+</li>
+<li><p>Het programma staat nu eigenlijk gewoon stil en doet niks meer. Maar als je nu (in Visual Studio) op 'F10' klikt dan vertel je daarmee aan Visual Studio dat je een regel verder wilt.<br>Er lijkt nu niks te gebeuren maar als je nu het venster van de applicatie weer opent (staat onder in de balk ergens) dan kan je gewoon weer verder.  </p>
+</li>
+<li><p>Vul nu je naam weer in en druk op Enter.</p>
+</li>
+<li><p>Nu wordt in Visual Studio de volgende lijn geel gemaakt en wordt de applicatie weer gestopt.<br><img src="Resources/11-Breakpoint-Hit-2.PNG" alt="Breakpoint Hit 2"></p>
+</li>
+<li><p>Ga met je muispijltje over de tekst <code>{naam}</code>.
+Je kan nu de waarde zien van wat er in 'naam' zit.<br><img src="Resources/12-Breakpoint-Waardes.PNG" alt="BreakpointValues"></p>
+</li>
+<li><p>Druk weer op F5 en de applicatie gaat gewoon weer verder.</p>
+</li>
+</ul>
+<p>Nu heb je gezien dat je met 'breakpoints' je code stil kan zetten op sommige momenten, en dat je dan kan zien welke waardes er op dat moment in zitten.</p>
+<h3 id="4-zelf-uitbreiden">4. Zelf uitbreiden</h3>
+<p>Nu heb je voor het eerst zelf een stukje C# code geschreven. Vind je het al leuk? Ik hoop het wel ;-).<br>Het is nog leuker om zelf wat meer er mee te doen. Daarom de volgende (kleine) opdracht. We gaan daarom niet alleen vragen naar de naam van de persoon die onze applicatie gebruikt maar we willen nog wat meer informatie weten. Dus maak het volgende:</p>
+<ol>
+<li>Vraag ook naar de leeftijd en laat het daarna zien</li>
+<li>Vraag waar iemand woont en laat het daarna zien.</li>
+</ol>
+<p>Is het gelukt? Superleuk! Gefeliciteerd :tada:</p>
+<h3 id="complete-code">Complete code</h3>
+<p>Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">HalloWereld</span>
+{
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Hallo wereld!"</span>);
+
+            Console.WriteLine(<span class="hljs-string">"Wie ben jij:"</span>);
+            <span class="hljs-keyword">var</span> naam = Console.ReadLine();
+            Console.WriteLine(<span class="hljs-string">$"Hallo <span class="hljs-subst">{naam}</span>"</span>);
+
+            Console.WriteLine(<span class="hljs-string">"Hoe oud ben je:"</span>);
+            <span class="hljs-keyword">var</span> leeftijd = Console.ReadLine();
+            Console.WriteLine(<span class="hljs-string">$"Je ben <span class="hljs-subst">{leeftijd}</span> jaar oud"</span>);
+
+            Console.WriteLine(<span class="hljs-string">"Waar woon je:"</span>);
+            <span class="hljs-keyword">var</span> plaats = Console.ReadLine();
+            Console.WriteLine(<span class="hljs-string">$"Je woont in <span class="hljs-subst">{plaats}</span>"</span>);
+        }
+    }
+}</code></pre><div class="page-break"></div>
+
+<h1 id="applicatie-2-rekenmachine">Applicatie 2: Rekenmachine</h1>
+<p>Laten we nu proberen een iets lastigere applicatie te maken. De basisdingen heb je nu geleerd bij 'Hallo wereld'. Maar ik zal in stappen uitleggen wat je moet doen, maar het kan soms zijn dat er iets minder plaatjes staan.</p>
+<p><em>Als 'Hallo wereld!' nog open staat, dan mag je die sluiten. We gaan namelijk een nieuwe applicatie maken.</em></p>
+<h2 id="project-aanmaken-1">Project aanmaken</h2>
+<p>Laten we gaan beginnen met 'Rekenmachine'. Dit is een kleine applicatie waarmee je simpele berekeningen moet kunnen gaan doen.</p>
+<ol>
+<li><p>Start Visual Studio op door in het start-menu van Windows te zoeken naar <em>Visual Studio</em> en dan op Enter te drukken<br><img src="Resources/01-VisualStudio_Startmenu.PNG" alt="Visual Studio in start menu"></p>
+</li>
+<li><p>Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'<br><img src="Resources/02-NieuwProject.PNG" alt="Create new project"></p>
+</li>
+<li><p>In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'<br><em>Let op dat je voor degenen kiest waar ook C# bij staat</em>
+<img src="Resources/03-ConsoleApplicatie.PNG" alt="Create Console app"></p>
+</li>
+<li><p>Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  </p>
+<ul>
+<li>Geef je project de naam 'Rekenmachine'.</li>
+<li>En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat <em>C:\Leren-Programmeren</em>. Als je de map zoekt dat ziet de map er zo uit als op het plaatje, en kies dan voor 'Select Folder'.
+<img src="Resources/13-BestaandeMapKiezen.PNG" alt="Select Existing Folder"><br><img src="Resources/14-Rekenmachine.PNG" alt="Rekenmachine Create"></li>
+<li>Als alles goed staat zoals op het plaatje hierboven, klik dan op 'Create'</li>
+</ul>
+</li>
+</ol>
+<p>Nu is er weer een nieuw project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio weer hetzelfde als bij de eerste applicatie. En staat er weer:</p>
+<pre><code class="hljs cs">Console.WriteLine(<span class="hljs-string">"Hello world!"</span>);</code></pre><p>Klopt dit? Mooi zo, dan ben je goed bezig!</p>
+<div class="page-break"></div>
+
+<h2 id="rekenmachine-maken">Rekenmachine maken</h2>
+<p>Laten nu dan beginnen met het bedenken wat een rekenmachine moet doen en wat voor sommen we willen dat hij kan uitrekenen:</p>
+<ul>
+<li>De rekenmachine moet getalen kunnen optellen en aftrekken.</li>
+</ul>
+<p>Oh.. is dat alles? Dat klinkt eigenlijk helemaal niet zo moeilijk...</p>
+<p>Nou.. dan gaan we gewoon beginnen, vind je ook niet ;-).</p>
+<ol>
+<li><p>Verander in regel 9 de tekst 'Hello World!' in 'Dit is een rekenmachine'</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">"Dit is een rekenmachine"</span>);</code></pre></li>
+<li><p>Nu gaan we vragen aan de gebruiker van de rekenmachine wat het eerste getal moet zijn wat gebruikt worden in de berekening. Weet je nog hoe je iets moest vragen aan iemand? ... Juist <code>Console.ReadLine()</code>. Zet dus het volgende neer:</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">"Wat is het eerste getal?"</span>);
+ <span class="hljs-keyword">var</span> eersteGetal = Console.ReadLine();</code></pre><p> In de stap hierboven lees de applicatie wat de gebruiker in typt en zet dat weer in de variabele 'eersteGetal'. Misschien denk je nu 'variabele', wat is dat nou weer. In de eerste opdracht heb je ze ook al gebruikt. Een variabele is een stukje geheugen in de computer waar je informatie in kan zetten en uit kan halen. Hier is de variabele 'eersteGetal'. De computer lees namelijk wat de gebruiker in typt en zet dat daarna in het stukje geheugen dan 'eersteGetal' heet. Later ga je dit er weer uit halen om mee te berekenen.</p>
+</li>
+<li><p>Ok, we hebben het eerste getal. Dus nu willen we weten of de gebruiker wil optellen of aftrekken.</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">"Wil je optellen of aftrekken (+ of -)"</span>);
+ <span class="hljs-keyword">var</span> plusOfMin = Console.ReadLine();</code></pre></li>
+<li><p>Nu gaan we ook het laatste getal vragen. Zou je al weten hoe dat moet?</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">"Wat is het tweede getal?"</span>);
+ <span class="hljs-keyword">var</span> tweedeGetal = Console.ReadLine();</code></pre><p> We hebben nu alle informatie om de som op te lossen in variabelen gestopt. Weet je nog wat de variabelen zijn? ... Juist...'eersteGetal', 'plusOfMin' en 'tweedeGetal'.</p>
+</li>
+<li><p>Laten we eerst de som een op het scherm zetten:</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">$"De som: <span class="hljs-subst">{eersteGetal}</span><span class="hljs-subst">{plusOfMin}</span><span class="hljs-subst">{tweedeGetal}</span>= "</span>);</code></pre><p> Nu weten we dus dat de goede dingen in de variabelen staan. Alleen hebben we nog geen uitkomst. Om dat te maken is het handig om gebruik te maken van een eigen gemaakte functie. Dat moeten we dus eerst even uitleggen.</p>
+<h3 id="functies">Functies</h3>
+<p> Een functie is een stukje herbruikbare code. Dus ander gezegd code die je op een andere plek nog een keer zou kunnen gebruiken. Een functie doet vaak iets waarvan het handiger is om het even los te programmeren.<br> In de afgelopen opdrachten heb je al gebruik gemaakt van functies, misschien wel zonder dat je het doorhad. Namelijk:</p>
+<pre><code class="hljs cs"> Console.WriteLine(...)</code></pre><p> Hierbij is <code>WriteLine</code> de functie die aangeroepen is. Je ziet misschien ook gelijk dat het handig is dat er een functie is, want anders hadden we elke keer waar we <code>WriteLine</code> hebben geschreven zelf code moeten schrijven om tekst op het scherm te krijgen.</p>
+<h4 id="parameters">Parameters</h4>
+<p> Een functie <strong>kan</strong> parameters hebben. Dat zijn eigenlijk de gegevens die je mee stuurt wanneer je de functie aanroept. In het geval van <code>WriteLine</code> is het de tekst die je op het scherm wilt zien. Een functie kan meerdere parameters hebben, maar het hoeft niet.</p>
+<h4 id="return-waarde-vertaald-teruggeef-waarde">Return waarde (vertaald: teruggeef waarde)</h4>
+<p> Een functie <strong>kan</strong> een return waarde hebben. Dat betekent dat wanneer de functie wordt aangeroepen dat er informatie terugkomt waar je weer wat mee kan doen. Ook die heb je al gebruikt. Kijk maar eens naar de plekken waar je <code>Console.ReadLine()</code> hebt gebruikt. Deze functie heeft zoals je ziet <em>geen</em> parameters, maar elke keer wanneer we hem aanroepen dan zetten we er een variabele voor. Bijv:  </p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">var</span> tweedeGetal = Console.ReadLine();</code></pre><p> In dit geval komt er dus uit de functie een return waarde waarin staat wat de gebruiker heeft ingetypt op het scherm. Wij zetten die waarde die terugkomt uit de functie gelijk in een variabele <em>tweedeGetal</em> (weet je nog wat dat is? Juist.. en stukje computergeheugen).</p>
+</li>
+<li><p>We gaan een functie maken! Zet daarom de functie <code>Bereken</code> tekst onder de functie <code>Main()</code>. De functie <code>Bereken</code> ziet er zo uit:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+ {
+     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ }</code></pre><p> Als je hem op de goed plek zet dan zie je bestand er nu ongeveer zo uit zoals hieronder.</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">using</span> System;
+
+ <span class="hljs-keyword">namespace</span> <span class="hljs-title">Rekenmachine</span>
+ {
+     <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+     {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+         {
+             <span class="hljs-comment">// Hier staat bij jou een heleboel code all</span>
+             <span class="hljs-comment">// ....</span>
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+         {
+             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+         }
+     }
+ }</code></pre><p> Maar nu is natuurlijk de vraag.. Wat heb je nou neer gezet. Er zitten weer allemaal nieuwe dingen die je nog niet eerder gezien hebt. Hieronder leg ik uit wat het betekent.</p>
+<p> Weet je nog dat we het hebben gehad over <em>Parameters</em>? Ja.. Goed zo. Nou in de <code>Bereken</code> functie zitten 3 parameters: <em>getal1</em>, <em>getal2</em> en <em>plusOfMin</em>. Ook heeft de functie een <em>Return waarde</em>. Zie jij hem al?...
+ Goed zo.. De Return waarde van deze functie is nu '0'. Dat gaan we straks natuurlijk wijzigen want een Rekenmachine die alleen maar 0 teruggeeft is niet heel handig ;-).</p>
+<p> Maar wat is dan <em>static</em>, <em>int</em> en <em>string</em>. Die zie je ook vast staan in de functie. <em>static</em> laten we even zitten want dat is voor nu niet belangrijk. De <em>int</em> en <em>string</em> zijn wel belangrijk. Dit noem je <strong>types</strong>, je geeft daarmee aan wat voor soort geheugen stukje de computer moet gebruiken voor je parameter. 
+ Er zijn een aantal belangrijks <strong>types</strong> die handig zijn om te onthouden:</p>
+<ul>
+<li><p><strong>int</strong> = een stukje geheugen waarin je een getal kan zetten. Dit kan alleen een getal zijn wat geen cijfers achter de komma heeft.</p>
+</li>
+<li><p><strong>double</strong> = een stukje geheugen waarin je ook een getal kan zetten. Deze heeft juist wel cijfers achter de komma.</p>
+</li>
+<li><p><strong>string</strong> = een stukje geheugen waarin je tekst kan neer zetten. Strings worden altijd in code geschreven met dubbele aanhalingstekens, dat zijn deze ". Dit heb je eerder gezien in bijvoorbeeld de <code>Console.WriteLine("Wat is het eerste getal")</code>. Als je voor de eerste " een $ zet dan kan je variabelen (weet je nog wat het is?) gebruiken in je tekst en dan worden die ook automatisch tekst zoals in <code>$"Hallo {naam}"</code>. De variabele <em>naam</em> wordt dan in de tekst gebruikt.</p>
+</li>
+<li><p><strong>bool</strong> = een stukje geheugen waarin je <em>waar</em> of <em>niet waar</em> kan zetten. Dit is alleen engels dus dat is het <em>true</em> (waar) en <em>false</em> (niet waar).</p>
+<p>Als we dan nu weer kijken naar de functie die we aan het maken zijn dan zie je dat er dus 2x een nummer en 1x een tekst als parameter wordt meegegeven. Zie je dat? Ja? Goed zo... Maar als je het toch niet ziet hier een beetje extra uitleg.<br><em>getal1</em> en <em>getal2</em> zijn allebei van het type <em>int</em>, dit zijn dus nummers. <em>plusOfMin</em> is van het type <em>string</em>, dit is dus een stukje tekst waarin we mee gaan geven of de rekenmachine '+' of '-' moet gaan doen.</p>
+<p>Nu is je misschien al opgevallen dat er nog een keertje <em>int</em> staat, maar dan voor de <code>Bereken</code> functie. Dit zorgt ervoor dat de computer snapt dat je ook een nummer terug wilt geven als Return waarde.</p>
+<p>Nou laten we nu maar eens echt beginnen met het vullen van de functie, vind je ook niet :D.</p>
+</li>
+</ul>
+</li>
+<li><p>We gaan nu de functie vullen met echte code! Jippie :tada:. We gaan eerst zorgen dat de functie 2 getallen kan optellen.</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+ {
+     <span class="hljs-keyword">return</span> getal1 + getal2;
+ }</code></pre><p> Zo.. dat was niet zo moeilijk toch? :D. Je hebt nu dus je eerste functie gemaakt die ook echt wat doet. Topper.<br> Maar we wilde natuurlijk een functie maken die optelt of aftrekt. Dus we moeten ook kijken naar wat er in <em>plusOfMin</em> staat. Dat kunnen we doen met een <em>if</em>. 'If' is engels voor 'Als' en ziet er zo uit:</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">if</span> (getal1 == <span class="hljs-number">10</span>) {
+     <span class="hljs-comment">// Hier kan je wat neer zetten...</span>
+ }</code></pre><p> Hierboven staat eigenlijk hetzelfde als:</p>
+<pre><code class="hljs plaintext"> Als getal1 gelijk is aan 10 dan</code></pre><p> En alles wat tussen de twee haakjes { } staat wordt dan gedaan als de vraag waar is.
+ Dus achter het woordje <em>if</em> staat altijd iets tussen twee 'gewone' haakjes ( ). Wat daartussen staat wordt bekeken door de computer en als het 'waar' is dan gaat de computer het stukje code tussen de twee speciale haakjes { } uitvoeren. Als het 'niet waar' is dan wordt dat stukje code overgeslagen.</p>
+<p> Wat zou het betekenen als er zou staan:</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">if</span> (getal1 == getal2) { 
+
+ }</code></pre><p> Juist... hier wordt gekeken of getal1 en getal2 hetzelfde zijn. Het kan ook andersom dan zet je niet twee keer een = neer maar zet je een uitroepteken neer met een =, dus: !=. En zo heb je ook nog 'groter dan' (&gt;) en 'kleiner dan' (&lt;)</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">if</span> (getal1 != getal2) {
+     <span class="hljs-comment">// Dit wordt door de computer uitgevoerd als de getallen niet hetzelfde zijn.</span>
+ }
+
+ <span class="hljs-keyword">if</span> (getal1 &lt; getal2) {
+     <span class="hljs-comment">// Getal1 is kleiner dan getal2</span>
+ }
+
+ <span class="hljs-keyword">if</span> (getal1 &gt; getal2) {
+     <span class="hljs-comment">// Getal1 is groter dan getal2</span>
+ }</code></pre><p> Ok nu eindelijk weer naar de echte code. Zorg ervoor dat de functie er nu zo uit ziet:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+ {
+     <span class="hljs-keyword">if</span>(plusOfMin == <span class="hljs-string">"+"</span>) {
+         <span class="hljs-keyword">return</span> getal1 + getal2;
+     }
+
+     <span class="hljs-keyword">if</span>(plusOfMin == <span class="hljs-string">"-"</span>) {
+         <span class="hljs-keyword">return</span> getal1 - getal2;
+     }
+
+     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ }</code></pre><p> Heb je een beetje een idee wat het doet? Als het goed is zou je het nu een beetje moeten kunnen lezen. Maar om je nog steeds een beetje te helpen hieronder de uitleg:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+ {
+     <span class="hljs-comment">// Eerst wordt gekeken of in de variabele 'plusOfMin' de tekst "+" staat. </span>
+     <span class="hljs-comment">// Als dat zo is dan tellen we getal1 en getal2 bij elkaar op en geven dat terug</span>
+     <span class="hljs-comment">// met de 'return' (engels voor 'teruggeven').</span>
+     <span class="hljs-keyword">if</span>(plusOfMin == <span class="hljs-string">"+"</span>) {
+         <span class="hljs-keyword">return</span> getal1 + getal2;
+     }
+
+     <span class="hljs-comment">// Als in de variabele 'plusOfMin' niet de tekst "+" staat dan gaat de computer verder</span>
+     <span class="hljs-comment">// en kijkt hier of er "-" in staat. Als dat zo is dan trekken we getal2 van getal1 af </span>
+     <span class="hljs-comment">// en geven dat terug met de 'return'</span>
+     <span class="hljs-keyword">if</span>(plusOfMin == <span class="hljs-string">"-"</span>) {
+         <span class="hljs-keyword">return</span> getal1 - getal2;
+     }
+
+     <span class="hljs-comment">// Als in de variabele 'plusOfMin' helemaal niet "+" of "-" in stond, maar heel iets</span>
+     <span class="hljs-comment">// anders dan geven we in dit geval 0 terug</span>
+     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ }</code></pre></li>
+<li><p>Nu gaan we de functie gebruiken vanuit de 'Main' functie. Roep daarom de functie aan voordat we de variabelen allemaal in de <code>Console.WriteLine(..)</code> gebruiken.</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+ {
+     ...
+
+     <span class="hljs-keyword">var</span> uitkomst = Bereken(eersteGetal, tweedeGetal, plusOfMin);
+
+     Console.WriteLine(<span class="hljs-string">$"De som: <span class="hljs-subst">{eersteGetal}</span><span class="hljs-subst">{plusOfMin}</span><span class="hljs-subst">{tweedeGetal}</span>= "</span>);
+ }</code></pre><p> Je zal nu zien dat er kringeltjes onder <em>eersteGetal</em> en <em>tweedeGetal</em> komen. Waarom is dat nu weer? Nou dat komt door het volgende.</p>
+<p> Wanneer de computer aan de gebruiker vraagt wat het eerste of tweede getal is dan weet de computer niet dat het om een nummer gaat. Hij denk daarom automatisch dat het om een stukje tekst gaat. Om de computer te laten weten dat we een nummer bedoelen moeten we de <em>string</em> (tekst) omzetten naar <em>int</em> met een <code>Convert</code> functie (convert is engels voor omzetten).</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">int</span> nummer100 = Convert.ToInt32(<span class="hljs-string">"100"</span>);</code></pre><p> In onze functie kunnen we het volgende doen:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+ {
+     ...
+
+     <span class="hljs-keyword">var</span> uitkomst = Bereken(Convert.ToInt32(eersteGetal), Convert.ToInt32(tweedeGetal), plusOfMin);
+
+     Console.WriteLine(<span class="hljs-string">$"De som: <span class="hljs-subst">{eersteGetal}</span><span class="hljs-subst">{plusOfMin}</span><span class="hljs-subst">{tweedeGetal}</span>= "</span>);
+ }</code></pre><p> Nu worden dus eerste de teksten die de computer in geheugen heeft omgezet in nummers voordat de functie er wat mee gaat doen.</p>
+</li>
+<li><p>En dan nu de laatste stap, dan is de rekenmachine klaar. We moeten de uitkomst van de som nog aan de gebruiker laten zien. Pas daarom de laatste <code>Console.WriteLine(...)</code> aan.</p>
+<pre><code class="hljs cs"> Console.WriteLine(<span class="hljs-string">$"De som: <span class="hljs-subst">{eersteGetal}</span><span class="hljs-subst">{plusOfMin}</span><span class="hljs-subst">{tweedeGetal}</span>=<span class="hljs-subst">{uitkomst}</span>"</span>);</code></pre></li>
+<li><p>Druk nu maar op 'F5' en dan gaat de computer de applicatie weer bouwen en opstarten. Nu kan je testen of je applicatie werkt. </p>
+<p>Werkt je applicatie? Ja :D. Gefeliciteerd :tada:.</p>
+<p><em>Als je zin of tijd hebt kan je altijd proberen om de _keer</em> (*) en de delen-door (/) ook nog te maken._</p>
+</li>
+</ol>
+<p><em><strong>Let op</strong>: Deze applicatie is heel 'simpel' gemaakt. En daarom is er niet gekeken of wat je intypt ook wel echt klopt. Als je dus tekst invult in plaats van een getal zal er daarom ook een fout komen en doet je applicatie het niet meer. Je kan dan altijd op de stop-knop drukken in Visual Studio. Voor nu is dat niet belangrijk dus gaan we door met andere dingen.</em><br><img src="Resources/15-Stop.PNG" alt="Stopknop"></p>
+<div class="page-break"></div>
+
+<h3 id="complete-code-1">Complete code</h3>
+<p>Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. </p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Rekenmachine</span>
+{
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Dit is een rekenmachine"</span>);
+
+            Console.WriteLine(<span class="hljs-string">"Wat is het eerste getal?"</span>);
+            <span class="hljs-keyword">var</span> eersteGetal = Console.ReadLine();
+
+            Console.WriteLine(<span class="hljs-string">"Wil je optellen of aftrekken (+ of -)"</span>);
+            <span class="hljs-keyword">var</span> plusOfMin = Console.ReadLine();
+
+            Console.WriteLine(<span class="hljs-string">"Wat is het tweede getal?"</span>);
+            <span class="hljs-keyword">var</span> tweedeGetal = Console.ReadLine();
+
+            <span class="hljs-keyword">var</span> uitkomst = Bereken(Convert.ToInt32(eersteGetal), Convert.ToInt32(tweedeGetal), plusOfMin);
+
+            Console.WriteLine(<span class="hljs-string">$"De som: <span class="hljs-subst">{eersteGetal}</span><span class="hljs-subst">{plusOfMin}</span><span class="hljs-subst">{tweedeGetal}</span>=<span class="hljs-subst">{uitkomst}</span>"</span>);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Bereken</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> getal1, <span class="hljs-keyword">int</span> getal2, <span class="hljs-keyword">string</span> plusOfMin</span>)</span>
+        {
+            <span class="hljs-keyword">if</span> (plusOfMin == <span class="hljs-string">"+"</span>)
+            {
+                <span class="hljs-keyword">return</span> getal1 + getal2;
+            }
+
+            <span class="hljs-keyword">if</span> (plusOfMin == <span class="hljs-string">"-"</span>)
+            {
+                <span class="hljs-keyword">return</span> getal1 - getal2;
+            }
+
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        }
+    }
+}</code></pre><h1 id="tot-nu-toe">Tot nu toe...</h1>
+<p>Je weet inmiddels aardig wat van programmeren af. Je weet hoe je een project kan maken en starten en hoe je de gebruiken van je applicatie kan vragen om dingen in te typen. Je kan met die informatie ook weer leuke dingen doen zoals een rekenmachine maken. Maar misschien heb je zelf nog wel veel meer ideeën wat je kan maken.</p>
+<h2 id="geleerd-met-applicatie-1--2">Geleerd met applicatie 1 &amp; 2</h2>
+<p>Het is denk ik handig om even een kleine samenvatting te maken van wat we tot nu toe geleerd hebben. Daarom hieronder even een opsomming:</p>
+<ul>
+<li><strong>Applicatie</strong> is het programma dat je maakt</li>
+<li><strong>Input</strong> is wat je aan de gebruiker vraagt en wat je applicatie kan gebruiken</li>
+<li><strong>Output</strong> is wat je aan de gebruiker laat zien</li>
+<li><strong>usings</strong> heb je nodig om stukjes al eerder gemaakte code te kunnen gebruiken (bibliotheek)</li>
+<li><strong>namespace</strong> heb je nodig om zelf een bibliotheek te maken</li>
+<li><strong>class</strong> is een stuk code wat zelf wat kan doen en wat functies kan hebben</li>
+<li><strong>functie</strong> is een stukje code wat je kan hergebruiken op verschillende plekken</li>
+<li><strong>variabele</strong> is iets wat je wilt laten onthouden door de computer in het geheugen</li>
+<li><strong>types</strong> zijn de verschillende soorten geheugenstukjes die je aan de computer kan vragen</li>
+<li><strong>parameters</strong> zijn de inputs van een functie</li>
+<li><strong>return waarde</strong> is wat de functie teruggeeft</li>
+<li><strong>if</strong> kan je gebruiken om keuzes te maken</li>
+</ul>
+<p>Al met al een hele hoop dingen die je in deze eerste 2 applicaties hebt geleerd. Hopelijk vind je het nog steeds interessant. Zo ja, laten we dan lekker door gaan ;-)</p>
+<div class="page-break"></div>
+
+<h1 id="applicatie-3-blaffende-honden">Applicatie 3: Blaffende honden</h1>
+<p>Je hebt nu 2 leuke applicaties gemaakt, maar nu gaan we het iets moeilijker maken. De dingen die je in dit hoofdstuk leert zijn belangrijk om te kunnen begrijpen hoe je goed kan programmeren. Ook is het handig om dit hoofdstuk goed te begrijpen als je straks Snake wilt maken.</p>
+<h2 id="project-aanmaken-2">Project aanmaken</h2>
+<p>Laten we weer beginnen met een nieuw project 'Honden'. Dit is een applicatie waarmee je gaat leren om <em>classen</em> te maken.</p>
+<ol>
+<li>Start Visual Studio opnieuw op</li>
+<li>Maak een nieuwe applicatie aan door te kiezen voor 'Create a new Project'  </li>
+<li>In het venster wat er nu staat kies je voor 'Console App (.NET Core)' en klik je op de knop 'Next'</li>
+<li>Nu moet je de naam in vullen voor je project en ook waar je het project wilt opslaan.  <ul>
+<li>Geef je project de naam 'Honden'.</li>
+<li>En kies voor de juiste locatie door op het knopje te drukken en dan de map op te zoeken waar de bestanden moeten komen te staan. In ons geval is dat <em>C:\Leren-Programmeren</em>. Als je de map zoekt dat ziet de map er zo uit als op het plaatje, en kies dan voor 'Select Folder'.</li>
+<li>Klik weer op 'Create' als alles goed staat</li>
+</ul>
+</li>
+</ol>
+<p>Nu is er weer een nieuw project aangemaakt waarin we kunnen gaan werken. Als het goed is zie je in Visual Studio weer hetzelfde als bij de eerste twee applicaties. En staat er weer:</p>
+<pre><code class="hljs cs">Console.WriteLine(<span class="hljs-string">"Hello world!"</span>);</code></pre><p>Klopt dit? Mooi zo, dan ben je goed bezig!</p>
+<h2 id="uitleg-1">Uitleg</h2>
+<p>Wat gaan we doen? We gaan geen functies maken, maar we gaan meerdere <em>classen</em> maken. Je hebt al eerder een <em>class</em> gezien namelijk de volgende:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    ...
+}</code></pre><p>Een <em>class</em> is een ding wat zelf iets kan doen. Nu klinkt dat een beetje lastig maar hopelijk wordt het straks duidelijker. Dus vooral doorlezen :D. Ik ga je proberen uit te leggen wat het is door een verzonnen verhaaltje:</p>
+<blockquote>
+<p><em>In een huis in een dorpje niet ver hier vandaan is niemand thuis. Nou ja niemand... Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond. Elke keer wanneer er iemand aanbelt dan gaan de honden allebei blaffen.</em></p>
+</blockquote>
+<p>Heb je enig idee hoe dat zal klinken als er iemand aanbelt?</p>
+<blockquote>
+<p><em>WOEF, kef kef, WOEF, kef kef, WOEF, kef kef ....</em></p>
+</blockquote>
+<p>Zoiets? Voor nu is het prima zo. Maar... wat moet je nou met dit verhaal? Het idee is dat we dit verhaal gaan maken in code en dat we daarvoor <em>classen</em> gaan gebruiken. Een ander woord voor een <em>class</em> is ook wel een object. En als we objecten willen maken in code dan kunnen we alle zelfstandig naamwoorden gebruiken en daar objecten van maken.</p>
+<h2 id="objecten-maken">Objecten maken</h2>
+<p>Welke zelfstandig naamwoorden kan jij allemaal vinden?</p>
+<ul>
+<li><strong>huis</strong></li>
+<li><strong>honden</strong></li>
+<li><strong>Teckel</strong></li>
+<li><strong>herdershond</strong></li>
+</ul>
+<p>Misschien zag je er nog wel meer, maar dit zijn voor nu de belangrijkste. Laten we daarom voor deze objecten een <em>class</em> aanmaken.</p>
+<ol>
+<li><p>Type de volgende code onder de <code>Program</code> class. De teksten achter // hoef je niet over te typen. Dat is alleen om duidelijk te maken wat er gemaakt wordt.</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">class</span> <span class="hljs-title">Huis</span> {
+     <span class="hljs-comment">// Dit is het object wat we gaan gebruiken als het huis</span>
+ }
+
+ <span class="hljs-keyword">class</span> <span class="hljs-title">Hond</span> {
+     <span class="hljs-comment">// Dit is een object wat als een hond gebruikt wordt</span>
+ }
+
+ <span class="hljs-keyword">class</span> <span class="hljs-title">Teckel</span> {
+     <span class="hljs-comment">// Dit is een object wat de Teckel gaat zijn</span>
+ }
+
+ <span class="hljs-keyword">class</span> <span class="hljs-title">Herdershond</span> {    
+     <span class="hljs-comment">// Dit is een object wat de herdershond gaat zijn</span>
+ }</code></pre><p> Nu gaan we de tekst nog een keertje doorlopen en gaan we zorgen dat de objecten bij elkaar worden gezet. Laten we beginnen met het huis. Er staat in de tekst</p>
+<blockquote>
+<p><em>In het huis zijn 2 honden</em></p>
+</blockquote>
+</li>
+<li><p>Laten we die honden toevoegen door een lijstje te maken. Zorg eerst ervoor dat we een extra using toevoegen boven in het bestand.</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">using</span> System.Collections.Generic;</code></pre><p> Bovenstaande code hebben we nodig om lijstjes bij te houden in de code.</p>
+</li>
+<li><p>Nu kunnen we in het huis een lijstje met honden maken (waar er uiteindelijk 2 in komen).</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">class</span> <span class="hljs-title">Huis</span> {
+     List&lt;Hond&gt; honden = <span class="hljs-keyword">new</span> List&lt;Hond&gt;();
+ }</code></pre><p> <em>List</em> is engels voor lijst dus je hebt nu een lijst gemaakt in het <em>Huis</em> waar je honden in bij kunt houden. Je ziet dat we dus in plaats van <em>string</em>, <em>int</em> etc.. ook objecten en zelfs lijsten van objecten kunnen bijhouden in weer een ander object.</p>
+<p> De lijst is nu alleen nog niet gevuld, het is dus een lege lijst. Nu zou het handig zijn dat als we een <em>Huis</em> hebben dat we dus kunnen vertellen dat er 2 honden wonen. Dat gaan we doen door een <em>contructor</em> te maken. Een <em>constructor</em> is een speciale functie die gebruikt wordt om een object te maken. </p>
+<p> Een <em>constructor</em> herken je aan de naam van de functie. Die is namelijk hetzelfde als de naam van de <em>class</em>:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Huis</span>(<span class="hljs-params"></span>)</span>
+ {
+
+ }</code></pre></li>
+<li><p>Deze functie zet je in de <em>class</em> die <em>Huis</em> heet. Zorg dat je code er zo uit ziet:</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">class</span> <span class="hljs-title">Huis</span>
+ {
+     List&lt;Hond&gt; honden;
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Huis</span>(<span class="hljs-params"></span>)</span>
+     {
+
+     }
+ }</code></pre></li>
+<li><p>Elke keer wanneer een <em>Huis</em> wordt aangemaakt zal deze functie worden aangeroepen. Misschien kunnen we dat eens uit testen. Pas daarom de code aan die in de <em>Main</em> functie staat naar dit:</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+ {
+     <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+     {
+         Huis huis1 = <span class="hljs-keyword">new</span> Huis();
+         Huis huis2 = <span class="hljs-keyword">new</span> Huis();
+     }
+ }</code></pre></li>
+<li><p>En pas de code in de <em>constructor</em> aan met de volgende code:</p>
+<pre><code class="hljs cs"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Huis</span>(<span class="hljs-params"></span>)</span>
+ {
+     Console.WriteLine(<span class="hljs-string">"Huis gemaakt"</span>);
+ }</code></pre></li>
+<li><p>Druk op 'F5' om het programma te starten. En als het goed is zie je dan dit:
+ <img src="Resources/16-HuizenGemaakt.PNG" alt="2HuizenGemaakt"></p>
+<p> Je ziet alleen niet goed welk huis gemaakt is, maar dat is voor nu ook niet belangrijk. Volgens het verhaaltje hebben we ook maar één huis nodig.</p>
+<p> Straks gaan we zorgen dat de honden ook echt in het huis kunnen wonen ;-). Maar nu eerst even terug naar die honden... In het verhaal staat:</p>
+<blockquote>
+<p><em>Er zijn twee honden thuis. De ene hond is een Teckel en de andere hond is een grote herdershond</em></p>
+</blockquote>
+<p> Wat verteld deze zin ons?  </p>
+<ul>
+<li><p>"<em>Er zijn twee honden</em>"</p>
+</li>
+<li><p>"<em>Een Teckel is een hond</em>"</p>
+</li>
+<li><p>"<em>Een herdershond is een hond</em>"'</p>
+<p>Belangrijk hierbij is het woordje <strong>is</strong>. We hebben namelijk een object gemaakt wat <em>Hond</em> heet, een object gemaakt wat <em>Teckel</em> heet en een object gemaakt wat <em>Herdershond</em>. We hebben in code alleen niet verteld dat een <em>Teckel</em> een <em>Hond</em> <strong>is</strong>, of dat de <em>Herdershond</em> een <em>Hond</em> is. Laten we dat nu gaan doen.</p>
+</li>
+</ul>
+</li>
+<li><p>Zorg dat de <em>Teckel</em> een <em>Hond</em> wordt doe je zo:</p>
+<pre><code class="hljs cs"> <span class="hljs-keyword">class</span> <span class="hljs-title">Teckel</span> : <span class="hljs-title">Hond</span>
+ {
+ }</code></pre></li>
+<li><p>Maak nu ook van de <em>Herdershond</em> een <em>Hond</em>.</p>
+<p> Als het goed is heb je nu 2 honden gemaakt maar ze 'bestaan' nog niet. </p>
+</li>
+<li><p>Dus maak nu 2 honden aan in de functie 'Main' en haal 'huis2' weg.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+{
+    Teckel teckel = <span class="hljs-keyword">new</span> Teckel();
+    Herdershond herdershond = <span class="hljs-keyword">new</span> Herdershond();
+
+    Huis huis1 = <span class="hljs-keyword">new</span> Huis();
+}</code></pre><p>We hebben nu de 2 honden aangemaakt. Maar wacht eens... Hoe kan het nou zijn dat we deze honden kunnen aanmaken zonder een <em>constructor</em> te maken? </p>
+<p>Een <em>constructor</em> is alleen maar nodig als je ook echt iets speciaals wilt doen bij het maken van een object. Als je geen <em>constructor</em> hebt gemaakt is er eigenlijk automatisch een lege functie.</p>
+<p>Nu moeten we alleen de honden nog aan het <em>Huis</em> geven.</p>
+</li>
+<li><p>Voeg een <em>parameter</em> toe aan de <em>constructor</em> van het <em>Huis</em> waarmee we een lijst van honden kunnen mee geven.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Huis</span>(<span class="hljs-params">List&lt;Hond&gt; honden</span>)</span>
+{
+    Console.WriteLine(<span class="hljs-string">"Huis gemaakt"</span>);
+    <span class="hljs-keyword">this</span>.honden = honden;
+}</code></pre><p>We hebben nu een parameter toegevoegd aan de <em>constructor</em> en de lijst die al in het <em>Huis</em> zat maken we nu gelijk aan de lijst die we mee geven. Belangrijk is om te snappen dat de lijst die we in het <em>Huis</em> hebben aanroepen met het woordje <em>this</em> ervoor. ('this' betekent in het engels 'deze'). </p>
+<pre><code class="hljs cs"><span class="hljs-keyword">this</span>.honden = honden</code></pre></li>
+<li><p>Pas nu de code in 'Main' aan door 2 honden mee te geven aan het <em>Huis</em></p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+{
+    Teckel teckel = <span class="hljs-keyword">new</span> Teckel();
+    Herdershond herdershond = <span class="hljs-keyword">new</span> Herdershond();
+
+    List&lt;Hond&gt; huis1Honden = <span class="hljs-keyword">new</span> List&lt;Hond&gt;()
+    {
+        teckel,
+        herdershond
+    };
+
+    Huis huis1 = <span class="hljs-keyword">new</span> Huis(huis1Honden);
+}</code></pre><p>Hier maken we dus eerst weer een nieuwe lijst aan en vullen die gelijk met 2 honden. Daarna geven we de lijst mee aan het <em>constructor</em> van het <em>Huis</em>.</p>
+</li>
+<li><p>Maak een functie aan in het <em>Hond</em> object die 'Blaf' heeft.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Hond</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span> { }
+}</code></pre></li>
+<li><p>Maak een functie aan in de <em>Teckel</em> en <em>herdershond</em> die 'Blaf' heet.<br><strong>Let op:</strong> deze functie ziet er iets anders uit dan in de <em>Hond</em>.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Teckel</span> : <span class="hljs-title">Hond</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span>
+    {
+        Console.WriteLine(<span class="hljs-string">"kef kef"</span>);
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Herdershond</span> : <span class="hljs-title">Hond</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span>
+    {
+        Console.WriteLine(<span class="hljs-string">"WOEF"</span>);
+    }
+}</code></pre><p>Zoals je zie hebben we in de <em>Hond</em> een functie 'Blaf' gemaakt. Dat betekent dat we elke <em>Hond</em> die er is kunnen aanroepen met de functie 'Blaf'. Maar omdat de <em>Teckel</em> en de <em>Herdershond</em> allebei anders blaffen maken we daar ook de functie 'Blaf' die de functie van de <em>Hond</em> overschrijft (overschrijven in het engels is <em>override</em>).</p>
+</li>
+<li><p>Maak nu een functie 'Aanbellen' aan in het <em>Huis</em>.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Huis</span>
+{
+    ....
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Aanbellen</span>(<span class="hljs-params"></span>)</span>
+    {
+    }
+}</code></pre></li>
+<li><p>In de functie aanbellen gaan we de honden die in het huis wonen laten blaffen. Daarvoor moeten we door het lijstje heen lopen van de honden en dan bij elke <em>Hond</em> roepen we de functie 'Blaf' aan.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Aanbellen</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">foreach</span>(Hond hond <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.honden)
+    {
+        hond.Blaf();
+    }
+}</code></pre></li>
+<li><p>Nu gaan we in de functie 'Main' aanbellen bij het <em>Huis</em>.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+    {
+        ....
+
+        Huis huis1 = <span class="hljs-keyword">new</span> Huis(huis1Honden);
+        huis1.Aanbellen();
+    }
+}</code></pre></li>
+<li><p>Druk nu op 'F5' en start daarmee de applicatie weer op.<br><img src="Resources/17-Aangebeld.PNG" alt="Aangebeld"></p>
+<p>Gefeliciteerd!! :tada: :tada: Je bent klaar met de <strong>Blaffende honden</strong>.
+Als je het leuk vindt dan kan je nog meer honden in het huis stoppen. Of je maakt meer huizen of je maakt andere honden. Je kan misschien nog wel heleboel andere leuke dingen verzinnen. Succes :D</p>
+</li>
+</ol>
+<h3 id="complete-code-2">Complete code</h3>
+<p>Hieronder de code hoe het er 'ongeveer' uit zou moeten zien. Het kan zijn dat je iets andere teksten hebt gebruikt, maar kijk maar eens over het vergelijkbaar is.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Honden</span>
+{
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            Teckel teckel = <span class="hljs-keyword">new</span> Teckel();
+            Herdershond herdershond = <span class="hljs-keyword">new</span> Herdershond();
+
+            List&lt;Hond&gt; huis1Honden = <span class="hljs-keyword">new</span> List&lt;Hond&gt;()
+            {
+                teckel,
+                herdershond
+            };
+
+            Huis huis1 = <span class="hljs-keyword">new</span> Huis(huis1Honden);
+            huis1.Aanbellen();
+        }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Huis</span>
+    {
+        List&lt;Hond&gt; honden;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Huis</span>(<span class="hljs-params">List&lt;Hond&gt; honden</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Huis gemaakt"</span>);
+            <span class="hljs-keyword">this</span>.honden = honden;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Aanbellen</span>(<span class="hljs-params"></span>)</span>
+        {
+            <span class="hljs-keyword">foreach</span>(Hond hond <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.honden)
+            {
+                hond.Blaf();
+            }
+        }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Hond</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span> { }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Teckel</span> : <span class="hljs-title">Hond</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"kef kef"</span>);
+        }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Herdershond</span> : <span class="hljs-title">Hond</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Blaf</span>(<span class="hljs-params"></span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"WOEF"</span>);
+        }
+    }
+}</code></pre><p>Je hebt nu als het goed is aardig wat kennis over wat programmeren is en hoe je in C# kan programmeren. Gefeliciteerd. Nu willen we natuurlijk het 'echte' werk gaan doen dus gaan we samen proberen 'Snake' te maken. Omdat de handleiding om snake te maken wat uitgebreid is heb ik die in een apart bestand gezet:</p>
+<p><a href="Snake.md">Snake.md</a></p>
+
+
+</body></html>
