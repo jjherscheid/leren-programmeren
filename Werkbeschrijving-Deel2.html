@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head>
 	<meta charset="utf-8">
-<style type="text/css">.page-break { page-break-after: always; } .markdown-body { font-size: 10pt; } code { white-space: pre-wrap; font-size: 1em !important; }</style><style type="text/css">* {
+<style type="text/css">.page-break { page-break-after: always; } .markdown-body { font-size: 10pt; } .hljs-comment, .hljs-quote { color: #009926 !important; } code { white-space: pre-wrap; font-size: 1em !important; } </style><style type="text/css">* {
 	box-sizing: border-box;
 }
 
@@ -231,44 +231,86 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 /*# sourceURL=C:\Users\jhers\AppData\Roaming\npm\node_modules\md-to-pdf\node_modules\highlight.js\styles\github.css*/</style></head>
 <body class="markdown-body">
-<h1 id="snake-werkbeschrijving">Snake werkbeschrijving</h1>
+<h1 id="opdracht-4-snake-werkbeschrijving">Opdracht 4. Snake werkbeschrijving</h1>
 <p><img src="Resources/Snake/SnakeFinal.PNG" alt="Snake"></p>
-<p>Deze snake werkbeschrijving komt heb ik niet helemaal zelf bedacht maar via een ander site op internet gevonden. Daar is hij alleen in het engels dus ik heb geprobeerd hem te vertalen.</p>
+<p>Deze snake werkbeschrijving komt heb ik niet helemaal zelf bedacht maar via een ander site op internet gevonden. Daar is hij alleen in het Engels dus ik heb geprobeerd hem te vertalen.</p>
 <p>Snake is een op zich een simpel spelletje, maar het is nog best ingewikkeld om te maken. Naast als je programmeer ervaring van de vorige opdrachten zal je hier ook met een nieuw programma aan de slag gaan, namelijk Unity. Unity is een programma waarmee spelletjes gemaakt kunnen worden voor de Computer, maar ook voor de PS4, Switch, Telefoon, Tablet etc. Het is dus een heel uitgebreid programma waar heel veel dingen ingesteld kunnen worden.</p>
-<h2 id="project-openen-in-unity">Project openen in Unity</h2>
-<p><em>Omdat het best lastig is om een Unity project aan te maken, heb ik alvast een basis project aangemaakt voor een 2D spel. Ook zijn alle plaatjes die je nodig hebt ook al toegevoegd.</em></p>
-<p>Laten we beginnen met het project te openen. Zoek in het Startmenu van Windows naar 'Unity Hub'.<br><img src="Resources/Snake/00-UnityHub.PNG" alt="00"></p>
+<p>In deze beschrijving zit ook de hele installatie van Unity (Hoofdstuk 1). Als Unity al geïnstalleerd staat kan heel hoofdstuk 1 overgeslagen worden.</p>
+<div class="page-break"></div>
+
+<h2 id="1-unity-installeren">1. Unity Installeren</h2>
+<p><strong>Let op:</strong> Dit hoofdstuk ik alleen nodig als Unity nog niet geïnstalleerd is.</p>
+<h3 id="unity-hub-installeren">Unity Hub installeren</h3>
+<p>Unity Hub is eigenlijk een programma om eenvoudige meerdere versies van Unity te kunnen gebruiken en je projecten te maken/openen.</p>
+<p><em>Je kan deze downloaden bij Unity: <a href="https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe">https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe</a></em>  </p>
+<ul>
+<li>Voer de installatie uit</li>
+<li>Na de installatie zie je het volgende scherm:<br><img src="Resources/UnityInstall/UnityHubLicense.PNG" alt="UnityHubLicense"></li>
+<li>Klik op het poppetje boven inbeeld en kies voor 'Sign In'</li>
+<li>Klik daar op 'Create account'<br><img src="Resources/UnityInstall/CreateAccount.PNG" alt="UnityCreateAccount"><div class="page-break"></div></li>
+<li>Vul de gegevens in. (<em>Gebruik niet het knopje 'SignIn with Google' die werkt niet</em>) 
+En vink het checkboxje aan achter 'I agree to the Unity Terms of Use and Privacy Policy'. Het tweede checkboxje hoef je niet aan te zetten. 
+<img src="Resources/UnityInstall/ConnectEmail.PNG" alt="ConnectEmail"><div class="page-break"></div></li>
+<li>Nadat je email gecontroleerd is kom je weer in het Unity Hub scherm. Klik daar op 'Activate New License'<br><img src="Resources/UnityInstall/ActiveLicense.PNG" alt="Activate"><div class="page-break"></div></li>
+<li>Kies voor 'Personal' license.<br><img src="Resources/UnityInstall/ProfesionalLicense.PNG" alt="Personal"><div class="page-break"></div></li>
+<li>Klik op de pijl om terug te gaan naar het hoofscherm.<br><img src="Resources/UnityInstall/TerugNaarHome.PNG" alt="TerugNaarHoofd"></li>
+</ul>
+<p>Unity Hub is nu geïnstalleerd, nu moet nog de juiste versie van Unity geïnstalleerd worden.</p>
+<div class="page-break"></div>
+
+<h3 id="unity-installeren-20192">Unity installeren (2019.2.**)</h3>
+<p>Voor dit project is verstandig om versie 2019.2.** te installeren. </p>
+<ul>
+<li>Klik op 'Installs'<br><img src="Resources/UnityInstall/Installs.PNG" alt="Installs"></li>
+<li>Klik op 'Add' om een installatie toe te voegen<br><img src="Resources/UnityInstall/AddInstall.PNG" alt="Add"></li>
+<li>Kies de juiste versie van Unity<br><img src="Resources/UnityInstall/2019.2.xxf1.PNG" alt="Version"></li>
+<li>Kies de juiste modules (standaard staat het goed)<br><img src="Resources/UnityInstall/Modules.PNG" alt="Modules"></li>
+<li>Accepteer de voorwaarden<br><img src="Resources/UnityInstall/Accept.PNG" alt="Accept"></li>
+<li>Als het goed is zie je deze na de installatie beschikbaar onder 'Installs'<br><img src="Resources/UnityInstall/VersionInstalled.PNG" alt="VersionInstalled"></li>
+</ul>
+<p>Onder het kopje 'Projects' zal je straks een project toevoegen.</p>
+<h2 id="2-snake-project-uitpakken">2. Snake project uitpakken</h2>
+<p>Omdat het best lastig is om een Unity project aan te maken, heb ik alvast een basis project aangemaakt voor een 2D spel. Ook zijn alle plaatjes die je nodig hebt ook al toegevoegd.</p>
+<p>Als je dit project gedownload hebt via Github dan is er al een mapje Snake aanwezig in de map C:\Leren-Programmeren. Als dit nog niet zo is, dan kan je op internet het basis project voor Snake los downloaden bij: <a href="https://github.com/jjherscheid/leren-programmeren/blob/master/Snake.zip">https://github.com/jjherscheid/leren-programmeren/blob/master/Snake.zip</a></p>
+<p>Deze zip moet je uitpakken naar C:\Leren-Programmeren<br><img src="Resources/UnityInstall/01-Unpack.PNG" alt="Unpack"></p>
+<div class="page-break"></div>
+
+<h2 id="3-project-openen-in-unity">3. Project openen in Unity</h2>
+<p>Laten we beginnen met het project te openen. Zoek in het Startmenu van Windows naar 'Unity Hub'.  (<em>Als Unity Hub al open staat hoeft dit natuurlijk niet ;-)</em>)
+<img src="Resources/Snake/00-UnityHub.PNG" alt="00"></p>
 <p>Klik in het venster wat nu in beeld staat op 'Add' (toevoegen).<br><img src="Resources/Snake/01-OpenProject.PNG" alt="01"></p>
 <p>Zoek de map <em>C\Leren-Programmeren\Snake\</em> en kies voor 'Select Folder'.<br><img src="Resources/Snake/02-SelectFolder.PNG" alt="02"></p>
-<p>Klik in het projecten scherm nu op het zojuist toegevoegde project 'Snake'.<br><img src="Resources/Snake/03-OpenLoadedProject.PNG" alt="03"></p>
+<p>Klik in het projecten scherm nu op het zojuist toegevoegde project 'Snake'.<br><img src="Resources/Snake/03-OpenLoadedProject.PNG" alt="03"><br><em>Vanaf nu kan je elke keer het project op deze manier openen</em></p>
 <p>Als het goed is opent nu het volgende scherm van Unity:<br><img src="Resources/Snake/04-Unity.PNG" alt="04"></p>
 <p>In het Unity scherm zijn een aantal dingen belangrijk:</p>
 <ol>
-<li>Is de 'scene' selectie. Daarin hebben we op dit moment 'SampleScene' met daarin alleen een 'Main Camera'.</li>
+<li>Is de 'scene' selectie. Daarin hebben we op dit moment 'SampleScene' met daarin alleen een 'Main Camera'. (Noemen we 'Scene venster')</li>
 <li>Hier kan je mapjes vinden met extra items. Handigste is om deze met de selectie op 'Assets' te laten staan.</li>
-<li>Dit een een gedetailleerde weergave van een mapje wat in '2' in aangeklikt. Door in 2 op 'Assets' te laten staan zie je hier als het goed is de onderdelen die je nodig hebt voor het spel.</li>
-<li>Dit is een eigenschappen venster. Wanneer je wat aanklikt in Unity kan je hier allemaal dingen aanpassen.</li>
-<li>Is het venster waar je het spel echt gaat 'maken'.</li>
+<li>Dit is een gedetailleerde weergave van een mapje wat in '2' in aangeklikt. Door in 2 op 'Assets' te laten staan zie je hier als het goed is de onderdelen die je nodig hebt voor het spel. (Noemen we ook 'Assets venster')</li>
+<li>Dit is een eigenschappen venster. Wanneer je wat aanklikt in Unity kan je hier allemaal dingen aanpassen. (Noemen we 'Eigenschappen venster')</li>
+<li>Is het venster waar je het spel echt gaat 'maken'. (Noemen we 'Spel venster')</li>
 <li>Zijn de knopjes om het spel te testen.</li>
 </ol>
-<p><em><strong>Letop:</strong> Als bij jou 'SampleScene' niet in het project menu (1) staat, dan is er iets niet goed gegaan. Je kan dan de 'SampleScene' vinden in venster 3 onder Assets. En die kan je slepen in venster 1.</em></p>
-<h2 id="toevoegen-van-de-randen-van-het-spel">Toevoegen van de randen van het spel</h2>
-<p>Als eerste gaan we de randen van het spel maken. Daarvoor zijn er twee 'assets' (die plaatjes in vakje 3).</p>
+<p><em><strong>Let op:</strong> Als bij jou 'SampleScene' niet in het project menu (1) staat, dan is er iets niet goed gegaan. Je kan dan de 'SampleScene' vinden in venster 3 onder Assets. En die kan je slepen in venster 1.</em></p>
+<div class="page-break"></div>
+
+<h2 id="4-toevoegen-van-de-randen-van-het-spel">4. Toevoegen van de randen van het spel</h2>
+<p>Als eerste gaan we de randen van het spel maken. Daarvoor zijn er twee 'assets' in het 'Assets venster' (die plaatjes in vakje 3).</p>
 <ul>
 <li>border_horizontal</li>
 <li>border_vertical</li>
 </ul>
-<p>Selecteer eerst de horizontale lijn in het 'Assets' venster (3).<br><img src="Resources/Snake/02-01-SelectBorderHorizontal.png" alt="02-01"></p>
-<p>Als het goed is zie je nu in het eigenschappen venster (4) dat je een heleboel kan instellen.
+<p>Selecteer eerst de horizontale lijn in het 'Assets venster' (3).<br><img src="Resources/Snake/02-01-SelectBorderHorizontal.png" alt="02-01"></p>
+<p>Als het goed is zie je nu in het 'Eigenschappen venster' (4) dat je een heleboel kan instellen.
 Zorg ervoor dat de instelling hetzelfde zijn als op onderstaand plaatje en druk dan op 'Apply':<br><img src="Resources/Snake/02-02-SettingsBorderHorizontal.png" alt="02-02"></p>
 <p><em>Belangrijkste wijziging is de 'Pixel Per Unit'. Omdat de snake ook 1x1 pixel gaat zijn willen we dat elke afstand in het spel ook per 1 pixel gaat. We zullen daarom bij <strong>alle</strong> assets dit op <strong>1</strong> willen zetten.</em></p>
-<p>Selecteer nu de verticale lijn in het 'Assets' venster.<br><img src="Resources/Snake/02-03-SelectBorderVertical.png" alt="02-03"></p>
-<p>Ook hiervoor zetten we de eigenschappen hetzelfde als bij de horizontale lijn en klik weer op 'Apply':<br><img src="Resources/Snake/02-04-SettingsBorderVertical.png" alt="02-04"></p>
-<p>Nu kunnen we de lijnen in het spel slepen. Sleep daarom de horizonale en verticale lijn allebei 2 keer in het spel venser (5). <em>Als de lijn heel groot lijkt, dan kan je uitzoomen met de scroll van de muis te draaien in het spel venster. Je kan ze alvast een beetje goed zetten, maar let daar nog niet te veel op, dat gaan we zo aanpassen.</em>  </p>
-<p>Als je de lijnen in het spel hebt gezet dan kan je ze daarna nog verslepen. Je moet dan alleen even vastpakken bij het middelste rondje als je een lijst geselecteerd hebt.<br><img src="Resources/Snake/02-05-Verslepen.png" alt="02-05"></p>
+<p>Selecteer nu de verticale lijn in het 'Assets venster' (3).<br><img src="Resources/Snake/02-03-SelectBorderVertical.png" alt="02-03"></p>
+<p>Ook hiervoor zetten we de eigenschappen in het 'Eigenschappen venster' (4) hetzelfde als bij de horizontale lijn en klik weer op 'Apply':<br><img src="Resources/Snake/02-04-SettingsBorderVertical.png" alt="02-04"></p>
+<p>Nu kunnen we de lijnen in het spel slepen. Sleep daarom de horizontale en verticale lijn allebei 2 keer in het 'Spel venster' (5). <em>Als de lijn heel groot lijkt, dan kan je uitzoomen met de scroll van de muis te draaien in het spel venster. Je kan ze alvast een beetje goed zetten, maar let daar nog niet te veel op, dat gaan we zo aanpassen.</em>  </p>
+<p>Als je de lijnen in het spel hebt gezet dan kan je ze daarna nog verslepen. Je moet dan alleen even vastpakken bij het middelste rondje als je een lijn geselecteerd hebt.<br><img src="Resources/Snake/02-05-Verslepen.png" alt="02-05"></p>
 <p>Als ze ongeveer zo staan zoals in het plaatje is het prima voor nu.<br><img src="Resources/Snake/02-06-Hernoemen.PNG" alt="02-06"></p>
-<p>Als je een lijn selecteert dan zie je in het 'Scene' venster (1) dat deze grijs (geselecteerd) wordt. We gaan nu even handige namen geven aan de lijntjes.<br>Nu kan jij ze iets anders hebben staan dan mij. Maar als je de linker verticale lijn selecteert, hernoem hem dan in het scene venster naar 'BorderLeft'.<br>Het hernoemen kan je doen door in het scene venster op 'F2' te klikken of door in het eigenschappen venster de naam te wijzigen:<br><img src="Resources/Snake/02-07-Hernoemen.png" alt="02-07"></p>
-<p>Doe dit voor alle lijntjes. Hernoem de lijntjes alsvolgt:</p>
+<p>Als je een lijn selecteert dan zie je in het scene venster dat deze grijs (geselecteerd) wordt. We gaan nu even handige namen geven aan de lijntjes.<br>Nu kan jij ze iets anders hebben staan dan mij. Maar als je de linker verticale lijn selecteert, hernoem hem dan in het scene venster naar 'BorderLeft'.<br>Het hernoemen kan je doen door in het scene venster op 'F2' te klikken of door in het eigenschappen venster de naam te wijzigen:<br><img src="Resources/Snake/02-07-Hernoemen.png" alt="02-07"></p>
+<p>Doe dit voor alle lijntjes. Hernoem de lijntjes als volgt:</p>
 <ul>
 <li>linker verticale lijn = BorderLeft <em>(deze heb je net gedaan)</em></li>
 <li>rechter verticale lijn = BorderRight</li>
@@ -285,11 +327,16 @@ Zorg ervoor dat de instelling hetzelfde zijn als op onderstaand plaatje en druk 
 <p><img src="Resources/Snake/02-08-Positie.PNG" alt="02-08"></p>
 <p>Tijd om een keertje op te slaan. Dus ga naar het menu en klik op 'Save' en doe dit nog een keer en klik op 'Save Project'.<br><img src="Resources/Snake/02-09-Opslaan.PNG" alt="02-09"></p>
 <p>Als het goed is zie je nu de randen van het spel voor 'Snake'. Er is alleen één probleem. Hoewel deze randen er uitzien als de randen van het spel weet het spel zelf nog niet dat het echte randen zijn. We willen natuurlijk zorgen dat Snake straks niet door de rand heen kan gaan. Daarom moeten we ze onderdeel maken van de 'echte' wereld in het spel.</p>
-<p>Om dit voor elkaar te krijgen selecteren we eerst in het scene venster alle 4 de borders.<br><img src="Resources/Snake/02-10-SelectBordersForCollision.PNG" alt="02-10"></p>
+<p>Om dit voor elkaar te krijgen selecteren we eerst in het scene venster alle 4 de borders. Door er eentje te selecteren en daarna met <em>Ctrl</em> ingdrukt te anderen te selecteren kan je ze uiteindelijk alle 4 tegelijk selecteren.<br><img src="Resources/Snake/02-10-SelectBordersForCollision.PNG" alt="02-10"></p>
 <p>Op dit moment zijn voor het spel de randen dus alleen maar plaatjes, maar dat kunnen we aanpassen door in het eigenschappen venster op 'Add Component' te klikken.<br><img src="Resources/Snake/02-11-AddComponent.PNG" alt="02-11"></p>
-<p>Nu open een ander venstertje en daarin selecteer je eerst 'Physics 2D' en daarna 'Box Collider 2D'. Als het goed is wordt daarna die toegevoegd aan de eigenschappen van al je randen.<br><img src="Resources/Snake/02-12-BoxCollider2D.PNG" alt="02-12"></p>
-<p>Zo.. de randen zijn nu gemaakt. En dan zonder dat je nog maar één regel code hebt geschreven. Die code komt straks echt nog wel ;-).</p>
-<h2 id="eten-maken">Eten maken</h2>
+<p>Nu open een ander venstertje en daarin selecteer je eerst 'Physics 2D' en daarna 'Box Collider 2D'.
+<img src="Resources/Snake/BoxCollider.PNG" alt="02-11a"></p>
+<p>Als het goed is wordt daarna die toegevoegd aan de eigenschappen van al je randen. (<em>Straks komt uitleg over wat het precies betekent</em>)</p>
+<p><img src="Resources/Snake/02-12-BoxCollider2D.PNG" alt="02-12"></p>
+<p>Zo... de randen zijn nu gemaakt. En dan zonder dat je nog maar één regel code hebt geschreven. Die code komt straks echt nog wel ;-).</p>
+<div class="page-break"></div>
+
+<h2 id="5-eten-maken">5. Eten maken</h2>
 <p>De bedoeling van Snake is om zoveel mogelijk eten te eten en daardoor te groeien. 
 Laten we daarom eerst gaan maken dat er op willekeurige plaatsen eten tevoorschijn komt.</p>
 <p>Voor het eten is al een 'assets' (een plaatje in vakje 3).</p>
@@ -297,26 +344,35 @@ Laten we daarom eerst gaan maken dat er op willekeurige plaatsen eten tevoorschi
 <li>food</li>
 </ul>
 <p>Dit plaatje is niets meer dan een gekleurde pixel. Maar dat is voor nu voldoende ;-).</p>
-<p>Klik 'food' aan in het assets vak (3). En zorg dat de eigenschappen goed staan zoals hier, en druk daarna op 'Apply':<br><img src="Resources/Snake/02-13-Food.png" alt="02-13"></p>
-<p>Nu kunnen we het voedsel in het spel slepen. Dat doe je door gewoon het 'food' icoontje met je muis naar het speelveld te slepen.<br><img src="Resources/Snake/02-14-AddFood.PNG" alt="02-14"></p>
-<p>Net zoals met de rande van het spel moet Snake weten dat hij voedsel aanraakt. Daarom moeten we net als bij de randen een <strong>Collider</strong> toevoegen via de eigenschappen. Zorg daarom dat het eten in het spel geselecteerd is en klik in het eigenschappen venster vervolgens op <strong>Add Component' -&gt; Physics 2D -&gt; Box Collider 2D</strong>.  
-<img src="Resources/Snake/02-15-FoodIsTrigger.PNG" alt="02-15"></p>
-<p>Bij de randen van het spel hoefte je niks te selecteren in het venster van de Box Collider, maar bij het eten moet je klikken op <strong>Is Trigger</strong>.</p>
-<p><em><strong>Even wat achtergrond:</strong><br>In een spel zijn allemaal <strong>GameObjecten</strong>. En een <strong>GameObject</strong> zonder een <strong>Box Collider</strong> is gewoon een plaatje wat niks doet in het spel. Wanneer je wilt dat het wel wat doet in het spel dan moet je een <strong>Box Collider</strong> toevoegen (wat we nu 2x gedaan hebben). Door het toevoegen van de <strong>Box Collider</strong> wordt straks automatisch een functie (<strong>OnCollissionEnter2D</strong>) aangeroepen in de code wanneer een ander <strong>GameObject</strong> er tegenaan komt.<br>Bij eten willen we niet dat Snake tegen het eten aanbotst, maar dat hij er gewoon doorheen gaat. Maar we willen wel weten als hij eten gegeten heeft. Daarom hebben we wel een <strong>Box Collider</strong> nodig, maar door de <strong>Is Trigger</strong> aan te zetten geven we aan dat de <strong>GameObjecten</strong> niet botsen, maar dat wel de functie (<strong>OnCollissionEnter2D</strong>) aangeroepen worden als ze overelkaar heen gaan.</em></p>
+<p>Klik 'food' aan in het assets venster (3). En zorg dat de eigenschappen goed staan zoals hier, en druk daarna op 'Apply':</p>
+<p><img src="Resources/Snake/02-13-Food.png" alt="02-13"></p>
+<p>Nu kunnen we het voedsel in het spel slepen. Dat doe je door gewoon het 'food' icoontje met je muis naar het speel venster te slepen.</p>
+<p><img src="Resources/Snake/02-14-AddFood.PNG" alt="02-14"></p>
+<p>Net zoals met de randen van het spel moet Snake weten dat hij voedsel aanraakt. Daarom moeten we net als bij de randen een <strong>Collider</strong> toevoegen via de eigenschappen. Zorg daarom dat het eten in het spel geselecteerd is en klik in het eigenschappen venster vervolgens op <strong>Add Component -&gt; Physics 2D -&gt; Box Collider 2D</strong>.</p>
+<p><img src="Resources/Snake/02-15-FoodIsTrigger.PNG" alt="02-15"></p>
+<p>Bij de randen van het spel hoefde je niks te selecteren in het venster van de Box Collider, maar bij het eten moet je klikken op <strong>Is Trigger</strong>.</p>
+<p><em><strong>Even wat achtergrond:</strong><br>In een spel zijn allemaal <strong>GameObjecten</strong>. En een <strong>GameObject</strong> zonder een <strong>Box Collider</strong> is gewoon een plaatje wat niks doet in het spel. Wanneer je wilt dat het wel wat doet in het spel dan moet je een <strong>Box Collider</strong> toevoegen (wat we nu 2x gedaan hebben). Door het toevoegen van de <strong>Box Collider</strong> wordt straks automatisch een functie (<strong>OnCollissionEnter2D</strong>) aangeroepen in de code wanneer een ander <strong>GameObject</strong> er tegenaan komt.<br>Bij eten willen we niet dat Snake tegen het eten aanbotst, maar dat hij er gewoon doorheen gaat. Maar we willen wel weten als hij eten gegeten heeft. Daarom hebben we wel een <strong>Box Collider</strong> nodig, maar door de <strong>Is Trigger</strong> aan te zetten geven we aan dat de <strong>GameObjecten</strong> niet botsen, maar dat wel de functie (<strong>OnCollissionEnter2D</strong>) aangeroepen worden als ze over elkaar heen gaan.</em></p>
 <h3 id="prefab-maken">Prefab maken</h3>
-<p>Omdat we niet willen dat er gelijk in het begin van een spel eten klaar ligt moeten we een <strong>Prefab</strong> maken. Dat kan je zien als een stukje spel wat we alvast gemaakt hebben met alle goede instellingen. Zo'n <strong>Prefab</strong> kunnen we via code straks toevoegen aan het spel.</p>
-<p>We gaan nu van het eten een <em>Prefab</em> maken door eerst de naam te wijzigen naar <strong>FoodPrefab</strong>. Weet je nog hoe dat moet? Klik in het scene venster (1) <strong>food</strong> aan en wijzig in het eigenschappen venster de naam dus naar <strong>FoodPrefab</strong>.  
-<img src="Resources/Snake/02-16-FoodPrefabMaken1.PNG" alt="02-16-1"></p>
-<p>Sleep daarna de <strong>FoodPrefab</strong> vanuit het scene venster naar het Assets venster (3).<br><img src="Resources/Snake/02-16-FoodPrefabMaken2.PNG" alt="02-16-2"></p>
-<p>Als dat gelukt is dan moet je nu uit het scene venster de <strong>FoodPrefab</strong> verwijderen. Hierdoor is hij nu niet meer standaard in het spel.<br><img src="Resources/Snake/02-17-DeleteFood.PNG" alt="02-17"></p>
+<p>Omdat we niet willen dat er gelijk in het begin van een spel eten klaarligt moeten we een <strong>Prefab</strong> maken. Dat kan je zien als een stukje spel wat we alvast gemaakt hebben met alle goede instellingen. Zo'n <strong>Prefab</strong> kunnen we via code straks toevoegen aan het spel.</p>
+<p>We gaan nu van het eten een <em>Prefab</em> maken door eerst de naam te wijzigen naar <strong>FoodPrefab</strong>. Weet je nog hoe dat moet? Klik in het scene venster (1) <strong>food</strong> aan en wijzig in het eigenschappen venster de naam dus naar <strong>FoodPrefab</strong>.</p>
+<p><img src="Resources/Snake/02-16-FoodPrefabMaken1.PNG" alt="02-16-1"></p>
+<p>Sleep daarna de <strong>FoodPrefab</strong> vanuit het scene venster naar het Assets venster (3).</p>
+<p><img src="Resources/Snake/02-16-FoodPrefabMaken2.PNG" alt="02-16-2"></p>
+<p>Als dat gelukt is dan moet je nu uit het scene venster de <strong>FoodPrefab</strong> verwijderen. Hierdoor is hij nu niet meer standaard in het spel.</p>
+<p><img src="Resources/Snake/02-17-DeleteFood.PNG" alt="02-17"></p>
 <p><strong>Belangrijk:</strong> Sla wat je gedaan weer op zoals ik eerder heb laten zien.</p>
-<h2 id="eten-tijdens-het-spel-laten-onstaan">Eten tijdens het spel laten onstaan</h2>
+<div class="page-break"></div>
+
+<h2 id="6-eten-tijdens-het-spel-laten-ontstaan">6. Eten tijdens het spel laten ontstaan</h2>
 <p>Eindelijk kan je weer wat gaan programmeren ;-). We gaan nu een script maken waarmee het eten op willekeurige plekken in het spel tevoorschijn komt.</p>
-<p>Omdat dit script altijd er moet zijn voegen we het toe aan iets anders wat er altijd is, namelijk de 'Main Camera'. Klik daarom op de 'Main Camera'. In het eigenschappen venster klik je vervolgens op <strong>Add Component -&gt; New Script</strong>.  
-<img src="Resources/Snake/03-01-NewScript.PNG" alt="03-01"></p>
-<p>En noem het script 'VoedselToevoegen' en klik op 'Create and Add'.<br><img src="Resources/Snake/03-02-NewScriptName.PNG" alt="03-02"></p>
+<p>Omdat dit script altijd er moet zijn voegen we het toe aan iets anders wat er altijd is, namelijk de 'Main Camera'. Klik daarom op de 'Main Camera' in het scene venster. </p>
+<p><img src="Resources/Snake/MainCamera.PNG" alt="03-00"></p>
+<p>In het eigenschappen venster klik je vervolgens op <strong>Add Component -&gt; New Script</strong>.</p>
+<p><img src="Resources/Snake/03-01-NewScript.PNG" alt="03-01"></p>
+<p>En noem het script 'VoedselToevoegen' en klik op 'Create and Add'.</p>
+<p><img src="Resources/Snake/03-02-NewScriptName.PNG" alt="03-02"></p>
 <p>Nu is in het 'Assets' venster (3) het script toegevoegd.<br><img src="Resources/Snake/03-03-ScriptSelecteren.PNG" alt="03-03"></p>
-<p>Dubbel klik op dit script en hierdoor zal Visual Studio vanzelf openen.<br>In Visual Studio zie je als het goed is nu het 'VoedselToevoegen' class staan met de volgende inhoud:  </p>
+<p>Dubbelklik op dit script en hierdoor zal Visual Studio vanzelf openen.<br>In Visual Studio zie je als het goed is nu het 'VoedselToevoegen' class staan met de volgende inhoud:  </p>
 <pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
 <span class="hljs-keyword">using</span> System.Collections.Generic;
 <span class="hljs-keyword">using</span> UnityEngine;
@@ -357,7 +413,7 @@ Laten we daarom eerst gaan maken dat er op willekeurige plaatsen eten tevoorschi
     {
 
     }
-}</code></pre><p>Een <strong>GameObject</strong> is een heel object waar we van alles mee kunnen doen. Één van de dingen die een <strong>GameObject</strong> heeft is een <strong>Transform</strong>, dat is een ander object wat de positie bijhoudt van het <strong>GameObject</strong>.</p>
+}</code></pre><p>Een <strong>GameObject</strong> is een heel object waar we van alles mee kunnen doen. Eén van de dingen die een <strong>GameObject</strong> heeft is een <strong>Transform</strong>, dat is een ander object wat de positie bijhoudt van het <strong>GameObject</strong>.</p>
 <p><em>Je kan dit een beetje vergelijke met het <em>Huis</em> uit opdracht 3 die een <em>Hond</em> kan hebben</em></p>
 <p>Omdat we willen dat het eten binnen de randen gemaakt wordt moeten we weten waar de randen zijn in het spel. Daarom hebben we variabele nodig voor elke rand die in het spel zit. Nu zouden we daar ook <strong>GameObject</strong> voor kunnen gebruiken, maar omdat we alleen de positie willen weten gebruiker we hiervoor dus de class <strong>Transform</strong>. Straks in Unity kunnen we deze variabelen koppelen met de echte randen in het spel.</p>
 <pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">VoedselToevoegen</span> : <span class="hljs-title">MonoBehaviour</span>
@@ -398,7 +454,7 @@ Laten we daarom eerst gaan maken dat er op willekeurige plaatsen eten tevoorschi
         <span class="hljs-keyword">var</span> etenY = (<span class="hljs-keyword">int</span>)Random.Range(bovenRandY, onderRandY);
     }
 }</code></pre><p><em>Random.Range() is een functie wat een willekeurig getal kan berekenen tussen twee andere getallen.</em></p>
-<p>Nu weten we een positie voor het eten, maar moeten we het eten zelf ook nog aanmaken in het spel. Dat doen we door de functie <strong>Instantiate()</strong> aan te roepen (engels voor 'Aanmaken').</p>
+<p>Nu weten we een positie voor het eten, maar moeten we het eten zelf ook nog aanmaken in het spel. Dat doen we door de functie <strong>Instantiate()</strong> aan te roepen (Engels voor 'Aanmaken').</p>
 <pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">VoedselToevoegen</span> : <span class="hljs-title">MonoBehaviour</span>
 {
     ...
@@ -472,12 +528,573 @@ Laten we daarom eerst gaan maken dat er op willekeurige plaatsen eten tevoorschi
 <li>Sleep nu de randen één voor één in het juiste vakje waar 'None' staat.
 Het zou er nu zo uit moeten zien:<br><img src="Resources/Snake/03-07-FoodVariables.PNG" alt="03-07"></li>
 </ul>
-<p><em>Als het niet lukt met slepen kan je ook klikken op het kleine rondje achter de variabele. Dan opent een venster waar je kan kiezen wat er in moet komen.<br><img src="Resources/Snake/03-08-InplaatsvanSlepen.PNG" alt="03-08"></em></p>
+<p><em>Als het niet lukt met slepen kan je ook klikken op het kleine rondje achter de variabele. Dan opent een venster waar je kan kiezen wat erin moet komen.<br><img src="Resources/Snake/03-08-InplaatsvanSlepen.PNG" alt="03-08"></em></p>
 <p><strong>Belangrijk:</strong> Sla je project weer even op zoals we eerder hebben gedaan.</p>
 <h3 id="uittesten">Uittesten</h3>
 <p>Nu willen we natuurlijk uittesten of het gaat werken. Dus klik nu maar eens op de 'Play' knop boven in beeld:<br><img src="Resources/Snake/03-09-Play.PNG" alt="03-09">.  
 Als het goed is zie je nu je spel starten en als je even wacht zouden er vanzelf eten stukjes tevoorschijn moeten komen.</p>
-<p>Gelukt? Jippie...:tada:</p>
+<p>Klik nog een keertje op de 'Play' knop om weer te stoppen.</p>
+<div class="page-break"></div>
+
+<h2 id="7-snake-maken">7. Snake maken</h2>
+<p>We hebben nu gemaakt dat het eten er is, maar zonder Snake is het spel natuurlijk niet af. Laten we daarom nu Snake gaan toevoegen aan het spel. Het toevoegen van Snake lijkt een beetje op het toevoegen van het eten.</p>
+<p>Voor de Snake is al een 'asset' (een plaatje in vakje 3).</p>
+<ul>
+<li>Snake</li>
+</ul>
+<p>Dit plaatje is bij hetzelfde als het eten, namelijk een pixel, maar dan wit.</p>
+<p>Klik het plaatje 'Snake' aan in het assets venster (3). En zorg dat de eigenschappen goed staan zoals hieronder. Druk daarna op 'Apply'.<br><img src="Resources/Snake/04-01-SnakeImport.PNG" alt="04-01"></p>
+<p>Als dat goed staat dan kan je nu Snake het spel in slepen en hem in het midden van het spel zetten.<br><img src="Resources/Snake/04-02-SnakeInSpel.PNG" alt="04-02"></p>
+<p>Op dit moment is dit eigenlijk nog geen slang, maar alleen nog maar zijn hoofd. Daarom gaan we hem even hernoemen naar 'Head' (Engels voor hoofd).<br><img src="Resources/Snake/04-03-Hernoemen.PNG" alt="04-03">
+<img src="Resources/Snake/04-04-Head.PNG" alt="04-04"></p>
+<p>Snake is natuurlijk nog maar een plaatje en zoals we eerder geleerd hadden moet Snake nog onderdeel worden van het spel om echt wat te kunnen doen. Daarop moeten we ook bij Snake een <strong>Box Collider</strong> toevoegen. Weet je nog hoe dat moet?</p>
+<p>Nee?</p>
+<p>Geeft niet! We leggen het gewoon nog even uit ;-). Klik op het hoofd van snake in het scene venster (1) (<em>waar je net hernoemd hebt</em>). Ga dan naar het eigenschappen venster en klik vervolgens op: <strong>Add Component -&gt; Physics 2D -&gt; Box Collider 2D</strong>.</p>
+<p>Bij de vorige keren hebben we niks aangepast in het vakje van de <strong>Box Collider</strong>, maar in dit geval moeten we dat wel doen. Pas daarom de eigenschappen aan van de 'Size' naar 0.7 en 0.7. Dit doen we omdat Snake dan dicht langs de muur kan bewegen. Ook hier moeten we de <em>Is Trigger</em> aanzetten.<br><img src="Resources/Snake/04-05-BoxCollider.PNG" alt="04-05"></p>
+<p>Omdat Snake ook moet bewegen in het spel, moeten we nog wat toevoegen. Namelijk een <strong>Rigidbody</strong>. Een <strong>Rigidbody</strong> is iets wat zorgt voor zwaartekracht, snelheid en beweging. Laten we die dus ook toevoegen aan het 'Head' object door in het eigenschappen venster vervolgens op het volgende te klikken: <strong>Add Component -&gt; Physics 2D -&gt; Rigidbody 2D</strong>. En we gebruiken dan de volgende settings.<br><img src="Resources/Snake/04-06-Rigidbody.PNG" alt="04-06"></p>
+<p>Nu hebben we Snake (zijn hoofd) en eten in het spel. Probeer eens uit met play of het eten ook nog steeds werkt. Sla nu het project weer op zoals je eerder hebt gedaan.</p>
+<h2 id="8-snakes-lichaam-maken">8. Snake's lichaam maken</h2>
+<p>Snake is nu alleen nog maar een hoofd, maar we hebben natuurlijk ook een lichaam nodig. Wij gebruiken eigenlijk hetzelfde als zijn hoofd alleen willen we dat tijdens het spel eraan vast maken. Hiervoor hebben we net als bij het eten een <strong>Prefab</strong> nodig.</p>
+<p>Sleep daarom het hoofd van Snake uit het scene venster naar het Assets scherm.<br><img src="Resources/Snake/04-07-HeadPrefab.PNG" alt="04-07"></p>
+<p>Hernoem nu de 'Head' in het Assets scherm naar 'TailPrefab' (tail betekend staart).<br><img src="Resources/Snake/04-08-RenamePrefab.PNG" alt="04-08"></p>
+<h2 id="9-snakes-hoofd-laten-bewegen">9. Snake's hoofd laten bewegen</h2>
+<p>Ok, nu hebben we de onderdelen voor zijn hoofd in het spel en de onderdelen voor zijn staart in het Assets venster.</p>
+<p>Klik weer op het hoofd van Snake. We gaan nu een script toevoegen om weer te kunnen programmeren. Klik in het eigenschappen venster achter elkaar op: <strong>Add Component -&gt; New Script</strong>. Noem het script 'Snake' en klik op 'Create and add'.<br><img src="Resources/Snake/04-09-SnakeScript.PNG" alt="04-09"></p>
+<p>Dubbelklik op het Snake script in het Assets venster. Nu zal Visual Studio weer openen en kan je weer gaan programmeren. Als het goed is ziet het script er zo uit:  </p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> UnityEngine;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    <span class="hljs-comment">// Start is called before the first frame update</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+
+    <span class="hljs-comment">// Update is called once per frame</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+}</code></pre><p>Omdat ze zometeen nog wat met een lijst moeten doen om de staart in te bewaren voegen we nog een <code>using</code> toe:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> UnityEngine;
+<span class="hljs-keyword">using</span> System.Linq;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    <span class="hljs-comment">// Start is called before the first frame update</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+
+    <span class="hljs-comment">// Update is called once per frame</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+}</code></pre><p>We gaan nu maken dat Snake altijd een kant op zal gaan. We gebruiken hiervoor weer de <strong>Start()</strong> functie. Maar om Snake te laten bewegen hebben we 2 nieuwe functies nodig. De eerste is de functie <strong>Beweeg()</strong>, deze functie zal ervoor zorgen dat Snake elke keer een stukje beweegt. We hebben nog een andere functie nodig die de <strong>Beweeg()</strong> functie aan blijft roepen net zolang we niet game over zijn. Deze nieuwe functie noemen we <strong>BeweegLus()</strong> en deze heeft als 'Return waarde' het type <code>IEnumerator</code>, maar voor nu is dat even niet belangrijk wat dat doet.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span> 
+{
+
+}
+
+<span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+{
+
+}</code></pre><p><em><strong>Let op:</strong> de functies moeten onder de andere functies staan, maar wel <strong>tussen</strong> de <code>class Snake {</code> en het einde van die class <code>}</code></em></p>
+<p>Vanuit de <strong>Start()</strong> functie roepen we de <strong>BeweegLus()</strong> functie aan. Dat doen we met een speciale functie die door Unity gemaakt is. Dit functie heet <strong>StartCoroutine()</strong> en we geven daar de naam van de functie aan mee die hij moet uitvoeren.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span> 
+{
+    StartCoroutine(<span class="hljs-keyword">nameof</span>(BeweegLus));
+}</code></pre><p>Nu gaan we de echte lus maken die uiteindelijke weer de <strong>Beweeg()</strong> functie moet aanroepen. Hiervoor hebben we een lus nodig. Eén van de manier om een lus te maken is met een 'while()' lus. Dit is een lus die elke keer opnieuw begint totdat de variabele die in de 'while()' staat niet meer waar is.<br>Voor nu maken we een 'while()' lus die altijd 'waar' (true) is. Maar daarom de 'while' lus aan in de <strong>BeweegLus()</strong> functie.</p>
+<pre><code class="hljs cs"><span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+    {
+
+    }
+}</code></pre><p>In de lus willen we dat Snake beweegt. Daarom roepen we in de 'while()' lus de functie <strong>Beweeg()</strong> aan.</p>
+<pre><code class="hljs cs"><span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+    {
+        Beweeg();
+    }
+}</code></pre><p>Als we nu niks zouden aanpassen dan gaat Snake heel snel bewegen. En we willen eigenlijk dat hij elke seconde ongeveer 3 stapjes maakt. Daarom roepen we vóórdat we <strong>Beweeg()</strong> aanroepen eerst nog een functie aan die wacht voor het aantal seconden wat we meegeven. (_Dit ziet er een beetje vreemd uit, maar is te lastig om nu uit te leggen, type het maar gewoon over ;-)).</p>
+<pre><code class="hljs cs"><span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+    {
+        <span class="hljs-function"><span class="hljs-keyword">yield</span> return new <span class="hljs-title">WaitForSeconds</span>(<span class="hljs-params"><span class="hljs-number">0.3f</span></span>)</span>;
+        Beweeg();
+    }
+}</code></pre><p>In de functie <strong>WaitForSeconds()</strong> geven we de waarde 0.3f mee. Dit betekent dat we 0.3 seconden wachten. En dan de <strong>Beweeg()</strong> functie aanroepen. Dan begint de lus weer opnieuw. Wacht weer 0.3 seconden en roept weer de <strong>Beweeg()</strong> functie aan. En zo blijft dit doorgaan.</p>
+<p>Nu wordt dus om de 0.3 seconden de <strong>Beweeg()</strong> functie aangeroepen, maar die doet nog niks. De code van het hele bestand zou er ongeveer zo uit moeten zien:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> UnityEngine;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    <span class="hljs-comment">// Start is called before the first frame update</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+    {
+        StartCoroutine(<span class="hljs-keyword">nameof</span>(BeweegLus));
+    }
+
+    <span class="hljs-comment">// Update is called once per frame</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+    {
+
+    }
+
+    <span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+        {
+            <span class="hljs-function"><span class="hljs-keyword">yield</span> return new <span class="hljs-title">WaitForSeconds</span>(<span class="hljs-params"><span class="hljs-number">0.3f</span></span>)</span>;
+            Beweeg();
+        }
+    }
+}</code></pre><p>Laten we nu de <strong>Beweeg()</strong> functie maar eens gaan maken.<br>Voor het bewegen moet het spel weten welke kant Snake op aan het bewegen is. Hiervoor voegen we een variabele toe die we 'richting' noemen. _Voor nu laten we hem naar rechts (right in het Engels) gaan.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+
+    <span class="hljs-comment">// Start is called before the first frame update</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+    {
+        StartCoroutine(<span class="hljs-keyword">nameof</span>(BeweegLus));
+    }
+
+    ...
+}</code></pre><p>In de <strong>Beweeg()</strong> functie kunnen we nu Snake laten bewegen. Omdat we dit script in Unity hebben gekoppeld met het hoofd van Snake, kunnen we in de <strong>Beweeg()</strong> functie 'transform' aanroepen wat eigenlijk zorgt dat het plaatje gaat bewegen.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+{
+    transform.Translate(richting);
+}</code></pre><p><em>Wat de <strong>Translate()</strong> functie doet is eigenlijk zeggen 'Voeg deze richting toe aan de plek waar ik nu ben'. Dus elke keer dat het wordt aangeroepen met 'right' zal Snake dus een plekje naar rechts opschuiven.</em></p>
+<p><strong>Belangrijk</strong> sla het bestand op in Visual Studio weer op zoals je eerder gedaan hebt. </p>
+<p>Open nu weer het Unity programma en klik op de 'Play' knop. Als het goed is zou Snake nu naar rechts moeten bewegen. <em>Let op Snake gaat ook nog gewoon door de muur heen, maar dat gaan we echt nog wel goed maken ;-)</em><br><img src="Resources/Snake/04-10-SnakeBeweegd.gif" alt="04-10"></p>
+<h2 id="11-het-hoofd-van-snake-besturen">11. Het hoofd van Snake besturen</h2>
+<p>Nu beweegt het hoofd van Snake, maar daar hebben we natuurlijk niet zo heel veel aan. Misschien is het daarom leuk om te gaan maken dat je met de pijltjes toetsen het hoofd kan bewegen. Hiervoor gebruiken we de <strong>Update()</strong> functie die al door Unity gemaakt was.</p>
+<p>Hiervoor gebruiken we de 'if' blokjes die we bij het maken van een rekenmachine ook gemaakt hebben. En we willen weten of iemand een toets heeft ingedrukt van de pijltjes. Dit doen we door het aanroepen van een functie <strong>Input.GetKey()</strong> en dan geven we mee welk pijltje we willen controleren:</p>
+<ul>
+<li>KeyCode.RightArrow = pijltje rechts,</li>
+<li>KeyCode.LeftArrow = pijltje links,</li>
+<li>KeyCode.UpArrow = pijltje omhoog,</li>
+<li>KeyCode.DownArrow = pijltje omlaag</li>
+</ul>
+<p>Waar we ook rekening mee moeten houden is dat als we links gaan dan we niet in één keer naar rechts kunnen. Als we dus <em>niet</em> links gaan <em>en</em> iemand drukt op de pijl naar rechts, dan zetten we de variabele 'richting' op rechts (right). Daarom ziet één afzonderlijk stukje er zo uit:</p>
+<pre><code class="hljs cs">    <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.RightArrow) &amp;&amp; richting != Vector2.left)
+        richting = Vector2.right;</code></pre><p>Als we dit voor alle richtingen doen dan krijgen we de volgende code in de <strong>Update()</strong> functie.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.RightArrow) &amp;&amp; richting != Vector2.left)
+        richting = Vector2.right;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.LeftArrow) &amp;&amp; richting != Vector2.right)
+        richting = Vector2.left;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.UpArrow) &amp;&amp; richting != Vector2.down)
+        richting = Vector2.up;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.DownArrow) &amp;&amp; richting != Vector2.up)
+        richting = Vector2.down;
+}</code></pre><p>Sla het bestand weer op in Visual Studio en ga weer naar Unity. Klik in Unity op de 'Play' knop. Als het goed is kan je nu met de pijltjes Snake bewegen door het veld. </p>
+<p>Doordat je nu met de pijltjes toets de waarde van de variabele <code>richting</code> veranderd zal elke keer dat de <strong>Beweeg()</strong> functie uitgevoerd worden gekeken worden welke kan Snake die keer op moet.</p>
+<p>Sla nu ook in Unity het project weer op zodat we zeker weten dat we later weer verder kunnen.</p>
+<h2 id="12-staart-van-snake">12. Staart van Snake</h2>
+<p>Laten we nu eens gaan nadenken over de staart van Snake. Stel Snake heeft een kop (H) en 3 staart delen (S).</p>
+<pre><code class="hljs sh">SSSH</code></pre><p>De computer kan per keer maar één dingen doen. Als nu het hoofd van Snake naar rechts gaat bewegen dan zou het logisch zijn om zijn staart erachter aan te laten bewegen op de volgende manier. </p>
+<pre><code class="hljs sh">stap 1: SSSH    snake heeft nog niet bewogen
+stap 2: SSS H   snake zijn hoofd is naar rechts bewogen
+stap 3: SS SH   snake zijn eerste staart stukje beweegt ook naar rechts
+stap 4: S SSH   snake zijn tweede staart stukje beweegt ook naar rechts
+stap 5:  SSSH   snake is nu <span class="hljs-keyword">in</span> zijn geheel naar rechts geschoven</code></pre><p>Om Snake te bewegen zijn er dus voor de computer 5 stappen nodig. Weet jij misschien een manier om voor de computer in maar 3 stappen heel snake te bewegen?</p>
+<p>Lees nog even niet verder, probeer eerst zelf eens een oplossing te bedenken.</p>
+<div class="page-break"></div>
+
+<p>Ok, heb je wat bedacht? Ik ben erg benieuwd. Schrijf daarom hieronder je oplossing op. Doe dat op dezelfde manier als dat we met de 5 stappen deden. Hieronder alvast stap 1. </p>
+<pre><code class="hljs sh">stap 1: SSSH    snake heeft nog niet bewogen
+
+
+
+
+
+
+
+
+
+
+</code></pre><p>Heb je geen oplossing of heb je wel een oplossing en deze opgeschreven ga dan naar de volgende bladzijde.</p>
+<div class="page-break"></div>
+
+<p>Dit is de oplossing om in 3 stappen hetzelfde te doen als in 5 stappen:</p>
+<pre><code class="hljs sh">stap 1: SSSH    snake heeft nog niet bewogen
+stap 2: SSS H   snake zijn hoofd heeft bewogen
+stap 3:  SSSH   snake zijn achterste stukje stoppen we <span class="hljs-keyword">in</span> het gat. </code></pre><p>Dit is voor de computer dus veel makkelijker om te doen dan elk stukje staart te bewegen. Het maakt hierdoor ook niet uit hoelang de staart is.</p>
+<p>Om dit te maken moeten we een lijstje bij gaan houden met staartstukjes. Open daarom weer in Visual Studio de code voor Snake door dubbel te klikken op 'Snake' in het assets venster.<br><img src="Resources/Snake/04-09-SnakeScript.PNG" alt="SnakeScript"></p>
+<p>We gaan nu vlak onder de variabele 'richting' (boven in de class) een nieuwe variabele maken. Hierin gaan we een lijstje bij houden van de staartdelen.</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+    List&lt;Transform&gt; staartstukjes = <span class="hljs-keyword">new</span> List&lt;Transform&gt;();
+
+    ...
+}</code></pre><p>We hebben nu een <code>List</code> gemaakt (lijst in het Engels), en zeggen tegen de computer dat in die lijst objecten komen van het type <code>Transform</code>. En een <code>Transform</code> was iets waaraan we positie konden geven, zoals dus ook nodig is bij de staart stukjes.</p>
+<p>Omdat we wat functies willen gebruiken die nodig zijn om informatie te vragen aan de lijst is het nodig om bovenin het bestand nog een bibliotheek toe te voegen. Voeg daar <code>using System.Linq;</code> aan toe</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> UnityEngine;
+<span class="hljs-keyword">using</span> System.Linq;    <span class="hljs-comment">// &lt;-- Deze is nieuw</span></code></pre><p>Dan moeten we nu de logica maken die we net bedacht hebben om de staart te bewegen. Zorg ervoor dat de <strong>Beweeg()</strong> functie er zo uit gaat zien:
+(<em>het commentaar in code hoef je niet over te typen he ;-)</em>)</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-comment">// We slaan eerst de vorige positie van het hoofd op</span>
+    Vector2 vorigePositieHoofd = transform.position;
+
+    <span class="hljs-comment">// Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)</span>
+    transform.Translate(richting);
+
+    <span class="hljs-comment">// Controleren of we een staart hebben</span>
+    <span class="hljs-keyword">if</span>(staartstukjes.Any())
+    {
+        <span class="hljs-comment">// Pak het laatste staartstukje en geef het de positie waar het hoofd was</span>
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        <span class="hljs-comment">// Zet het laatste stukje in de lijst als eerste in de lijst</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staartstukjes.Last());
+
+        <span class="hljs-comment">// Haal het staartstukje aan het einde weg</span>
+        staartstukjes.RemoveAt(staartstukjes.Count - <span class="hljs-number">1</span>);
+    }
+}</code></pre><p>Ik heb geprobeerd in het commentaar te zetten wat er gedaan wordt, maar hieronder even een opsomming van de stappen:</p>
+<ol>
+<li>Vorige positie van hoofd moeten we even opslaan</li>
+<li>Hoofd bewegen</li>
+<li>Kijken of we staart stukjes hebben</li>
+<li>Positie (in het spel) van laatste staartstukje veranderen in de positie van het hoofd</li>
+<li>Laatste staart stukje in de lijst stoppen als eerste stukje (<em>we vullen nu het gat op, maar dit stukje zit nu 2x in de lijst</em>)</li>
+<li>Uit de lijst het laatste stukje weghalen.</li>
+</ol>
+<h2 id="13-snake-voeren-zodat-zijn-staart-langer-wordt">13. Snake voeren zodat zijn staart langer wordt</h2>
+<p>We hebben nu een stukje code gemaakt om te zorgen dat de staart van Snake zijn hoofd volgt. Maar zolang Snake niet kan eten gebeurt er natuurlijk weinig.</p>
+<p>Wat we gaan doen is het volgende:</p>
+<ol>
+<li>Functie maken die aangeroepen wordt door het spel wanneer Snake in aanraking komt met een stukje eten</li>
+<li>Snake langer maken wanneer hij een stukje eet</li>
+</ol>
+<p>Voor het langer worden van Snake gebruiken we dezelfde techniek als bij zijn staart. Hieronder en voorbeeld met Snake zijn hoofd (H), zijn staart (S) en eten (E):</p>
+<pre><code class="hljs sh">stap 1: SSSH E      // Snake is bijna bij het eten
+stap 2: SSS HE      // Snake zijn hoofd is bewogen
+stap 3:  SSSHE      // Snakes laatste staartstukje is verplaatst
+stap 4:  SSS H      // Snake zijn hoofd is over het eten heen
+stap 5:  SSSSH      // We voegen een nieuwe stukje staart toe 
+                    // <span class="hljs-keyword">in</span> het gat wat is ontstaan.</code></pre><p>Wat we nu eerst nodig hebben is nu weer een extra variabele om bij de houden of Snake wat gegeten heeft. Voeg daarom onder de 'staartstukjes' variabele 'gegeten' toe. 'gegeten' zetten we gelijk op 'false' (<em>niet waar, dus niet gegeten</em>):</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+    List&lt;Transform&gt; staartstukjes = <span class="hljs-keyword">new</span> List&lt;Transform&gt;();
+    <span class="hljs-keyword">bool</span> gegeten = <span class="hljs-literal">false</span>;
+
+    ...
+}</code></pre><p>Ook hebben we een variabele nodig om nieuwe staart stukjes toe te kunnen voegen 'staartPrefab'. De code ziet er dan zo uit:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+    List&lt;Transform&gt; staartstukjes = <span class="hljs-keyword">new</span> List&lt;Transform&gt;();
+    <span class="hljs-keyword">bool</span> gegeten = <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">public</span> GameObject staartPrefab;
+}</code></pre><h3 id="eten-opeten">Eten opeten</h3>
+<p>We hebben net 2 variabelen toegevoegd. Eén om te weten dat Snake gegeten heeft en één om te weten hoe de staartstukjes er uit zien.<br>Nu moeten we natuurlijk nog zorgen dat we ook weten dat Snake echte gegeten heeft. Hiervoor hebben we eerder in de opdracht <strong>Box Colliders</strong> gemaakt voor de stukjes eten en voor Snake zijn hoofd. Als nu het hoofd van Snake tegen een eten stukje aankomt dan wordt door Unity de functie <strong>OnTriggerEnter2D()</strong> aangeroepen. Dat doet Unity alleen als de functie er ook is. Die moeten we nu dus aanmaken.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnTriggerEnter2D</span>(<span class="hljs-params">Collider2D gebotstMet</span>)</span>
+{
+    <span class="hljs-comment">// Is Snake gebotst met FoodPrefab</span>
+    <span class="hljs-keyword">if</span> (gebotstMet.name.StartsWith(<span class="hljs-string">"FoodPrefab"</span>))
+    {
+        <span class="hljs-comment">// Snake heeft gegeten</span>
+        <span class="hljs-keyword">this</span>.gegeten = <span class="hljs-literal">true</span>;
+
+        <span class="hljs-comment">// Het eten weghalen uit het spel</span>
+        Destroy(gebotstMet.gameObject);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// Je bent met iets anders gebotst.. </span>
+        Time.timeScale = <span class="hljs-number">0</span>; <span class="hljs-comment">// Stop het spel</span>
+    }
+}</code></pre><p>Even een korte uitleg van wat we nou gedaan hebben. In Unity hebben we een object gemaakt (eerder in de opdracht) voor het eten. Dat object heeft 'FoodPrefab'<br><img src="Resources/Snake/05-01-FoodPrefab.PNG" alt="FoodPrefab"></p>
+<p>Nu weten we dat Snake gegeten heeft en als hij eet dan verwijderen we de stukje eten weer uit het spel. Met de <strong>Destroy()</strong> functie wordt het stukje eten verwijderd. (<em>Destroy betekend vernietigen in het Engels</em>)</p>
+<p>Wanneer je met iets anders botst (<em>dat is dan je staart of de rand van het spel</em>) dan stoppen we het hele spel. Doordat we de tijd stilzetten. Er zijn natuurlijk allemaal andere manieren om het spel te laten stoppen, maar voor nu is dit het makkelijkst.</p>
+<p>Nu hebben we er dus voor gezorgd dat we weten wanneer Snake gegeten heeft. We moeten nu alleen nog maken dat tijdens het bewegen er een stukje staart bij komt. Dit doen we in de <strong>Beweeg()</strong> functie gaan we een stukje code toevoegen net boven de <strong>if(staartstukjes.Any())</strong> die er staat. Het stuk code ziet er zo uit (<em>kijk verder voor hoe de hele functie eruitziet</em>):</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+{
+    ....
+
+    <span class="hljs-comment">// Heeft Snake gegeten? Dan moeten we extra stukje staart maken</span>
+    <span class="hljs-keyword">if</span>(gegeten)
+    {
+        <span class="hljs-comment">// Stukje staart inladen in het spel en op de vorige positie</span>
+        <span class="hljs-comment">// van het hoofd neerzetten</span>
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        <span class="hljs-comment">// Ook het stukje toevoegen aan de lijst met staart stukjes</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staart.transform);
+
+        <span class="hljs-comment">// En weer laten weten dat Snake weer kan eten</span>
+        gegeten = <span class="hljs-literal">false</span>;
+    }
+
+    ....
+}</code></pre><p>De functie <strong>Beweeg()</strong> ziet er als het goed is nu zo uit:</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-comment">// We slaan eerst de vorige positie van het hoofd op</span>
+    Vector2 vorigePositieHoofd = transform.position;
+
+    <span class="hljs-comment">// Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)</span>
+    transform.Translate(richting);
+
+    <span class="hljs-comment">// Heeft Snake gegeten? Dan moeten we extra stukje staart maken</span>
+    <span class="hljs-keyword">if</span>(gegeten)
+    {
+        <span class="hljs-comment">// Stukje staart inladen in het spel en op de vorige positie</span>
+        <span class="hljs-comment">// van het hoofd neerzetten</span>
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        <span class="hljs-comment">// Ook het stukje toevoegen aan de lijst met staart stukjes</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staart.transform);
+
+        <span class="hljs-comment">// En weer laten weten dat Snake weer kan eten</span>
+        gegeten = <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// Controleren of we een staart hebben</span>
+    <span class="hljs-keyword">if</span>(staartstukjes.Any())
+    {
+        <span class="hljs-comment">// Pak het laatste staartstukje en geef het de positie waar het hoofd was</span>
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        <span class="hljs-comment">// Zet het laatste stukje in de lijst als eerste in de lijst</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staartstukjes.Last());
+
+        <span class="hljs-comment">// Haal het staartstukje aan het einde weg</span>
+        staartstukjes.RemoveAt(staartstukjes.Count - <span class="hljs-number">1</span>);
+    }
+}</code></pre><p>Nu zie je twee keer een <strong>if()</strong> staan, maar dat klopt eigenlijk niet. Want wat er nu gebeurt is het volgende:</p>
+<ul>
+<li>Snake beweegt</li>
+<li>Heeft Snake gegeten?<ul>
+<li>Ja: Voeg nieuwe stukje staart toe</li>
+</ul>
+</li>
+<li>Heeft Snake staart stukjes?<ul>
+<li>Ja: Verplaats het laatst stukje staart naar de plek waar net het hoofd van Snake zat.</li>
+</ul>
+</li>
+</ul>
+<p>Op het eerste gezicht lijkt dit misschien te kloppen, maar als we even verder nadenken, klopt het toch niet. Want het laatste stukje staart verplaatsen naar waar Snake zijn hoofd zat, dat hoeft alleen als we bewegen en niet als we gegeten hebben. Daarom moeten we de <strong>else</strong> gebruiken. </p>
+<p>We hebben eerder geleerd dat een <strong>if()</strong> eigenlijk <strong>als?</strong> betekend. Dus <code>if(gegeten)</code> betekent eigenlijk: <code>als Snake gegeten heeft dan...</code>. Maar nu willen we maken: <code>als Snake gegeten heeft dan ... en anders ...</code>. En precies voor het stukje <code>en anders ...</code> is de <strong>else</strong> uitgevonden.</p>
+<p>We gaan daarom de code een heel klein beetje veranderen namelijk:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">if</span>(staartstukjes.Any())</code></pre><p>Moet je veranderen in:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(staartstukjes.Any())</code></pre><p>De hele functie ziet er dan nu zo uit:</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-comment">// We slaan eerst de vorige positie van het hoofd op</span>
+    Vector2 vorigePositieHoofd = transform.position;
+
+    <span class="hljs-comment">// Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)</span>
+    transform.Translate(richting);
+
+    <span class="hljs-comment">// Heeft Snake gegeten? Dan moeten we extra stukje staart maken</span>
+    <span class="hljs-keyword">if</span>(gegeten)
+    {
+        <span class="hljs-comment">// Stukje staart inladen in het spel en op de vorige positie</span>
+        <span class="hljs-comment">// van het hoofd neerzetten</span>
+        GameObject staart = (GameObject)Instantiate(
+            staartPrefab,
+            vorigePositieHoofd,
+            Quaternion.identity);
+
+        <span class="hljs-comment">// Ook het stukje toevoegen aan de lijst met staart stukjes</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staart.transform);
+
+        <span class="hljs-comment">// En weer laten weten dat Snake weer kan eten</span>
+        gegeten = <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// Controleren of we een staart hebben</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(staartstukjes.Any())
+    {
+        <span class="hljs-comment">// Pak het laatste staartstukje en geef het de positie waar het hoofd was</span>
+        staartstukjes.Last().position = vorigePositieHoofd;
+
+        <span class="hljs-comment">// Zet het laatste stukje in de lijst als eerste in de lijst</span>
+        staartstukjes.Insert(<span class="hljs-number">0</span>, staartstukjes.Last());
+
+        <span class="hljs-comment">// Haal het staartstukje aan het einde weg</span>
+        staartstukjes.RemoveAt(staartstukjes.Count - <span class="hljs-number">1</span>);
+    }
+}</code></pre><p>Sla je code weer op in Visual Studio zoals je eerder al hebt moeten doen.</p>
+<p>We hebben nu heel wat code gemaakt. Nu is het bijna tijd om het uit te testen. Maar er mist nog één ding. Namelijk aan de computer laten weten welk onderdeel bij de Staart hoort. We hebben eerder al in Unity een <em>TailPrefab</em> gemaakt (zie plaatje) en deze moeten we koppelen aan de variabele <em>StaartPrefab</em> die in de code hierboven staat.</p>
+<p>Selecteer daarom eerst in Unity het hoofd van Snake<br><img src="Resources/Snake/05-02-HoofdSnake.PNG" alt="05-02"></p>
+<p>Klik daarna in het eigenschappen venster op het kleine ronde knopje om een Staart te koppelen.<br><img src="Resources/Snake/05-02-StaartPrefab1.PNG" alt="05-02"></p>
+<p>In het schermpje wat er dan komt kies je de <em>TailPrefab</em>.  
+<img src="Resources/Snake/05-03-SelectTailPrefab.PNG" alt="05-03"></p>
+<p>Start nu het spel opnieuw en als het goed is kan je Snake bewegen. Kan je stukjes opeten en wordt Snake dan langer. En als je tegen de muur botst of tegen je eigen staart, dan ben je af en stopt het spel.</p>
+<p>De volledige code van Snake script zou er ongeveer zo uit moeten zien:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">using</span> System.Collections;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> UnityEngine;
+<span class="hljs-keyword">using</span> System.Linq;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+    List&lt;Transform&gt; staartstukjes = <span class="hljs-keyword">new</span> List&lt;Transform&gt;();
+    <span class="hljs-keyword">bool</span> gegeten = <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">public</span> GameObject staartPrefab;
+
+    <span class="hljs-comment">// Start is called before the first frame update</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+    {
+        StartCoroutine(<span class="hljs-keyword">nameof</span>(BeweegLus));
+    }
+
+    <span class="hljs-comment">// Update is called once per frame</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.RightArrow) &amp;&amp; richting != Vector2.left)
+            richting = Vector2.right;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.LeftArrow) &amp;&amp; richting != Vector2.right)
+            richting = Vector2.left;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.UpArrow) &amp;&amp; richting != Vector2.down)
+            richting = Vector2.up;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetKey(KeyCode.DownArrow) &amp;&amp; richting != Vector2.up)
+            richting = Vector2.down;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Beweeg</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-comment">// We slaan eerst de vorige positie van het hoofd op</span>
+        Vector2 vorigePositieHoofd = transform.position;
+
+        <span class="hljs-comment">// Nu bewegen we het hoofd (en ontstaat er een gat als we een staart hebben)</span>
+        transform.Translate(richting);
+
+        <span class="hljs-comment">// Heeft Snake gegeten? Dan moeten we extra stukje staart maken</span>
+        <span class="hljs-keyword">if</span>(gegeten)
+        {
+            <span class="hljs-comment">// Stukje staart inladen in het spel en op de vorige positie</span>
+            <span class="hljs-comment">// van het hoofd neerzetten</span>
+            GameObject staart = (GameObject)Instantiate(
+                staartPrefab,
+                vorigePositieHoofd,
+                Quaternion.identity);
+
+            <span class="hljs-comment">// Ook het stukje toevoegen aan de lijst met staart stukjes</span>
+            staartstukjes.Insert(<span class="hljs-number">0</span>, staart.transform);
+
+            <span class="hljs-comment">// En weer laten weten dat Snake weer kan eten</span>
+            gegeten = <span class="hljs-literal">false</span>;
+        }
+        <span class="hljs-comment">// Controleren of we een staart hebben</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (staartstukjes.Any())
+        {
+            <span class="hljs-comment">// Pak het laatste staartstukje en geef het de positie waar het hoofd was</span>
+            staartstukjes.Last().position = vorigePositieHoofd;
+
+            <span class="hljs-comment">// Zet het laatste stukje in de lijst als eerste in de lijst</span>
+            staartstukjes.Insert(<span class="hljs-number">0</span>, staartstukjes.Last());
+
+            <span class="hljs-comment">// Haal het staartstukje aan het einde weg</span>
+            staartstukjes.RemoveAt(staartstukjes.Count - <span class="hljs-number">1</span>);
+        }
+    }
+
+    <span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+        {
+            <span class="hljs-function"><span class="hljs-keyword">yield</span> return new <span class="hljs-title">WaitForSeconds</span>(<span class="hljs-params"><span class="hljs-number">0.3f</span></span>)</span>;
+            Beweeg();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnTriggerEnter2D</span>(<span class="hljs-params">Collider2D gebotstMet</span>)</span>
+    {
+        <span class="hljs-comment">// Is Snake gebotst met FoodPrefab</span>
+        <span class="hljs-keyword">if</span> (gebotstMet.name.StartsWith(<span class="hljs-string">"FoodPrefab"</span>))
+        {
+            <span class="hljs-comment">// Snake heeft gegeten</span>
+            <span class="hljs-keyword">this</span>.gegeten = <span class="hljs-literal">true</span>;
+
+            <span class="hljs-comment">// Het eten weghalen uit het spel</span>
+            Destroy(gebotstMet.gameObject);
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-comment">// Je bent met iets anders gebotst.. </span>
+            Time.timeScale = <span class="hljs-number">0</span>; <span class="hljs-comment">// Stop het spel</span>
+        }
+    }
+}</code></pre><p>Gefeliciteerd! Je hebt in een aantal opdrachten nu geleerd hoe je kan programmeren. Natuurlijk is er nog veel meer te leren, maar hopelijk heb je een beetje een gevoel bij wat je gedaan hebt.</p>
+<p>Nu komt misschien nog wel het leukste.. dat is lekker zelf bezig zijn en dingen verzinnen.</p>
+<hr>
+<p>Als je nog tijd hebt of het leuk vindt om dingen uit te proberen hieronder nog een aantal </p>
+<h3 id="1-snake-sneller-laten-gaan">1. Snake sneller laten gaan:</h3>
+<p>Probeer eens het getal in <code>WaitForSeconds</code> aan te passen en kijk wat er gebeurt.</p>
+<h3 id="2-snake-steeds-een-beetje-sneller-laten-gaan">2. Snake steeds een beetje sneller laten gaan:</h3>
+<p>Voor het maken van het eten hebben we gebruik gemaakt van de functie:  </p>
+<pre><code class="hljs cs">InvokeRepeating(<span class="hljs-keyword">nameof</span>(EtenMaken), <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</code></pre><p>Misschien weet je het nog, deze functie roept na 3 seconden de functie <strong>EtenMaken()</strong> aan en daarna wacht hij elke keer 4 seconden en roept hij weer de functie <strong>EtenMaken()</strong> aan.</p>
+<p>Deze <code>InvokeRepeating</code> kunnen we ook gebruiken om het spel steeds een beetje sneller te laten gaan.</p>
+<p>Eerst moeten we een variabele aan maken voor de snelheid van het spel. </p>
+<pre><code class="hljs cs"><span class="hljs-keyword">float</span> snelheid = <span class="hljs-number">0.3f</span>;</code></pre><p>Zet deze onder de variabele 'gegeten' neer:</p>
+<pre><code class="hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Snake</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    Vector2 richting = Vector2.right;
+    List&lt;Transform&gt; staartstukjes = <span class="hljs-keyword">new</span> List&lt;Transform&gt;();
+    <span class="hljs-keyword">bool</span> gegeten = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">float</span> snelheid = <span class="hljs-number">0.3f</span>;
+
+    <span class="hljs-keyword">public</span> GameObject staartPrefab;
+
+    ...
+}</code></pre><p>Pas de code van de <code>WaitForSeconds</code> aan in het volgende:</p>
+<pre><code class="hljs cs"><span class="hljs-function">IEnumerator <span class="hljs-title">BeweegLus</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)
+    {
+        <span class="hljs-function"><span class="hljs-keyword">yield</span> return new <span class="hljs-title">WaitForSeconds</span>(<span class="hljs-params">snelheid</span>)</span>;
+        Beweeg();
+    }
+}</code></pre><p>Maak nu een extra functie aan die we <strong>VerhoogSnelheid()</strong> noemen:  </p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">VerhoogSnelheid</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">this</span>.snelheid = <span class="hljs-keyword">this</span>.snelheid * <span class="hljs-number">0.8f</span>;
+}</code></pre><p>Deze functie veranderd de inhoud van snelheid door elke keer de snelheid keer 0.8 te doen.</p>
+<p>Pas nu de <strong>Start()</strong> functie aan door met <code>InvokeRepeating</code> de <strong>VerhoogSnelheid()</strong> functie aan te roepen.</p>
+<pre><code class="hljs cs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">this</span>.timeToMove = <span class="hljs-number">.3</span>f;
+    <span class="hljs-comment">//InvokeRepeating(nameof(Move), .3f, .2f);</span>
+    StartCoroutine(<span class="hljs-keyword">nameof</span>(MoveRoutine));
+    InvokeRepeating(<span class="hljs-keyword">nameof</span>(VerhoogSnelheid), <span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+}</code></pre><p>Hierboven staat dus dat na 1 seconden en daarna elke 10 seconden de snelheid van snake wordt aangepast door de functie <strong>VerhoogSnelheid()</strong> aan te roepen.</p>
+<p>Sla het spel op en test het uit.</p>
 
 
 </body></html>
